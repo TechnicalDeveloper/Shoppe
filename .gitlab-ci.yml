@@ -1,4 +1,4 @@
 include:
   - project: 'infra/common-ci'
-    file: 'ci/common-html-ci.yml'
+    file: 'ci/common-js-ci.yml'
     ref: 'master'
