@@ -1,8 +1,78 @@
 @use "reset";
 
-#app {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  color: white;
+// HEADER
+.header {
+  width: 100%;
+
+  &__container {
+    padding: 64px 96px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &-svg, &-img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__menu-item {}
+
+  &__menu-link {
+    color: var(--Light-Colors-Black---Light, #000);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color .2s;
+    &:hover { color: #A18A68; }
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 27px;
+  }
+
+  &__icon_cart {
+    margin-right: 39px;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 24px;
+    background: #707070;
+    margin: 0 78px;
+    display: inline-block;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  &__icon:hover svg {
+    fill: var(--Light-Colors-Black---Light, #000);
+    stroke-width: 1px;
+    stroke: var(--Light-Colors-White---Light, #FFF);
+    transition: fill .2s, stroke .2s;
+  }
 }
