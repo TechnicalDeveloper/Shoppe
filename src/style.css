@@ -1,0 +1,198 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  width: 100%;
+}
+.header__container {
+  padding: 64px 96px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.header__logo-svg, .header__logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.header__menu-link {
+  color: var(--Light-Colors-Black---Light, #000);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 27px;
+}
+.header__menu-link:hover {
+  color: #A18A68;
+}
+.header__icon_cart {
+  margin-right: 39px;
+}
+.header__divider {
+  width: 1px;
+  height: 24px;
+  background: #707070;
+  margin: 0 78px;
+  display: inline-block;
+}
+.header__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.header__icon:hover svg {
+  fill: var(--Light-Colors-Black---Light, #000);
+  stroke-width: 1px;
+  stroke: var(--Light-Colors-White---Light, #FFF);
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+/*# sourceMappingURL=style.css.map */
