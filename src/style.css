@@ -133,7 +133,7 @@ table {
   width: 100%;
 }
 .header__container {
-  padding: 64px 96px 0;
+  padding: 64px 96px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -249,7 +249,7 @@ table {
   color: var(--Light-Colors-White---Light, #FFF);
   font-size: 33px;
   font-weight: 500;
-  line-height: 43px; /* 130.303% */
+  line-height: 43px;
 }
 .hero__price {
   font-family: "DM Sans", Arial, sans-serif;
@@ -259,7 +259,7 @@ table {
   font-size: 26px;
   font-style: normal;
   font-weight: 400;
-  line-height: 35px; /* 134.615% */
+  line-height: 35px;
 }
 .hero__btn {
   font-family: "DM Sans", Arial, sans-serif;
@@ -277,6 +277,135 @@ table {
 .hero__btn:hover {
   background: #fff;
   color: #222;
+}
+
+.shop-latest {
+  padding: 64px 96px 0;
+}
+.shop-latest__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 39px;
+}
+.shop-latest__title {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-weight: 500;
+  color: var(--Light-Colors-Black---Light, #000);
+  font-size: 33px;
+  font-style: normal;
+  line-height: 43px; /* 130.303% */
+}
+.shop-latest__view-all {
+  text-decoration: none;
+  transition: color 0.2s;
+  color: var(--Light-Colors-Accent---Light, #A18A68);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  text-transform: capitalize;
+}
+.shop-latest__view-all:hover {
+  color: #A18A68;
+}
+.shop-latest__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 86px 54px;
+}
+.shop-latest__card {
+  background: #faf9f8;
+  border-radius: 10px;
+  padding: 0 0 0 0;
+  box-shadow: 0 2px 6px 0 rgba(40, 40, 40, 0.02);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 265px;
+  transition: box-shadow 0.2s;
+}
+.shop-latest__card::before {
+  content: "";
+  display: block;
+  width: 377px;
+  height: 380px;
+  flex-shrink: 0;
+  border-radius: 8px 8px 0 0;
+  background: lightgray 50%/cover no-repeat;
+}
+.shop-latest__card--lira::before {
+  background-image: url("/src/assets/Lira-Earrings_shop.png");
+}
+.shop-latest__card--hal::before {
+  background-image: url("/src/assets/Hal-Earrings_shop.png");
+}
+.shop-latest__card--kaede::before {
+  background-image: url("/src/assets/Kaede-Hair_shop.png");
+}
+.shop-latest__card--hairpin::before {
+  background-image: url("/src/assets/Hair-Pin_shop.png");
+}
+.shop-latest__card--plaine::before {
+  background-image: url("/src/assets/Plaine-Necklace_shop.png");
+}
+.shop-latest__card--yuki::before {
+  background-image: url("/src/assets/Yuki-Hair_shop.png");
+}
+.shop-latest__card:hover {
+  box-shadow: 0 8px 24px 0 rgba(40, 40, 40, 0.08);
+}
+.shop-latest__badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #e5dac3;
+  color: #8a7450;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 500;
+  z-index: 2;
+}
+.shop-latest__info {
+  padding-top: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.shop-latest__name {
+  font-family: "DM Sans", Arial, sans-serif;
+  margin-bottom: 16px;
+  font-weight: 400;
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 33px;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+.shop-latest__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.shop-latest__price {
+  font-family: "DM Sans", Arial, sans-serif;
+  color: var(--Light-Colors-Accent---Light, #A18A68);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  text-transform: capitalize;
+}
+.shop-latest__price--old {
+  text-decoration: line-through;
+  color: #ef3e37;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
