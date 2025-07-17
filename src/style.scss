@@ -46,14 +46,19 @@
     list-style: none;
   }
 
-  &__menu-item {}
+  &__menu-item {
+  }
 
   &__menu-link {
     color: var(--Light-Colors-Black---Light, #000);
     text-decoration: none;
     font-weight: 400;
     transition: color .2s;
-    &:hover { color: #A18A68; }
+
+    &:hover {
+      color: #A18A68;
+    }
+
     font-family: "DM Sans", Arial, sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -179,7 +184,11 @@
   &__view-all {
     text-decoration: none;
     transition: color 0.2s;
-    &:hover { color: #A18A68; }
+
+    &:hover {
+      color: #A18A68;
+    }
+
     color: var(--Light-Colors-Accent---Light, #A18A68);
     font-family: "DM Sans", Arial, sans-serif;
     font-size: 20px;
@@ -198,7 +207,7 @@
   &__card {
     background: #faf9f8;
     border-radius: 10px;
-    box-shadow: 0 2px 6px 0 rgba(40,40,40,0.02);
+    box-shadow: 0 2px 6px 0 rgba(40, 40, 40, 0.02);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -215,15 +224,32 @@
       background: lightgray 50% / cover no-repeat;
     }
 
-    &--lira::before    { background-image: url("/src/assets/Lira-Earrings_shop.png"); }
-    &--hal::before     { background-image: url("/src/assets/Hal-Earrings_shop.png"); }
-    &--kaede::before   { background-image: url("/src/assets/Kaede-Hair_shop.png"); }
-    &--hairpin::before { background-image: url("/src/assets/Hair-Pin_shop.png"); }
-    &--plaine::before  { background-image: url("/src/assets/Plaine-Necklace_shop.png"); }
-    &--yuki::before    { background-image: url("/src/assets/Yuki-Hair_shop.png"); }
+    &--lira::before {
+      background-image: url("/src/assets/Lira-Earrings_shop.png");
+    }
+
+    &--hal::before {
+      background-image: url("/src/assets/Hal-Earrings_shop.png");
+    }
+
+    &--kaede::before {
+      background-image: url("/src/assets/Kaede-Hair_shop.png");
+    }
+
+    &--hairpin::before {
+      background-image: url("/src/assets/Hair-Pin_shop.png");
+    }
+
+    &--plaine::before {
+      background-image: url("/src/assets/Plaine-Necklace_shop.png");
+    }
+
+    &--yuki::before {
+      background-image: url("/src/assets/Yuki-Hair_shop.png");
+    }
 
     &:hover {
-      box-shadow: 0 8px 24px 0 rgba(40,40,40,0.08);
+      box-shadow: 0 8px 24px 0 rgba(40, 40, 40, 0.08);
     }
   }
 
@@ -365,9 +391,18 @@
     padding-left: 32px;
     padding-right: 32px;
   }
-  .hero__slider { height: 440px; margin-bottom: 48px; }
-  .shop-latest__grid { grid-template-columns: repeat(2, 1fr); gap: 38px 22px; }
-  .footer, .header__container { padding-left: 32px; padding-right: 32px; }
+  .hero__slider {
+    height: 440px;
+    margin-bottom: 48px;
+  }
+  .shop-latest__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 38px 22px;
+  }
+  .footer, .header__container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -382,17 +417,37 @@
     padding-bottom: 24px;
     align-items: flex-start;
   }
-  .header__logo { margin-bottom: 8px; }
-  .header__divider { margin: 0 24px; }
-  .hero__content { margin-left: 0; }
-  .footer__bottom { flex-direction: column; gap: 20px; align-items: flex-start; }
+  .header__logo {
+    margin-bottom: 8px;
+  }
+  .header__divider {
+    margin: 0 24px;
+  }
+  .hero__content {
+    margin-left: 0;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 900px) {
-  .shop-latest__header { flex-direction: column; gap: 20px; align-items: flex-start; }
-  .shop-latest__grid { gap: 28px 14px; }
-  .shop-latest__title { font-size: 28px; }
-  .shop-latest__view-all { font-size: 16px; }
+  .shop-latest__header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .shop-latest__grid {
+    gap: 28px 14px;
+  }
+  .shop-latest__title {
+    font-size: 28px;
+  }
+  .shop-latest__view-all {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -400,43 +455,111 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  .header__container { padding: 18px 10px 14px; }
+  .header__container {
+    padding: 18px 10px 14px;
+  }
   .header__menu,
   .header__divider,
   .header__icon_cart,
   .header__icon_user {
     display: none !important; // Можно добавить бургер, если нужен
   }
-  .header__nav { width: 100%; justify-content: flex-end; }
-  .hero__slider { height: 330px; }
-  .hero__title { font-size: 22px; line-height: 29px; }
-  .hero__price { font-size: 16px; line-height: 22px; }
-  .hero__btn { padding: 8px 18px; font-size: 15px; }
-  .shop-latest__grid { grid-template-columns: 1fr; gap: 18px; }
-  .shop-latest__card { min-height: 200px; }
-  .footer { padding-top: 30px; padding-bottom: 24px; }
-  .footer__line { margin-bottom: 18px; }
-  .footer__bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .header__nav {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .hero__slider {
+    height: 330px;
+  }
+  .hero__title {
+    font-size: 22px;
+    line-height: 29px;
+  }
+  .hero__price {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .hero__btn {
+    padding: 8px 18px;
+    font-size: 15px;
+  }
+  .shop-latest__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .shop-latest__card {
+    min-height: 200px;
+  }
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 24px;
+  }
+  .footer__line {
+    margin-bottom: 18px;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 480px) {
-  .container { padding-left: 4px; padding-right: 4px; }
-  .header__container { padding: 12px 4px 6px; }
-  .hero__slider { height: 180px; }
-  .hero__title { font-size: 16px; line-height: 22px; }
-  .hero__price { font-size: 12px; line-height: 17px; }
-  .hero__btn { padding: 7px 13px; font-size: 12px; }
-  .shop-latest { padding: 16px 0 28px 0; }
-  .shop-latest__header { margin-bottom: 10px; }
-  .shop-latest__title { font-size: 17px; line-height: 22px; }
-  .shop-latest__view-all { font-size: 12px; line-height: 17px; }
-  .shop-latest__card { min-height: 130px; border-radius: 6px; }
-  .footer__copy { font-size: 12px; }
-  .footer__social-icons { width: 94px; height: 13px; }
+  .container {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .header__container {
+    padding: 12px 4px 6px;
+  }
+  .hero__slider {
+    height: 180px;
+  }
+  .hero__title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .hero__price {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .hero__btn {
+    padding: 7px 13px;
+    font-size: 12px;
+  }
+  .shop-latest {
+    padding: 16px 0 28px 0;
+  }
+  .shop-latest__header {
+    margin-bottom: 10px;
+  }
+  .shop-latest__title {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .shop-latest__view-all {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .shop-latest__card {
+    min-height: 130px;
+    border-radius: 6px;
+  }
+  .footer__copy {
+    font-size: 12px;
+  }
+  .footer__social-icons {
+    width: 94px;
+    height: 13px;
+  }
 }
 
 @media (max-width: 375px) {
-  .hero__content { max-width: 90vw; }
-  .shop-latest__card { min-height: 90px; }
+  .hero__content {
+    max-width: 90vw;
+  }
+  .shop-latest__card {
+    min-height: 90px;
+  }
 }
 

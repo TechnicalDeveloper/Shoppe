@@ -34,14 +34,19 @@
     list-style: none;
   }
 
-  &__item {}
+  &__item {
+  }
 
   &__link {
     color: var(--Light-Colors-Black---Light, #000);
     text-decoration: none;
     font-weight: 400;
     transition: color .2s;
-    &:hover { color: #A18A68; }
+
+    &:hover {
+      color: #A18A68;
+    }
+
     font-family: "DM Sans", Arial, sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -117,6 +122,7 @@
 
   &__sort {
     margin-bottom: 12px;
+
     &-select {
       width: 100%;
       padding: 7px 14px;
@@ -228,13 +234,15 @@
       background: #A18A68;
       color: #FFF;
     }
-    &--prev{
+
+    &--prev {
       min-width: 98px;
       border-radius: 10px;
       background: var(--Light-Colors-Light-gray---Light, #EFEFEF);
       color: rgba(0, 0, 0, 0.40);
     }
-    &--next{
+
+    &--next {
       min-width: 98px;
       background: var(--Light-Colors-Gray---Light, #D8D8D8);
     }
@@ -243,7 +251,7 @@
 
 .shop-card {
   border-radius: 10px;
-  box-shadow: 0 2px 6px 0 rgba(40,40,40,0.02);
+  box-shadow: 0 2px 6px 0 rgba(40, 40, 40, 0.02);
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -258,13 +266,32 @@
     height: 300px;
     border-radius: 8px;
     background: lightgray 50% / cover no-repeat;
-    &--lira    { background-image: url('/src/assets/Lira-Earrings_shop.png'); }
-    &--hal     { background-image: url('/src/assets/Hal-Earrings_shop.png'); }
-    &--kaede   { background-image: url('/src/assets/Kaede-Hair_shop.png'); }
-    &--hairpin { background-image: url('/src/assets/Hair-Pin_shop.png'); }
-    &--plaine  { background-image: url('/src/assets/Plaine-Necklace_shop.png'); }
-    &--yuki    { background-image: url('/src/assets/Yuki-Hair_shop.png'); }
+
+    &--lira {
+      background-image: url('/src/assets/Lira-Earrings_shop.png');
+    }
+
+    &--hal {
+      background-image: url('/src/assets/Hal-Earrings_shop.png');
+    }
+
+    &--kaede {
+      background-image: url('/src/assets/Kaede-Hair_shop.png');
+    }
+
+    &--hairpin {
+      background-image: url('/src/assets/Hair-Pin_shop.png');
+    }
+
+    &--plaine {
+      background-image: url('/src/assets/Plaine-Necklace_shop.png');
+    }
+
+    &--yuki {
+      background-image: url('/src/assets/Yuki-Hair_shop.png');
+    }
   }
+
   &__badge {
     position: absolute;
     top: 12px;
@@ -276,17 +303,20 @@
     border-radius: 4px;
     font-weight: 500;
     z-index: 2;
+
     &--soldout {
       background: #e5dac3;
       color: #888;
     }
   }
+
   &__info {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
+
   &__name {
     font-family: "DM Sans", Arial, sans-serif;
     margin-bottom: 8px;
@@ -296,11 +326,13 @@
     font-style: normal;
     line-height: 27px;
   }
+
   &__prices {
     display: flex;
     align-items: baseline;
     gap: 8px;
   }
+
   &__price {
     font-family: "DM Sans", Arial, sans-serif;
     font-weight: 500;
@@ -309,6 +341,7 @@
     font-style: normal;
     line-height: 26px;
     text-transform: capitalize;
+
     &--old {
       text-decoration: line-through;
       color: var(--Light-Colors-Errors---Light, #D82700);
@@ -318,11 +351,15 @@
       line-height: 26px;
       text-transform: capitalize;
     }
-    &--new {}
+
+    &--new {
+    }
   }
+
   &--onsale .shop-card__badge {
     display: block;
   }
+
   &--soldout .shop-card__badge--soldout {
     display: block;
   }
@@ -415,7 +452,9 @@
     padding-left: 32px;
     padding-right: 32px;
   }
-  .shop-page__grid { gap: 24px 14px; }
+  .shop-page__grid {
+    gap: 24px 14px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -430,8 +469,12 @@
     padding-top: 18px;
     padding-bottom: 12px;
   }
-  .site-nav__divider { margin: 0 10px; }
-  .shop-page__main { gap: 10px; }
+  .site-nav__divider {
+    margin: 0 10px;
+  }
+  .shop-page__main {
+    gap: 10px;
+  }
   .shop-page__grid {
     grid-template-columns: 1fr 1fr;
     gap: 14px 8px;
@@ -456,11 +499,24 @@
   .site-header__logo {
     max-width: 92vw;
     overflow: hidden;
-    svg { max-width: 100%; height: auto; display: block; }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
   }
-  .site-nav { width: 100%; justify-content: flex-end; }
-  .site-nav__divider { display: none; }
-  .shop-page__main { flex-direction: column; gap: 0; }
+  .site-nav {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .site-nav__divider {
+    display: none;
+  }
+  .shop-page__main {
+    flex-direction: column;
+    gap: 0;
+  }
   .shop-page__sidebar {
     width: 100%;
     flex-direction: row;
@@ -472,8 +528,13 @@
     border-bottom: 1px solid #f3f3f3;
     min-width: 0;
   }
-  .shop-page__filter, .shop-page__sort { margin-bottom: 0; }
-  .shop-page__search { width: 100%; min-width: 0; }
+  .shop-page__filter, .shop-page__sort {
+    margin-bottom: 0;
+  }
+  .shop-page__search {
+    width: 100%;
+    min-width: 0;
+  }
   .shop-page__grid {
     grid-template-columns: 1fr;
     gap: 10px 0;
@@ -516,7 +577,9 @@
     padding-top: 10px;
     padding-bottom: 14px;
   }
-  .shop-footer__line { margin-bottom: 4px; }
+  .shop-footer__line {
+    margin-bottom: 4px;
+  }
   .shop-footer__bottom {
     flex-direction: column;
     gap: 6px;
@@ -542,7 +605,11 @@
   .site-header__logo {
     max-width: 92vw;
     overflow: hidden;
-    svg { max-width: 100%; height: auto; }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
   }
   .shop-page__title {
     font-size: 14px;
