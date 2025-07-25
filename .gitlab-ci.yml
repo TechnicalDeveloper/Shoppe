@@ -2,17 +2,3 @@ include:
   - project: 'infra/common-ci'
     file: 'ci/common-js-ci.yml'
     ref: 'master'
-
-build:
-  before_script:
-    - |
-      if ! command -v node &> /dev/null; then
-        echo "Node.js не найден, устанавливаю..."
-        curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-        apt-get install -y nodejs
-      fi
-    - npm install -g pnpm
-    - pnpm --version
-  script:
-    - pnpm i
-    - pnpm run build
