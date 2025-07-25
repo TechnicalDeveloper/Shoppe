@@ -2,3 +2,10 @@ include:
   - project: 'infra/common-ci'
     file: 'ci/common-js-ci.yml'
     ref: 'master'
+build:
+  image: node:23-alpine
+  before_script:
+    - npm install -g pnpm
+  script:
+    - pnpm i
+    - pnpm run build
