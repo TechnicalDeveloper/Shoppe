@@ -46,10 +46,15 @@
 .site-nav__menu {
   display: flex;
   align-items: center;
-  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.site-nav__menu > li, .site-nav__menu-item {
+  margin-right: 16px;
+}
+.site-nav__menu > li:last-child, .site-nav__menu-item:last-child {
+  margin-right: 0;
 }
 .site-nav__link {
   color: var(--color-black);
@@ -101,13 +106,19 @@
 .shop-page__main {
   display: flex;
   align-items: flex-start;
-  gap: 36px;
+}
+.shop-page__main > *:not(:last-child) {
+  margin-right: 36px;
 }
 .shop-page__sidebar {
   flex: 0 0 220px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+}
+.shop-page__sidebar > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+.shop-page__sidebar {
   margin-top: 0;
 }
 .shop-page__search {

@@ -18,7 +18,6 @@
   --opacity-social-icons: 0.68;
 }
 
-
 // CONTAINER
 .container {
   width: 100%;
@@ -58,13 +57,16 @@
   &__menu {
     display: flex;
     align-items: center;
-    gap: 16px;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   &__menu-item {
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__menu-link {
@@ -189,6 +191,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 39px;
+    > *:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 
   &__title {
@@ -275,13 +280,20 @@
     position: absolute;
     top: 16px;
     left: 16px;
-    background: var(--color-badge);
-    color: var(--color-badge-text);
-    font-size: 11px;
-    padding: 2px 7px;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-family: "DM Sans", Arial, sans-serif;
+    //padding: 2px 7px;
     border-radius: 4px;
-    font-weight: 500;
     z-index: 2;
+    width: 46px;
+    height: 24px;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
   }
 
   &__info {
@@ -290,6 +302,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    > *:not(:last-child) {
+      margin-bottom: 8px;
+    }
   }
 
   &__name {
@@ -307,7 +322,9 @@
   &__prices {
     display: flex;
     align-items: baseline;
-    gap: 12px;
+    > *:not(:last-child) {
+      margin-right: 12px;
+    }
   }
 
   &__price {
@@ -345,6 +362,9 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    > *:not(:last-child) {
+      margin-right: 24px;
+    }
   }
 
   &__copy {
@@ -383,7 +403,6 @@
     width: 156px;
     height: 19px;
     display: flex;
-    gap: 0;
   }
 
   &__social-link {
@@ -401,7 +420,6 @@
     }
   }
 }
-
 
 @media (max-width: 1200px) {
   .container {
@@ -429,10 +447,12 @@
   }
   .header__container {
     flex-direction: column;
-    gap: 20px;
     padding-top: 32px;
     padding-bottom: 24px;
     align-items: flex-start;
+    > *:not(:last-child) {
+      margin-bottom: 20px;
+    }
   }
   .header__logo {
     margin-bottom: 8px;
@@ -445,7 +465,10 @@
   }
   .footer__bottom {
     flex-direction: column;
-    gap: 20px;
+    > *:not(:last-child) {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
     align-items: flex-start;
   }
 }
@@ -453,7 +476,9 @@
 @media (max-width: 900px) {
   .shop-latest__header {
     flex-direction: column;
-    gap: 20px;
+    > *:not(:last-child) {
+      margin-bottom: 20px;
+    }
     align-items: flex-start;
   }
   .shop-latest__grid {
@@ -479,7 +504,7 @@
   .header__divider,
   .header__icon_cart,
   .header__icon_user {
-    display: none !important; // Можно добавить бургер, если нужен
+    display: none;
   }
   .header__nav {
     width: 100%;
@@ -517,7 +542,10 @@
   .footer__bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    > *:not(:last-child) {
+      margin-bottom: 12px;
+      margin-right: 0;
+    }
   }
 }
 
@@ -579,4 +607,3 @@
     min-height: 90px;
   }
 }
-

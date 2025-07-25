@@ -51,10 +51,17 @@
   &__menu {
     display: flex;
     align-items: center;
-    gap: 16px;
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  &__menu > li,
+  &__menu-item {
+    margin-right: 16px;
+  }
+  &__menu > li:last-child,
+  &__menu-item:last-child {
+    margin-right: 0;
   }
 
   &__link {
@@ -116,14 +123,20 @@
   &__main {
     display: flex;
     align-items: flex-start;
-    gap: 36px;
+  }
+  &__main > *:not(:last-child) {
+    margin-right: 36px;
   }
 
   &__sidebar {
     flex: 0 0 220px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+  }
+  &__sidebar > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &__sidebar {
     margin-top: 0;
   }
 
