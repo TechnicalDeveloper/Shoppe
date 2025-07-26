@@ -9,34 +9,58 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="site-header">
-    <div class="site-header__container">
-        <a href="index.html" class="site-header__logo" aria-label="Shoppe">
-            <img src="src/assets/svg/shoppe_logo.svg" alt="Shoppe Logo" width="135" height="40" class="site-header__logo-img"/>
-        </a>
-        <nav class="site-nav">
-            <ul class="site-nav__menu">
-                <li class="site-nav__item">
-                    <a href="/shop.html" class="site-nav__link">Shop</a>
-                </li>
-            </ul>
-            <span class="site-nav__divider"></span>
-            <a href="#" class="site-nav__icon site-nav__icon--cart" aria-label="Корзина">
-                <img src="src/assets/svg/cart.svg" alt="Корзина" class="site-nav__icon-img" width="21" height="21"/>
+<div class="container">
+    <header class="site-header">
+        <div class="site-header__container">
+            <a href="index.html" class="site-header__logo" aria-label="Shoppe">
+                <img src="src/assets/svg/shoppe_logo.svg" alt="Shoppe Logo" width="135" height="40" class="site-header__logo-img"/>
             </a>
-            <a href="#" class="site-nav__icon site-nav__icon--user" aria-label="Профиль">
-                <img src="src/assets/svg/profile.svg" alt="Профиль" class="site-nav__icon-img" width="22" height="22"/>
-            </a>
-        </nav>
-    </div>
-</header>
-<main>
-    <div class="shop-page">
-        <div class="container">
+            <nav class="site-nav">
+                <ul class="site-nav__menu">
+                    <li class="site-nav__item">
+                        <a href="/shop.html" class="site-nav__link">Shop</a>
+                    </li>
+                </ul>
+                <span class="site-nav__divider"></span>
+                <a href="#" class="site-nav__icon site-nav__icon--cart" aria-label="Корзина">
+                    <img src="src/assets/svg/cart.svg" alt="Корзина" class="site-nav__icon-img" width="21" height="21"/>
+                </a>
+                <a href="#" class="site-nav__icon site-nav__icon--user" aria-label="Профиль">
+                    <img src="src/assets/svg/profile.svg" alt="Профиль" class="site-nav__icon-img" width="22" height="22"/>
+                </a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="shop-page">
             <div class="shop-page__header">
                 <h1 class="shop-page__title">Shop The Latest</h1>
             </div>
             <div class="shop-page__main">
+                <aside class="shop-page__sidebar">
+                    <input class="shop-page__search" type="text" placeholder="Search..." />
+                    <div class="shop-page__sort">
+                        <select id="sort" class="shop-page__sort-select">
+                            <option>Sort By</option>
+                            <option>Something</option>
+                            <option>Something</option>
+                        </select>
+                    </div>
+                    <div class="shop-page__filter">
+                        <label class="shop-page__filter-label">
+                            <span>On sale</span>
+                            <input type="checkbox" class="shop-page__filter-switch"/>
+                            <span class="shop-page__switch"></span>
+                        </label>
+                    </div>
+                    <div class="shop-page__filter">
+                        <label class="shop-page__filter-label">
+                            <span>In stock</span>
+                            <input type="checkbox" class="shop-page__filter-switch"/>
+                            <span class="shop-page__switch"></span>
+                        </label>
+                    </div>
+                </aside>
                 <div class="shop-page__products">
                     <div class="shop-page__grid">
                         <div class="shop-card shop-card--onsale">
@@ -107,24 +131,24 @@
                 </div>
             </div>
         </div>
-    </div>
-</main>
-<footer class="shop-footer">
-    <div class="shop-footer__container">
-        <div class="shop-footer__line"></div>
-        <div class="shop-footer__bottom">
-            <div class="shop-footer__copy">© 2025 Shelly</div>
-            <div class="shop-footer__social">
-                <img src="src/assets/svg/footer-icons.svg" alt="Социальные иконки" class="footer__social-icons"/>
-                <div class="shop-footer__social-overlay">
-                    <a href="#" class="shop-footer__social-link" aria-label="LinkedIn"></a>
-                    <a href="#" class="shop-footer__social-link" aria-label="Facebook"></a>
-                    <a href="#" class="shop-footer__social-link" aria-label="Instagram"></a>
-                    <a href="#" class="shop-footer__social-link" aria-label="Twitter"></a>
+    </main>
+    <footer class="shop-footer">
+        <div class="shop-footer__container">
+            <div class="shop-footer__line"></div>
+            <div class="shop-footer__bottom">
+                <div class="shop-footer__copy">© 2025 Shelly</div>
+                <div class="shop-footer__social">
+                    <img src="src/assets/svg/footer-icons.svg" alt="Социальные иконки" class="footer__social-icons"/>
+                    <div class="shop-footer__social-overlay">
+                        <a href="#" class="shop-footer__social-link" aria-label="LinkedIn"></a>
+                        <a href="#" class="shop-footer__social-link" aria-label="Facebook"></a>
+                        <a href="#" class="shop-footer__social-link" aria-label="Instagram"></a>
+                        <a href="#" class="shop-footer__social-link" aria-label="Twitter"></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</div>
 </body>
 </html>

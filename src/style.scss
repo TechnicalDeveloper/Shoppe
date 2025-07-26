@@ -20,7 +20,7 @@
 
 // CONTAINER
 .container {
-  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 96px;
   box-sizing: border-box;
@@ -43,7 +43,7 @@
     text-decoration: none;
 
     &-svg, &-img {
-      height: 32px;
+      height: 40px;
       width: auto;
       display: block;
     }
@@ -120,7 +120,7 @@
 
   &__slider {
     position: relative;
-    width: 100%;
+    width: 1248px;
     height: 646px;
     border-radius: 8px;
     overflow: hidden;

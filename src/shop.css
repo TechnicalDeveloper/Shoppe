@@ -19,11 +19,19 @@
   --color-switch-shadow: rgba(0, 0, 0, 0.07);
 }
 
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 96px;
+  box-sizing: border-box;
+}
+
 .site-header {
   width: 100%;
 }
 .site-header__container {
-  padding: 64px 96px 50px;
+  padding: 64px 0 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,8 +42,8 @@
   text-decoration: none;
 }
 .site-header__logo-svg, .site-header__logo-img {
-  height: 32px;
   width: auto;
+  height: 40px;
   display: block;
 }
 
