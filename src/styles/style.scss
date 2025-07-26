@@ -1,5 +1,5 @@
-@import "/src/reset.css";
-@import "/src/shop.css";
+@import "/src/styles/reset.css";
+@import "/src/styles/shop.css";
 
 :root {
   --color-black: #000000;
@@ -29,6 +29,25 @@
 // HEADER
 .header {
   width: 100%;
+
+  &__menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid var(--color-accent);
+    padding: 8px 16px;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover,
+    &[aria-expanded="true"] {
+      background: var(--color-accent);
+      color: var(--color-white);
+    }
+  }
 
   &__container {
     padding: 64px 96px 50px;
@@ -64,6 +83,7 @@
 
   &__menu-item {
     margin-right: 16px;
+
     &:last-child {
       margin-right: 0;
     }
@@ -120,7 +140,7 @@
 
   &__slider {
     position: relative;
-    width: 1248px;
+    max-width: 1248px;
     height: 646px;
     border-radius: 8px;
     overflow: hidden;
@@ -191,6 +211,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 39px;
+
     > *:not(:last-child) {
       margin-right: 20px;
     }
@@ -302,6 +323,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     > *:not(:last-child) {
       margin-bottom: 8px;
     }
@@ -322,6 +344,7 @@
   &__prices {
     display: flex;
     align-items: baseline;
+
     > *:not(:last-child) {
       margin-right: 12px;
     }
@@ -362,6 +385,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
     > *:not(:last-child) {
       margin-right: 24px;
     }
@@ -421,6 +445,7 @@
   }
 }
 
+// Responsive: Media Queries
 @media (max-width: 1200px) {
   .container {
     padding-left: 32px;
@@ -434,28 +459,20 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 38px 22px;
   }
-  .footer, .header__container {
+  .header__container,
+  .footer {
     padding-left: 32px;
     padding-right: 32px;
   }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
   .header__container {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding-top: 32px;
     padding-bottom: 24px;
-    align-items: flex-start;
-    > *:not(:last-child) {
-      margin-bottom: 20px;
-    }
   }
   .header__logo {
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
   .header__divider {
     margin: 0 24px;
@@ -465,87 +482,74 @@
   }
   .footer__bottom {
     flex-direction: column;
-    > *:not(:last-child) {
-      margin-bottom: 20px;
-      margin-right: 0;
-    }
     align-items: flex-start;
-  }
-}
-
-@media (max-width: 900px) {
-  .shop-latest__header {
-    flex-direction: column;
     > *:not(:last-child) {
       margin-bottom: 20px;
     }
-    align-items: flex-start;
-  }
-  .shop-latest__grid {
-    gap: 28px 14px;
-  }
-  .shop-latest__title {
-    font-size: 28px;
-  }
-  .shop-latest__view-all {
-    font-size: 16px;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
   .header__container {
-    padding: 18px 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 16px;
+    flex-direction: row;
   }
-  .header__menu,
-  .header__divider,
-  .header__icon_cart,
-  .header__icon_user {
-    display: none;
-  }
-  .header__nav {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .hero__slider {
-    height: 330px;
-  }
-  .hero__title {
-    font-size: 22px;
-    line-height: 29px;
-  }
-  .hero__price {
-    font-size: 16px;
-    line-height: 22px;
-  }
-  .hero__btn {
-    padding: 8px 18px;
-    font-size: 15px;
-  }
-  .shop-latest__grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .shop-latest__card {
-    min-height: 200px;
-  }
-  .footer {
-    padding-top: 30px;
-    padding-bottom: 24px;
-  }
-  .footer__line {
-    margin-bottom: 18px;
-  }
-  .footer__bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    > *:not(:last-child) {
-      margin-bottom: 12px;
-      margin-right: 0;
+
+  .header__logo {
+    order: 1;
+    width: 99px;
+    height: 36px;
+    flex-shrink: 0;
+
+    &-img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+    order: 2;
+  }
+
+  .header__menu-toggle {
+    order: 3;
+    display: inline-block;
+    padding: 8px 16px;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 2px solid var(--color-accent);
+    background: none;
+    color: var(--color-black);
+    transition: background 0.2s, color 0.2s;
+
+    &:hover,
+    &[aria-expanded="true"] {
+      background: var(--color-accent);
+      color: var(--color-white);
+    }
+  }
+
+  .header__icon_cart {
+    width: 17.982px;
+    height: 18px;
+    display: inline-block !important;
+  }
+
+  .header__icon_user,
+  .header__menu,
+  .header__divider {
+    display: none !important;
   }
 }
 
@@ -559,6 +563,7 @@
   }
   .hero__slider {
     height: 180px;
+    background-image: url("/src/assets/img_hero_mobile.png");
   }
   .hero__title {
     font-size: 16px;
@@ -576,6 +581,8 @@
     padding: 16px 0 28px 0;
   }
   .shop-latest__header {
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 10px;
   }
   .shop-latest__title {
@@ -599,11 +606,29 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 290px) {
+  .header__container {
+    padding: 8px 12px !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__menu-toggle {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .hero__slider {
+    height: 140px;
+  }
   .hero__content {
     max-width: 90vw;
   }
   .shop-latest__card {
     min-height: 90px;
   }
+  .shop-latest__title,
+  .shop-latest__view-all {
+    font-size: 14px;
+  }
 }
+
