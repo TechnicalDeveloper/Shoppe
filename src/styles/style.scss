@@ -222,25 +222,22 @@
     font-weight: 500;
     color: var(--color-black);
     font-size: 33px;
-    font-style: normal;
     line-height: 43px;
   }
 
   &__view-all {
     text-decoration: none;
     transition: color 0.2s;
+    color: var(--color-accent);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
 
     &:hover {
       color: var(--color-accent);
     }
-
-    color: var(--color-accent);
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px;
-    text-transform: capitalize;
   }
 
   &__grid {
@@ -251,7 +248,7 @@
 
   &__card {
     border-radius: 10px;
-    box-shadow: 0 2px 6px 0 rgba(40, 40, 40, 0.02);
+    box-shadow: 0 2px 6px rgba(40, 40, 40, 0.02);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -259,41 +256,68 @@
     min-height: 265px;
     transition: box-shadow 0.2s;
 
-    &::before {
-      content: "";
-      display: block;
+    &:hover {
+      box-shadow: 0 8px 24px rgba(40, 40, 40, 0.08);
+
+      .shop-latest__actions {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-gray-light);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
       width: 100%;
-      aspect-ratio: 1/1;
+      height: 100%;
+      object-fit: cover;
       border-radius: 8px;
-      background: var(--color-gray-light) 50% / cover no-repeat;
     }
+  }
 
-    &--lira::before {
-      background-image: url("/src/assets/Lira-Earrings_shop.png");
-    }
+  &__actions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 2;
+  }
 
-    &--hal::before {
-      background-image: url("/src/assets/Hal-Earrings_shop.png");
-    }
-
-    &--kaede::before {
-      background-image: url("/src/assets/Kaede-Hair_shop.png");
-    }
-
-    &--hairpin::before {
-      background-image: url("/src/assets/Hair-Pin_shop.png");
-    }
-
-    &--plaine::before {
-      background-image: url("/src/assets/Plaine-Necklace_shop.png");
-    }
-
-    &--yuki::before {
-      background-image: url("/src/assets/Yuki-Hair_shop.png");
-    }
+  &__icon-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 6px var(--color-shadow-hover);
+    cursor: pointer;
+    transition: transform 0.2s;
 
     &:hover {
-      box-shadow: 0 8px 24px 0 rgba(40, 40, 40, 0.08);
+      transform: scale(1.1);
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
     }
   }
 
@@ -304,14 +328,11 @@
     background: var(--color-accent);
     color: var(--color-white);
     font-family: "DM Sans", Arial, sans-serif;
-    //padding: 2px 7px;
     border-radius: 4px;
     z-index: 2;
     width: 46px;
     height: 24px;
-    flex-shrink: 0;
     font-size: 12px;
-    font-style: normal;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
@@ -331,11 +352,9 @@
 
   &__name {
     font-family: "DM Sans", Arial, sans-serif;
-    margin-bottom: 16px;
     font-weight: 400;
     color: var(--color-black);
     font-size: 20px;
-    font-style: normal;
     line-height: 33px;
     letter-spacing: 0.5px;
     text-transform: capitalize;
@@ -352,17 +371,19 @@
 
   &__price {
     font-family: "DM Sans", Arial, sans-serif;
-    color: var(--color-accent);
     font-size: 20px;
-    font-style: normal;
     font-weight: 500;
     line-height: 26px;
     text-transform: capitalize;
+    color: var(--color-accent);
 
     &--old {
       text-decoration: line-through;
-      font-weight: 500;
       color: var(--color-error);
+    }
+
+    &--new {
+      color: var(--color-accent);
     }
   }
 }
@@ -555,8 +576,8 @@
 
 @media (max-width: 480px) {
   .container {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .header__container {
     padding: 12px 4px 6px;
@@ -566,12 +587,14 @@
     background-image: url("/src/assets/img_hero_mobile.png");
   }
   .hero__title {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 26px; /* 130% */
+    text-transform: capitalize;
   }
   .hero__price {
-    font-size: 12px;
-    line-height: 17px;
+    font-size: 14px;
+    line-height: 22px; /* 157.143% */
+    margin-bottom: 10px;
   }
   .hero__btn {
     padding: 7px 13px;
@@ -618,10 +641,20 @@
     font-size: 13px;
   }
   .hero__slider {
-    height: 140px;
+    max-width: 288px;
+    height: 354px;
+    align-items: end;
   }
   .hero__content {
     max-width: 90vw;
+    margin-left: 16px;
+  }
+  .hero__btn {
+    margin-bottom: 24px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
   }
   .shop-latest__card {
     min-height: 90px;
