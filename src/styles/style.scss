@@ -1,5 +1,4 @@
 @import "/src/styles/reset.css";
-@import "/src/styles/shop.css";
 
 :root {
   --color-black: #000000;
@@ -24,6 +23,7 @@
   margin: 0 auto;
   padding: 0 96px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 // HEADER

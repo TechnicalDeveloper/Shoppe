@@ -4,29 +4,32 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>SHOPPE</title>
-    <link rel="stylesheet" href="src/styles/style.scss">
+    <link rel="stylesheet" href="src/styles/shop.scss">
     <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-    <header class="site-header">
-        <div class="site-header__container">
-            <a href="index.html" class="site-header__logo" aria-label="Shoppe">
-                <img src="src/assets/svg/shoppe_logo.svg" alt="Shoppe Logo" width="135" height="40" class="site-header__logo-img"/>
+    <header class="topbar">
+        <div class="topbar__container container">
+            <button class="topbar__menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+                Menu
+            </button>
+            <a href="index.html" class="topbar__logo" aria-label="Shoppe">
+                <img src="src/assets/svg/header_logo.svg" alt="Shoppe Logo" class="topbar__logo-img" />
             </a>
-            <nav class="site-nav">
-                <ul class="site-nav__menu">
-                    <li class="site-nav__item">
-                        <a href="/shop.html" class="site-nav__link">Shop</a>
+            <nav class="topbar__nav">
+                <ul class="topbar__menu">
+                    <li class="topbar__menu-item">
+                        <a href="/shop.html" class="topbar__menu-link">Shop</a>
                     </li>
                 </ul>
-                <span class="site-nav__divider"></span>
-                <a href="#" class="site-nav__icon site-nav__icon--cart" aria-label="Корзина">
-                    <img src="src/assets/svg/cart.svg" alt="Корзина" class="site-nav__icon-img" width="21" height="21"/>
+                <span class="topbar__divider"></span>
+                <a href="#" class="topbar__icon topbar__icon_cart" aria-label="Корзина">
+                    <img src="src/assets/svg/header_shopping-cart.svg" alt="Cart" class="topbar__icon-img" />
                 </a>
-                <a href="#" class="site-nav__icon site-nav__icon--user" aria-label="Профиль">
-                    <img src="src/assets/svg/profile.svg" alt="Профиль" class="site-nav__icon-img" width="22" height="22"/>
+                <a href="#" class="topbar__icon topbar__icon_user" aria-label="Профиль">
+                    <img src="src/assets/svg/header_icon-color.svg" alt="User" class="topbar__icon-img" />
                 </a>
             </nav>
         </div>
@@ -35,6 +38,7 @@
         <div class="shop-page">
             <div class="shop-page__header">
                 <h1 class="shop-page__title">Shop The Latest</h1>
+                <button class="shop-page__filters-toggle">Filters</button>
             </div>
             <div class="shop-page__main">
                 <aside class="shop-page__sidebar">
@@ -107,7 +111,7 @@
                             <div class="shop-card__info">
                                 <div class="shop-card__name">Plaine Necklace</div>
                                 <div class="shop-card__prices">
-                                    <span class="shop-card__price shop-card__price--new">$ 19,00</span>
+                                    <span class="shop-card__price shop-card__price--new">$ 30,00</span>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +120,7 @@
                             <div class="shop-card__info">
                                 <div class="shop-card__name">Yuki Hair Pin Set of 3</div>
                                 <div class="shop-card__prices">
-                                    <span class="shop-card__price shop-card__price--new">$ 29,00</span>
+                                    <span class="shop-card__price shop-card__price--new">$ 20,00</span>
                                 </div>
                             </div>
                         </div>
