@@ -110,6 +110,36 @@
   stroke: var(--color-white);
   transition: fill 0.2s, stroke 0.2s;
 }
+.header__menu-toggle {
+  display: none;
+}
+.header__menu-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray);
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
+  z-index: 999;
+}
+.header__menu-toggle.open .header__menu-dropdown {
+  display: flex;
+}
+.header__menu-dropdown-link {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+  text-decoration: none;
+}
+.header__menu-dropdown-link:hover {
+  color: var(--color-accent);
+}
 
 .hero {
   width: 100%;
@@ -338,11 +368,9 @@
 .shop-latest__cta--mobile {
   display: none;
 }
-
 .shop-latest__card .shop-latest__badge {
   display: none !important;
 }
-
 .shop-latest__card:nth-child(1) .shop-latest__badge {
   display: block !important;
 }
@@ -474,7 +502,6 @@
   }
   .header__menu-toggle {
     order: 3;
-    display: inline-block;
     padding: 8px 16px;
     font-family: "DM Sans", Arial, sans-serif;
     font-size: 14px;
@@ -484,10 +511,21 @@
     background: none;
     color: var(--color-black);
     transition: background 0.2s, color 0.2s;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
   }
   .header__menu-toggle:hover, .header__menu-toggle[aria-expanded=true] {
     background: var(--color-accent);
     color: var(--color-white);
+  }
+  .header__menu-icon {
+    width: 24px;
+    height: 24px;
   }
   .header__icon_cart {
     width: 17.982px;
@@ -510,7 +548,6 @@
   }
   .hero__slider {
     height: 180px;
-    background-image: url("/src/assets/img_hero_mobile.png");
   }
   .hero__title {
     font-size: 20px;
@@ -660,6 +697,7 @@
     height: 354px;
     align-items: end;
     margin-bottom: 0;
+    background-image: url("/src/assets/img_hero_mobile.png");
   }
   .hero__content {
     max-width: 90vw;

@@ -112,6 +112,33 @@
   stroke: var(--color-white);
   transition: fill 0.2s, stroke 0.2s;
 }
+.topbar__menu-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray);
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px var(--color-shadow-hover);
+  z-index: 999;
+}
+.topbar__menu-toggle.open .topbar__menu-dropdown {
+  display: flex;
+}
+.topbar__menu-dropdown-link {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+  text-decoration: none;
+}
+.topbar__menu-dropdown-link:hover {
+  color: var(--color-accent);
+}
 
 .site-nav {
   display: flex;
@@ -537,7 +564,6 @@
   }
   .topbar__menu-toggle {
     order: 3;
-    display: inline-block;
     padding: 8px 16px;
     font-family: "DM Sans", Arial, sans-serif;
     font-size: 14px;
@@ -547,6 +573,13 @@
     background: none;
     color: var(--color-black);
     transition: background 0.2s, color 0.2s;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
   }
   .topbar__menu-toggle:hover, .topbar__menu-toggle[aria-expanded=true] {
     background: var(--color-accent);
@@ -556,7 +589,10 @@
     width: 18px;
     height: 18px;
   }
-  /* Use parent specificity to override these for this breakpoint */
+  .topbar__menu-icon {
+    width: 24px;
+    height: 24px;
+  }
   .topbar__container .topbar__icon_user,
   .topbar__container .topbar__menu,
   .topbar__container .topbar__divider {

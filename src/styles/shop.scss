@@ -19,7 +19,7 @@
   --color-switch-shadow: rgba(0, 0, 0, 0.07);
 }
 
-// ====== CONTAINER ======
+// CONTAINER
 .container {
   max-width: 1440px;
   width: 100%;
@@ -28,7 +28,7 @@
   box-sizing: border-box;
 }
 
-// ====== TOPBAR ======
+// TOPBAR
 .topbar {
   width: 100%;
 
@@ -130,9 +130,40 @@
       transition: fill 0.2s, stroke 0.2s;
     }
   }
+
+  &__menu-dropdown {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray);
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px var(--color-shadow-hover);
+    z-index: 999;
+  }
+
+  &__menu-toggle.open .topbar__menu-dropdown {
+    display: flex;
+  }
+
+  &__menu-dropdown-link {
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-black);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
 }
 
-// ====== Navigation ======
+// Navigation
 .site-nav {
   display: flex;
   align-items: center;
@@ -194,7 +225,7 @@
   }
 }
 
-// ====== Shop Page ======
+// Shop Page
 .shop-page {
   background: var(--color-white);
 
@@ -363,7 +394,7 @@
   }
 }
 
-// ====== FILTER TOGGLE BUTTON FOR MOBILE ======
+// FILTER TOGGLE BUTTON FOR MOBILE
 .shop-page__filters-toggle {
   display: none;
   font-family: "DM Sans", sans-serif;
@@ -378,7 +409,7 @@
   margin-top: 6px;
 }
 
-// ====== Shop Card ======
+//Shop card
 .shop-card {
   border-radius: 10px;
   box-shadow: 0 2px 6px 0 var(--color-shadow-card);
@@ -483,7 +514,7 @@
   }
 }
 
-// ====== Shop Footer ======
+// Shop footer
 .shop-footer {
   background: var(--color-white);
   border-top: 1px solid var(--color-divider);
@@ -625,7 +656,6 @@
   }
   .topbar__menu-toggle {
     order: 3;
-    display: inline-block;
     padding: 8px 16px;
     font-family: "DM Sans", Arial, sans-serif;
     font-size: 14px;
@@ -635,6 +665,13 @@
     background: none;
     color: var(--color-black);
     transition: background 0.2s, color 0.2s;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
 
     &:hover,
     &[aria-expanded="true"] {
@@ -646,7 +683,10 @@
     width: 18px;
     height: 18px;
   }
-  /* Use parent specificity to override these for this breakpoint */
+  .topbar__menu-icon {
+    width: 24px;
+    height: 24px;
+  }
   .topbar__container .topbar__icon_user,
   .topbar__container .topbar__menu,
   .topbar__container .topbar__divider {

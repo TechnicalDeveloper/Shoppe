@@ -11,9 +11,6 @@
 <body>
 <header class="header">
     <div class="header__container container">
-        <button class="header__menu-toggle" aria-expanded="false" aria-label="Toggle menu">
-            Menu
-        </button>
         <a href="index.html" class="header__logo" aria-label="Shoppe">
             <img src="src/assets/svg/header_logo.svg" alt="Shoppe Logo" class="header__logo-img"/>
         </a>
@@ -31,6 +28,14 @@
                 <img src="src/assets/svg/header_icon-color.svg" alt="User" class="header__icon-img"/>
             </a>
         </nav>
+        <div class="header__menu-toggle" aria-label="Toggle menu">
+            <img src="src/assets/svg/icon-burger.svg" alt="Menu" class="header__menu-icon"/>
+            <div class="header__menu-dropdown">
+                <a href="/" class="header__menu-dropdown-link">HOME</a>
+                <a href="/shop.html" class="header__menu-dropdown-link">SHOP</a>
+            </div>
+        </div>
+
     </div>
 </header>
 <main>
@@ -181,8 +186,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Card 6 -->
                 <div class="shop-latest__card">
                     <div class="shop-latest__image">
                         <img src="/src/assets/Hair-Pin_shop.png" alt="Hair Pin Set"/>
@@ -229,5 +232,13 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const burger = document.querySelector('.header__menu-toggle');
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+    });
+</script>
+
 </body>
 </html>

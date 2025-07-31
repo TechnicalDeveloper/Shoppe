@@ -12,11 +12,15 @@
 <div class="container">
     <header class="topbar">
         <div class="topbar__container container">
-            <button class="topbar__menu-toggle" aria-expanded="false" aria-label="Toggle menu">
-                Menu
-            </button>
+            <div class="topbar__menu-toggle" aria-label="Toggle menu">
+                <img src="src/assets/svg/icon-burger.svg" alt="Menu" class="topbar__menu-icon"/>
+                <div class="topbar__menu-dropdown">
+                    <a href="/" class="topbar__menu-dropdown-link">HOME</a>
+                    <a href="/shop.html" class="topbar__menu-dropdown-link">SHOP</a>
+                </div>
+            </div>
             <a href="index.html" class="topbar__logo" aria-label="Shoppe">
-                <img src="src/assets/svg/header_logo.svg" alt="Shoppe Logo" class="topbar__logo-img" />
+                <img src="src/assets/svg/header_logo.svg" alt="Shoppe Logo" class="topbar__logo-img"/>
             </a>
             <nav class="topbar__nav">
                 <ul class="topbar__menu">
@@ -26,10 +30,10 @@
                 </ul>
                 <span class="topbar__divider"></span>
                 <a href="#" class="topbar__icon topbar__icon_cart" aria-label="Корзина">
-                    <img src="src/assets/svg/header_shopping-cart.svg" alt="Cart" class="topbar__icon-img" />
+                    <img src="src/assets/svg/header_shopping-cart.svg" alt="Cart" class="topbar__icon-img"/>
                 </a>
                 <a href="#" class="topbar__icon topbar__icon_user" aria-label="Профиль">
-                    <img src="src/assets/svg/header_icon-color.svg" alt="User" class="topbar__icon-img" />
+                    <img src="src/assets/svg/header_icon-color.svg" alt="User" class="topbar__icon-img"/>
                 </a>
             </nav>
         </div>
@@ -42,7 +46,7 @@
             </div>
             <div class="shop-page__main">
                 <aside class="shop-page__sidebar">
-                    <input class="shop-page__search" type="text" placeholder="Search..." />
+                    <input class="shop-page__search" type="text" placeholder="Search..."/>
                     <div class="shop-page__sort">
                         <select id="sort" class="shop-page__sort-select">
                             <option>Sort By</option>
@@ -154,5 +158,13 @@
         </div>
     </footer>
 </div>
+
+<script>
+    const burger = document.querySelector('.topbar__menu-toggle');
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+    });
+</script>
+
 </body>
 </html>
