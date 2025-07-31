@@ -46,7 +46,10 @@
             </div>
             <div class="shop-page__main">
                 <aside class="shop-page__sidebar">
-                    <input class="shop-page__search" type="text" placeholder="Search..."/>
+                    <div class="shop-page__search-wrapper">
+                        <input class="shop-page__search" type="text" placeholder="Search…" aria-label="Search products"/>
+                        <img src="src/assets/svg/search.svg" alt="Search" class="shop-page__search-icon" aria-hidden="true"/>
+                    </div>
                     <div class="shop-page__sort">
                         <select id="sort" class="shop-page__sort-select">
                             <option>Sort By</option>
@@ -72,7 +75,7 @@
                 <div class="shop-page__products">
                     <div class="shop-page__grid">
                         <div class="shop-card shop-card--onsale">
-                            <span class="shop-card__badge">-31%</span>
+                            <span class="shop-card__badge">- 31 %</span>
                             <div class="shop-card__img shop-card__img--lira"></div>
                             <div class="shop-card__info">
                                 <div class="shop-card__name">Lira Earrings</div>
