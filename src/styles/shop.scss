@@ -1268,6 +1268,12 @@
     gap: 0;
   }
 
+  .shop-footer__social {
+    transform: scale(0.6);
+    transform-origin: left center;
+    height: auto;
+  }
+
   .shop-footer__bottom > *:not(:last-child) {
     margin-right: 0;
   }
