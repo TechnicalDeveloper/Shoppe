@@ -1,3 +1,4 @@
+@import "/src/styles/reset.css";
 :root {
   --color-black: #000;
   --color-white: #fff;
