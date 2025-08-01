@@ -29,6 +29,27 @@
 }
 
 // TOPBAR
+.header__icon_cart {
+  position: relative;
+
+  .header__cart-count {
+    position: absolute;
+    top: -8px;
+    right: -7px;
+    width: 11px;
+    height: 10px;
+    background-color: var(--color-white);
+    border: 1.5px solid var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--color-gray-dark);
+    line-height: 1;
+  }
+}
 .topbar {
   width: 100%;
 
@@ -397,8 +418,8 @@
     }
 
     &--active {
-      //background: var(--color-accent);
-      //color: var(--color-white);
+      background: var(--color-accent);
+      color: var(--color-white);
       cursor: default;
 
       &:hover {
@@ -412,62 +433,102 @@
     &--prev {
       min-width: 98px;
       color: var(--color-text-disabled);
+      cursor: not-allowed;
+      pointer-events: none;
+      transform: none;
+      box-shadow: none;
     }
 
     &--next {
       min-width: 98px;
       background: var(--color-gray);
+      cursor: not-allowed;
+      pointer-events: none;
+      transform: none;
+      box-shadow: none;
     }
   }
 }
-.shop-page {
-  &__search-wrapper {
-    position: relative;
-    width: 100%;
-  }
+.shop-page__search-wrapper {
+  position: relative;
+  width: 100%;
+}
 
-  &__search {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid var(--color-border);
-    background: transparent;
-    padding: 8px 0;
-    padding-right: 32px;        // leave space for the icon
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 15px;
-    color: var(--color-black);
+.shop-page__search {
+  width: 100%;
+  padding: 8px 0 8px 0;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 15px;
+  font-family: "DM Sans", Arial, sans-serif;
+  background: transparent;
+  color: var(--color-black);
+  outline: none;
 
-    &::placeholder {
-      color: var(--color-gray-dark);
-    }
-
-    &:focus {
-      outline: none;
-      border-color: var(--color-accent);
-    }
-  }
-
-  &__search-icon {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-    // tint via filter if you need to recolor a black-only SVG
-    filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg)
-    brightness(80%) contrast(100%);
-  }
-  .shop-page__search:focus + .shop-page__search-icon,
-  .shop-page__search:not(:placeholder-shown) + .shop-page__search-icon {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity .2s;
+  &::placeholder {
+    color: var(--color-gray-dark);
+    opacity: 1;
   }
 }
 
+.shop-page__search-icon {
+  position: absolute;
+  right: -20px;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+// Icons
+.shop-latest__actions {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 16px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+.shop-card {
+  position: relative;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px var(--color-shadow-hover);
+
+    .shop-latest__actions {
+      opacity: 1;
+    }
+  }
+}
+.shop-latest__icon-btn {
+  width: 36px;
+  height: 36px;
+  background: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px var(--color-shadow-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+  }
+}
 
 // FILTER TOGGLE BUTTON FOR MOBILE
 .shop-page__filters-toggle {
@@ -859,6 +920,10 @@
     height: 14px;
     background: url("src/assets/svg/filter.svg") no-repeat center;
     background-size: contain;
+  }
+
+  .shop-latest__actions {
+    display: none;
   }
 }
 
