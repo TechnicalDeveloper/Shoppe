@@ -309,10 +309,10 @@
   transition: left 0.18s;
   box-shadow: 0 1px 3px var(--color-switch-shadow);
 }
-.shop-page .shop-page__filter:checked + .shop-page__switch {
+.shop-page .shop-page__filter-switch:checked + .shop-page__switch {
   background: var(--color-accent);
 }
-.shop-page .shop-page__filter:checked + .shop-page__switch::after {
+.shop-page .shop-page__filter-switch:checked + .shop-page__switch::after {
   left: 19px;
 }
 .shop-page__products {

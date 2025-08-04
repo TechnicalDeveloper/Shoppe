@@ -358,14 +358,14 @@
           box-shadow: 0 1px 3px var(--color-switch-shadow);
         }
       }
-    }
 
-    &:checked + .shop-page__switch {
-      background: var(--color-accent);
-    }
+      &:checked + .shop-page__switch {
+        background: var(--color-accent);
 
-    &:checked + .shop-page__switch::after {
-      left: 19px;
+        &::after {
+          left: 19px;
+        }
+      }
     }
   }
 

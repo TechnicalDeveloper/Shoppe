@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>SHOPPE</title>
-    <link rel="stylesheet" href="src/styles/shop.scss">
+    <link rel="stylesheet" href="src/styles/shop.css">
     <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
 </head>
@@ -29,12 +29,13 @@
                     </li>
                 </ul>
                 <span class="topbar__divider"></span>
-                <a href="#" class="topbar__icon topbar__icon_cart header__icon header__icon_cart" aria-label="Корзина">
+                <a href="#" class="topbar__icon topbar__icon_cart header__icon header__icon_cart" aria-label="Корзина"
+                   lang="ru">
                     <img src="src/assets/svg/header_shopping-cart.svg" alt="Cart"
                          class="topbar__icon-img header__icon-img"/>
                     <span class="header__cart-count">1</span>
                 </a>
-                <a href="#" class="topbar__icon topbar__icon_user" aria-label="Профиль">
+                <a href="#" class="topbar__icon topbar__icon_user" aria-label="Профиль" lang="ru">
                     <img src="src/assets/svg/header_icon-color.svg" alt="User" class="topbar__icon-img"/>
                 </a>
             </nav>
@@ -44,12 +45,12 @@
         <div class="shop-page">
             <div class="shop-page__header">
                 <h1 class="shop-page__title">Shop The Latest</h1>
-                <button class="shop-page__filters-toggle">Filters</button>
+                <button type="button" class="shop-page__filters-toggle">Filters</button>
             </div>
             <div class="shop-page__main">
                 <aside class="shop-page__sidebar">
                     <div class="shop-page__search-wrapper">
-                        <input class="shop-page__search" type="text" placeholder="Search…"
+                        <input class="shop-page__search" type="text" placeholder="Search&hellip;"
                                aria-label="Search products"/>
                         <img src="src/assets/svg/search.svg" alt="Search" class="shop-page__search-icon"
                              aria-hidden="true"/>
@@ -57,8 +58,8 @@
                     <div class="shop-page__sort">
                         <select id="sort" class="shop-page__sort-select">
                             <option>Sort By</option>
-                            <option>Something</option>
-                            <option>Something</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
                         </select>
                     </div>
                     <div class="shop-page__filter">
@@ -82,13 +83,13 @@
                             <span class="shop-card__badge">- 31 %</span>
                             <div class="shop-card__img shop-card__img--lira">
                                 <div class="shop-latest__actions">
-                                    <button class="shop-latest__icon-btn" aria-label="Add to cart">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Add to cart">
                                         <img src="/src/assets/svg/cart.svg" alt="Add to cart"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="View">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="View">
                                         <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Wishlist">
                                         <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist"/>
                                     </button>
                                 </div>
@@ -101,17 +102,16 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="shop-card">
                             <div class="shop-card__img shop-card__img--hal">
                                 <div class="shop-latest__actions">
-                                    <button class="shop-latest__icon-btn" aria-label="Add to cart">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Add to cart">
                                         <img src="/src/assets/svg/cart.svg" alt="Add to cart"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="View">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="View">
                                         <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Wishlist">
                                         <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist"/>
                                     </button>
                                 </div>
@@ -123,17 +123,16 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="shop-card">
                             <div class="shop-card__img shop-card__img--kaede">
                                 <div class="shop-latest__actions">
-                                    <button class="shop-latest__icon-btn" aria-label="Add to cart">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Add to cart">
                                         <img src="/src/assets/svg/cart.svg" alt="Add to cart"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="View">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="View">
                                         <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Wishlist">
                                         <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist"/>
                                     </button>
                                 </div>
@@ -145,17 +144,16 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="shop-card">
                             <div class="shop-card__img shop-card__img--hairpin">
                                 <div class="shop-latest__actions">
-                                    <button class="shop-latest__icon-btn" aria-label="Add to cart">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Add to cart">
                                         <img src="/src/assets/svg/cart.svg" alt="Add to cart"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="View">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="View">
                                         <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Wishlist">
                                         <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist"/>
                                     </button>
                                 </div>
@@ -167,18 +165,18 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="shop-card shop-card--soldout">
                             <span class="shop-card__badge shop-card__badge--soldout">Sold out</span>
                             <div class="shop-card__img shop-card__img--plaine">
                                 <div class="shop-latest__actions">
-                                    <button class="shop-latest__icon-btn" aria-label="Add to cart">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Add to cart"
+                                            disabled>
                                         <img src="/src/assets/svg/cart.svg" alt="Add to cart"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="View">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="View">
                                         <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Wishlist">
                                         <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist"/>
                                     </button>
                                 </div>
@@ -190,17 +188,16 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="shop-card">
                             <div class="shop-card__img shop-card__img--yuki">
                                 <div class="shop-latest__actions">
-                                    <button class="shop-latest__icon-btn" aria-label="Add to cart">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Add to cart">
                                         <img src="/src/assets/svg/cart.svg" alt="Add to cart"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="View">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="View">
                                         <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View"/>
                                     </button>
-                                    <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                                    <button type="button" class="shop-latest__icon-btn" aria-label="Wishlist">
                                         <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist"/>
                                     </button>
                                 </div>
@@ -213,13 +210,12 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="shop-page__pagination">
-                        <button class="shop-page__page shop-page__page--prev">Prev</button>
-                        <button class="shop-page__page shop-page__page--active">1</button>
-                        <button class="shop-page__page">2</button>
-                        <button class="shop-page__page">3</button>
-                        <button class="shop-page__page shop-page__page--next">Next</button>
+                        <button type="button" class="shop-page__page shop-page__page--prev">Prev</button>
+                        <button type="button" class="shop-page__page shop-page__page--active">1</button>
+                        <button type="button" class="shop-page__page">2</button>
+                        <button type="button" class="shop-page__page">3</button>
+                        <button type="button" class="shop-page__page shop-page__page--next">Next</button>
                     </div>
                 </div>
             </div>
@@ -231,7 +227,7 @@
             <div class="shop-footer__bottom">
                 <div class="shop-footer__copy">© 2025 Shelly</div>
                 <div class="shop-footer__social">
-                    <img src="src/assets/svg/footer-icons.svg" alt="Социальные иконки" class="footer__social-icons"/>
+                    <img src="src/assets/svg/footer-icons.svg" alt="Social icons" class="footer__social-icons"/>
                     <div class="shop-footer__social-overlay">
                         <a href="#" class="shop-footer__social-link" aria-label="LinkedIn"></a>
                         <a href="#" class="shop-footer__social-link" aria-label="Facebook"></a>
