@@ -449,11 +449,11 @@
   }
 
   &__card .shop-latest__badge {
-    display: none !important;
+    display: none;
   }
 
   &__card:nth-child(1) .shop-latest__badge {
-    display: block !important;
+    display: block;
   }
 }
 
@@ -752,7 +752,7 @@
     }
 
     &__actions {
-      display: none !important;
+      display: none;
     }
 
     &__info {
@@ -815,7 +815,7 @@
 @media (max-width: 290px) {
   .header {
     &__container {
-      padding: 17px 12px !important;
+      padding: 17px 12px;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -881,12 +881,12 @@
       gap: 16px;
 
       .shop-latest__card:nth-child(n+5) {
-        display: none !important;
+        display: none;
       }
 
       .shop-latest__card:nth-child(1) {
         .shop-latest__price--old {
-          display: none !important;
+          display: none;
         }
       }
     }
@@ -959,15 +959,15 @@
     }
 
     &__card:nth-child(1) .shop-latest__badge {
-      display: none !important;
+      display: none;
     }
 
     &__card:nth-child(4) .shop-latest__badge {
-      display: block !important;
+      display: block;
     }
 
     &__actions {
-      display: none !important;
+      display: none;
     }
 
     &__info {
