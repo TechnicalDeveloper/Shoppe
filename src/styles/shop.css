@@ -440,7 +440,7 @@
   padding-bottom: 20px;
 }
 .shop-card:hover {
-  box-shadow: 0 8px 24px var(--color-shadow-hover);
+  box-shadow: none;
 }
 .shop-card:hover .shop-latest__actions {
   opacity: 1;

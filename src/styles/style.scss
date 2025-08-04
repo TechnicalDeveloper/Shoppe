@@ -314,7 +314,7 @@
     transition: box-shadow 0.2s;
 
     &:hover {
-      box-shadow: 0 8px 24px rgba(40, 40, 40, 0.08);
+      box-shadow: none;
 
       .shop-latest__actions {
         opacity: 1;

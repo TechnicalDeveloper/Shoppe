@@ -505,7 +505,7 @@
   transition: box-shadow 0.2s ease;
 
   &:hover {
-    box-shadow: 0 8px 24px var(--color-shadow-hover);
+    box-shadow: none;
 
     .shop-latest__actions {
       opacity: 1;
