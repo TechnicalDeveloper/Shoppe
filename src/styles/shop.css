@@ -426,8 +426,6 @@
 }
 
 .shop-card {
-  position: relative;
-  transition: box-shadow 0.2s ease;
   border-radius: 10px;
   box-shadow: 0 2px 6px 0 var(--color-shadow-card);
   background: var(--color-white);
@@ -436,7 +434,7 @@
   align-items: flex-start;
   position: relative;
   min-height: 265px;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s ease;
   padding-bottom: 20px;
 }
 .shop-card:hover {
@@ -446,6 +444,7 @@
   opacity: 1;
 }
 .shop-card__img {
+  position: relative;
   width: 300px;
   height: 300px;
   border-radius: 8px;
@@ -846,6 +845,9 @@
     height: 18px;
     margin-right: 0;
   }
+  .shop-page__header {
+    margin: 0 0 12px;
+  }
   .shop-page__title {
     font-size: 20px;
     line-height: 26px;
@@ -861,7 +863,7 @@
     height: 16px;
   }
   .shop-page__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     margin-bottom: 20px;
   }
@@ -900,6 +902,9 @@
   .shop-card__price {
     font-size: 13px;
     line-height: 18px;
+  }
+  .shop-card__price--old {
+    display: none;
   }
   .shop-card:hover .shop-latest__actions {
     opacity: 0;
@@ -977,9 +982,6 @@
     padding: 6px 0;
     font-size: 13px;
   }
-  .shop-page__header {
-    margin: 24px 0 12px;
-  }
   .shop-card--onsale .shop-card__badge,
   .shop-card--soldout .shop-card__badge--soldout {
     display: none;
@@ -993,6 +995,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 26px;
+    margin-bottom: 0;
   }
   .shop-page__sidebar {
     display: none;
