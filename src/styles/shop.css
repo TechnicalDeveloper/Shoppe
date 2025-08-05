@@ -694,6 +694,16 @@
     height: auto;
   }
 }
+@media (max-width: 1024px) {
+  .shop-page__grid {
+    gap: 32px 24px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .shop-card__img {
+    height: 140px;
+    width: 140px;
+  }
+}
 @media (max-width: 768px) {
   .topbar__container {
     padding: 14px 16px;
