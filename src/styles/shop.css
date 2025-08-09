@@ -693,6 +693,10 @@
     width: 140px;
     height: auto;
   }
+  .shop-card__img {
+    height: 380px;
+    width: 100%;
+  }
 }
 @media (max-width: 1024px) {
   .shop-page__grid {
@@ -700,8 +704,8 @@
     grid-template-columns: repeat(3, 1fr);
   }
   .shop-card__img {
-    height: 140px;
-    width: 140px;
+    height: 210px;
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
