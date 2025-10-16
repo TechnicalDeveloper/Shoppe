@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>SHOPPE</title>
+    <title>SHOPPE I Главная</title>
     <link rel="stylesheet" href="src/styles/style.scss">
     <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
@@ -48,6 +48,7 @@
                     <div class="hero__price">$ 68,00</div>
                     <a href="#" class="hero__btn">View Product</a>
                 </div>
+                <div class="hero__pagination swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -257,6 +258,7 @@
     </div>
 </footer>
 
+<script type="module" src="/src/modules/main.js"></script>
 <script>
     const burger = document.querySelector('.header__menu-toggle');
     burger.addEventListener('click', () => {
