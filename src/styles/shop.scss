@@ -1,14 +1,16 @@
 @import "/src/styles/reset.css";
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
 }
-
 
 @supports (overflow: clip) {
   body {
@@ -53,18 +55,19 @@ html, body {
   }
 }
 
-.container, .l-container {
+.container,
+.l-container {
   overflow-x: clip;
 }
 
 :root {
   --color-black: #000;
   --color-white: #fff;
-  --color-accent: #A18A68;
+  --color-accent: #a18a68;
   --color-gray-dark: #707070;
-  --color-gray: #D8D8D8;
-  --color-gray-light: #EFEFEF;
-  --color-error: #D82700;
+  --color-gray: #d8d8d8;
+  --color-gray-light: #efefef;
+  --color-error: #d82700;
   --color-border: #ededed;
   --color-background-light: #fafbfc;
   --color-badge: #e5dac3;
@@ -72,11 +75,11 @@ html, body {
   --color-badge-soldout: #888;
   --color-switch: #757575;
   --color-divider: #f3f3f3;
-  --color-text-disabled: rgba(0, 0, 0, 0.40);
+  --color-text-disabled: rgba(0, 0, 0, 0.4);
   --color-shadow-card: rgba(40, 40, 40, 0.02);
   --color-shadow-hover: rgba(40, 40, 40, 0.08);
   --color-switch-shadow: rgba(0, 0, 0, 0.07);
-  --opacity-social-icons: .7;
+  --opacity-social-icons: 0.7;
 }
 
 .u-sr-only {
@@ -121,6 +124,22 @@ html, body {
   }
 }
 
+.topbar__menu-link {
+  position: relative;
+  padding-bottom: 24px;
+}
+.topbar__menu-link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+  width: 40px;
+  height: 3px;
+  background: var(--color-black);
+  border-radius: 2px;
+}
+
 /* ===== TOPBAR ===== */
 .topbar {
   width: 100%;
@@ -140,11 +159,17 @@ html, body {
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    font: 500 16px "DM Sans", Arial, sans-serif;
+    font:
+      500 16px "DM Sans",
+      Arial,
+      sans-serif;
     position: relative;
-    transition: background .2s, color .2s;
+    transition:
+      background 0.2s,
+      color 0.2s;
 
-    &:hover, &[aria-expanded="true"] {
+    &:hover,
+    &[aria-expanded="true"] {
       background: var(--color-accent);
       color: var(--color-white);
     }
@@ -176,7 +201,10 @@ html, body {
   }
 
   &__menu-dropdown-link {
-    font: 500 14px "DM Sans", Arial, sans-serif;
+    font:
+      500 14px "DM Sans",
+      Arial,
+      sans-serif;
     color: var(--color-black);
     text-decoration: none;
 
@@ -223,8 +251,11 @@ html, body {
   &__menu-link {
     color: var(--color-black);
     text-decoration: none;
-    transition: color .2s;
-    font: 400 16px/27px "DM Sans", Arial, sans-serif;
+    transition: color 0.2s;
+    font:
+      400 16px/27px "DM Sans",
+      Arial,
+      sans-serif;
 
     &:hover {
       color: var(--color-accent);
@@ -262,7 +293,10 @@ html, body {
   }
 
   &__title {
-    font: 500 33px/43px "DM Sans", Arial, sans-serif;
+    font:
+      500 33px/43px "DM Sans",
+      Arial,
+      sans-serif;
     color: var(--color-black);
   }
 
@@ -298,7 +332,10 @@ html, body {
     background: transparent;
     color: var(--color-black);
     outline: none;
-    font: 400 15px "DM Sans", Arial, sans-serif;
+    font:
+      400 15px "DM Sans",
+      Arial,
+      sans-serif;
 
     &::placeholder {
       color: var(--color-gray-dark);
@@ -325,7 +362,10 @@ html, body {
       border: 1px solid var(--color-border);
       border-radius: 6px;
       background: var(--color-white);
-      font: 400 14px/22px "DM Sans", Arial, sans-serif;
+      font:
+        400 14px/22px "DM Sans",
+        Arial,
+        sans-serif;
       color: var(--color-black);
     }
   }
@@ -341,7 +381,10 @@ html, body {
       align-items: center;
       width: 100%;
       gap: 10px;
-      font: 400 16px/27px "DM Sans", Arial, sans-serif;
+      font:
+        400 16px/27px "DM Sans",
+        Arial,
+        sans-serif;
       color: var(--color-black);
     }
 
@@ -356,7 +399,7 @@ html, body {
         position: relative;
         display: inline-block;
         cursor: pointer;
-        transition: background .18s;
+        transition: background 0.18s;
         margin-left: 6px;
 
         &::after {
@@ -368,7 +411,7 @@ html, body {
           height: 16px;
           background: var(--color-white);
           border-radius: 50%;
-          transition: left .18s;
+          transition: left 0.18s;
           box-shadow: 0 1px 3px var(--color-switch-shadow);
         }
       }
@@ -412,8 +455,15 @@ html, body {
     border-radius: 10px;
     background: var(--color-gray-light);
     color: var(--color-black);
-    font: 400 20px "DM Sans", Arial, sans-serif;
-    transition: background .2s, color .2s, transform .2s, box-shadow .2s;
+    font:
+      400 20px "DM Sans",
+      Arial,
+      sans-serif;
+    transition:
+      background 0.2s,
+      color 0.2s,
+      transform 0.2s,
+      box-shadow 0.2s;
 
     &:hover:not(&--active) {
       background: var(--color-accent);
@@ -422,7 +472,8 @@ html, body {
       box-shadow: 0 4px 8px var(--color-shadow-hover);
     }
 
-    &--prev:hover, &--next:hover {
+    &--prev:hover,
+    &--next:hover {
       background: var(--color-gray);
       color: var(--color-black);
       transform: none;
@@ -435,7 +486,8 @@ html, body {
       cursor: default;
     }
 
-    &--prev, &--next {
+    &--prev,
+    &--next {
       min-width: 98px;
       background: var(--color-gray);
       color: var(--color-text-disabled);
@@ -451,7 +503,9 @@ html, body {
     padding: 0;
     cursor: pointer;
     color: var(--color-accent);
-    font: 400 14px/20px "DM Sans", sans-serif;
+    font:
+      400 14px/20px "DM Sans",
+      sans-serif;
     margin-top: 6px;
   }
 
@@ -464,13 +518,15 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(.98);
+  transform: translate(-50%, -50%) scale(0.98);
   display: flex;
   gap: 16px;
   z-index: 2;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .25s ease, transform .25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -505,7 +561,7 @@ html, body {
   justify-content: center;
   padding: 0;
   cursor: pointer;
-  transition: transform .2s;
+  transition: transform 0.2s;
 
   &:hover {
     transform: scale(1.1);
@@ -527,7 +583,7 @@ html, body {
   background: var(--color-white);
   border-radius: 10px;
   box-shadow: 0 2px 6px 0 var(--color-shadow-card);
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
   padding-bottom: 20px;
 
   &:hover {
@@ -543,27 +599,27 @@ html, body {
     margin-bottom: 24px;
 
     &--lira {
-      background-image: url('/src/assets/Lira-Earrings_shop.png');
+      background-image: url("/src/assets/Lira-Earrings_shop.png");
     }
 
     &--hal {
-      background-image: url('/src/assets/Hal-Earrings_shop.png');
+      background-image: url("/src/assets/Hal-Earrings_shop.png");
     }
 
     &--kaede {
-      background-image: url('/src/assets/Kaede-Hair_shop.png');
+      background-image: url("/src/assets/Kaede-Hair_shop.png");
     }
 
     &--hairpin {
-      background-image: url('/src/assets/Hair-Pin_shop.png');
+      background-image: url("/src/assets/Hair-Pin_shop.png");
     }
 
     &--plaine {
-      background-image: url('/src/assets/Plaine-Necklace_shop.png');
+      background-image: url("/src/assets/Plaine-Necklace_shop.png");
     }
 
     &--yuki {
-      background-image: url('/src/assets/Yuki-Hair_shop.png');
+      background-image: url("/src/assets/Yuki-Hair_shop.png");
     }
   }
 
@@ -579,7 +635,9 @@ html, body {
     height: 24px;
     padding: 0 8px;
     border-radius: 4px;
-    font: 400 12px/20px "DM Sans", sans-serif;
+    font:
+      400 12px/20px "DM Sans",
+      sans-serif;
     color: var(--color-white);
     background: var(--color-accent);
     min-width: 46px;
@@ -593,7 +651,10 @@ html, body {
   }
 
   &__name {
-    font: 400 16px/27px "DM Sans", Arial, sans-serif;
+    font:
+      400 16px/27px "DM Sans",
+      Arial,
+      sans-serif;
     color: var(--color-black);
   }
 
@@ -604,7 +665,10 @@ html, body {
   }
 
   &__price {
-    font: 500 20px/26px "DM Sans", Arial, sans-serif;
+    font:
+      500 20px/26px "DM Sans",
+      Arial,
+      sans-serif;
     color: var(--color-accent);
 
     &--old {
@@ -644,8 +708,11 @@ html, body {
   }
 
   &__legal {
-    font: 400 16px/27px "DM Sans", Arial, sans-serif;
-    letter-spacing: .2px;
+    font:
+      400 16px/27px "DM Sans",
+      Arial,
+      sans-serif;
+    letter-spacing: 0.2px;
     color: var(--color-gray-dark);
   }
 
@@ -673,9 +740,12 @@ html, body {
     height: 24px;
     border-radius: 6px;
     opacity: var(--opacity-social-icons);
-    transition: opacity .18s, transform .18s;
+    transition:
+      opacity 0.18s,
+      transform 0.18s;
 
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       opacity: 1;
       transform: translateY(-1px);
       outline-offset: 2px;
@@ -815,7 +885,7 @@ html, body {
   }
 
   .shop-page__grid {
-    grid-template-columns: repeat( auto-fill, minmax(160px, 1fr) );
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 20px 16px;
   }
 }
@@ -850,7 +920,9 @@ html, body {
     margin: 0 0 12px;
   }
   .shop-page__title {
-    font: 400 20px/26px "DM Sans", sans-serif;
+    font:
+      400 20px/26px "DM Sans",
+      sans-serif;
     margin-bottom: 5px;
     text-align: left;
   }
@@ -880,7 +952,9 @@ html, body {
   }
 
   .shop-card__name {
-    font: 500 14px/18px "DM Sans", sans-serif;
+    font:
+      500 14px/18px "DM Sans",
+      sans-serif;
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -910,8 +984,10 @@ html, body {
     height: 33px;
     background: var(--color-gray-light);
     color: var(--color-black);
-    font: 700 8.2px/1 "DM Sans", sans-serif;
-    letter-spacing: .5px;
+    font:
+      700 8.2px/1 "DM Sans",
+      sans-serif;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -981,7 +1057,7 @@ html, body {
 
   .brand-footer__social-list li .brand-footer__icon {
     filter: grayscale(1) brightness(0.7);
-    opacity: .7;
+    opacity: 0.7;
   }
   .brand-footer__social-list li:nth-child(2) .brand-footer__icon {
     filter: none;
