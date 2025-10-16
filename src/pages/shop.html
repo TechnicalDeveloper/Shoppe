@@ -56,14 +56,19 @@
             <div class="shop-page__main">
                 <aside id="shop-filters" class="shop-page__sidebar" aria-label="Filters">
                     <div class="shop-page__search-wrapper">
-                        <input class="shop-page__search" type="text" placeholder="Search…" aria-label="Search products"
-                               inputmode="search"/>
-                        <img src="../assets/svg/search.svg" alt="" class="shop-page__search-icon" aria-hidden="true"/>
+                        <input
+                                class="shop-page__search"
+                                type="text"
+                                placeholder="Search…"
+                                aria-label="Search products"
+                                inputmode="search"
+                        />
+                        <img src="../assets/svg/search.svg" alt="" class="shop-page__search-icon" aria-hidden="true" />
                     </div>
 
                     <div class="shop-page__sort">
                         <label class="u-sr-only" for="sort">Sort</label>
-                        <select id="sort" class="shop-page__sort-select">
+                        <select id="sort" class="shop-page__sort-select" aria-label="Sort By">
                             <option>Sort By</option>
                             <option>Price: Low to High</option>
                             <option>Price: High to Low</option>
@@ -71,15 +76,19 @@
                     </div>
 
                     <div class="shop-page__filter">
-                        <label for="filter-sale" class="shop-page__filter-text">On sale</label>
-                        <input id="filter-sale" type="checkbox" class="shop-page__filter-switch u-sr-only" />
-                        <label for="filter-sale" class="shop-page__switch" aria-label="Toggle On sale"></label>
+                        <label for="filter-sale" class="shop-page__filter-label">
+                            On Sale
+                            <input id="filter-sale" type="checkbox" class="shop-page__filter-switch u-sr-only" />
+                            <span class="shop-page__switch" aria-hidden="true"></span>
+                        </label>
                     </div>
 
                     <div class="shop-page__filter">
-                        <label for="filter-stock" class="shop-page__filter-text">In stock</label>
-                        <input id="filter-stock" type="checkbox" class="shop-page__filter-switch u-sr-only" />
-                        <label for="filter-stock" class="shop-page__switch" aria-label="Toggle In stock"></label>
+                        <label for="filter-stock" class="shop-page__filter-label">
+                            In Stock
+                            <input id="filter-stock" type="checkbox" class="shop-page__filter-switch u-sr-only" />
+                            <span class="shop-page__switch" aria-hidden="true"></span>
+                        </label>
                     </div>
                 </aside>
                 <div class="shop-page__products">
