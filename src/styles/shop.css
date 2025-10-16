@@ -138,6 +138,48 @@ body {
   border-radius: 2px;
 }
 
+/* ==== STICKY ==== */
+:root {
+  --sticky-top: 120px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sticky-top: 96px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --sticky-top: 64px;
+  }
+}
+.shop-page__sidebar {
+  position: sticky; /* key */
+  top: var(--sticky-top); /* glued under header */
+  align-self: flex-start; /* sticky works inside flex parent */
+  height: max-content;
+  max-height: calc(100vh - var(--sticky-top));
+  overflow: auto; /* scroll if taller than viewport */
+  background: var(--color-white); /* looks solid while scrolling */
+  z-index: 1; /* keep above product cards if needed */
+  padding-right: 2px; /* room for thin scrollbar */
+}
+
+.shop-page__sidebar.is-open {
+  display: block;
+  position: sticky;
+  top: var(--sticky-top);
+}
+
+.shop-page__sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.shop-page__sidebar::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 6px;
+}
+
 /* ===== TOPBAR ===== */
 .topbar {
   width: 100%;
