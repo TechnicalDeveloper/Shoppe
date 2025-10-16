@@ -2,23 +2,23 @@
 :root {
   --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
   --color-white-rgb: 255, 255, 255;
-  --color-accent: #A18A68;
+  --color-accent: #a18a68;
   --color-accent-rgb: 161, 138, 104;
-  --color-error: #D82700;
+  --color-error: #d82700;
   --color-error-rgb: 216, 39, 0;
-  --color-gray-light: #EFEFEF;
+  --color-gray-light: #efefef;
   --color-gray-light-rgb: 239, 239, 239;
-  --color-gray: #D8D8D8;
+  --color-gray: #d8d8d8;
   --color-gray-rgb: 216, 216, 216;
   --color-gray-dark: #707070;
   --color-gray-dark-rgb: 112, 112, 112;
   --color-gray-darkest: #222222;
   --color-gray-darkest-rgb: 34, 34, 34;
-  --color-badge: #E5DAC3;
+  --color-badge: #e5dac3;
   --color-badge-rgb: 229, 218, 195;
-  --color-badge-text: #8A7450;
+  --color-badge-text: #8a7450;
   --color-badge-text-rgb: 138, 116, 80;
   --color-shadow-light: rgba(var(--color-black-rgb), 0.02);
   --color-shadow-hover: rgba(var(--color-black-rgb), 0.08);
@@ -248,7 +248,8 @@
 .hero .hero-swiper:active {
   cursor: grabbing;
 }
-.hero .swiper-wrapper, .hero .swiper-slide {
+.hero .swiper-wrapper,
+.hero .swiper-slide {
   height: 100%;
 }
 .hero .hero-slide {
@@ -277,32 +278,37 @@
   bottom: 28px;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 12px;
   z-index: 5;
   pointer-events: auto;
+  justify-content: center;
+  align-items: center;
 }
 .hero .hero__bullet {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #fff;
   display: inline-block;
   cursor: pointer;
   outline: none;
-  border: 0;
-  transition: transform 0.15s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  border: none;
+  transition: all 0.25s ease;
+  opacity: 1;
 }
 .hero .hero__bullet:hover, .hero .hero__bullet:focus-visible {
-  transform: scale(1.12);
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.18);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
 }
 .hero .hero__bullet:active {
-  transform: scale(0.96);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
+  transform: scale(0.9);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
 }
 .hero .hero__bullet--active {
   background: transparent;
-  box-shadow: inset 0 0 0 2px #fff;
+  border: 1px solid #fff;
+  box-shadow: none;
+  transform: scale(1.1);
 }
 @media (prefers-reduced-motion: reduce) {
   .hero .hero__bullet {
@@ -538,7 +544,8 @@
   transform: translateY(-1px);
   outline-offset: 2px;
 }
-.footer__social-link img, .footer__social-link .footer__icon {
+.footer__social-link img,
+.footer__social-link .footer__icon {
   width: 100%;
   height: 100%;
   display: block;
