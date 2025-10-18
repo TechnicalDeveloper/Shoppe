@@ -2,11 +2,11 @@ import Swiper from "swiper";
 import { Autoplay, Keyboard, A11y, EffectCreative } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-creative";
-import hero1 from "./assets/img_hero.png";
-import hero1m from "./assets/img_hero_mobile.png";
-import hero2 from "./assets/img_hero_2.png";
-import hero3 from "./assets/img_hero_3.png";
-import hero4 from "./assets/img_hero_4.png";
+import hero1 from "../assets/img_hero.png";
+import hero1m from "../assets/img_hero_mobile.png";
+import hero2 from "../assets/img_hero_2.png";
+import hero3 from "../assets/img_hero_3.png";
+import hero4 from "../assets/img_hero_4.png";
 
 const ROOT_SELECTOR = ".hero__slider";
 const AUTOPLAY_MS = 5000;
