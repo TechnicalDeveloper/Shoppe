@@ -2,6 +2,11 @@ import Swiper from "swiper";
 import { Autoplay, Keyboard, A11y, EffectCreative } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-creative";
+import hero1 from "./assets/img_hero.png";
+import hero1m from "./assets/img_hero_mobile.png";
+import hero2 from "./assets/img_hero_2.png";
+import hero3 from "./assets/img_hero_3.png";
+import hero4 from "./assets/img_hero_4.png";
 
 const ROOT_SELECTOR = ".hero__slider";
 const AUTOPLAY_MS = 5000;
@@ -31,30 +36,20 @@ const API_BASE = (
 const PROMOS_ENDPOINT = "/api/promos?populate=*";
 
 const FALLBACK_SLIDES = [
-  {
-    title: "Gold big hoops",
-    price: "68,00",
-    img: assetUrl("./assets/img_hero.png"),
-    imgMobile: assetUrl("./assets/img_hero_mobile.png"),
-  },
+  { title: "Gold big hoops", price: "68,00", img: hero1, imgMobile: hero1m },
   {
     title: "This is Barsic kitty",
     price: "55,00",
-    img: assetUrl("./assets/img_hero_2.png"),
-    imgMobile: assetUrl("./assets/img_hero_2.png"),
+    img: hero2,
+    imgMobile: hero2,
   },
   {
     title: "This is Nikol kitty",
     price: "39,00",
-    img: assetUrl("./assets/img_hero_3.png"),
-    imgMobile: assetUrl("./assets/img_hero_3.png"),
+    img: hero3,
+    imgMobile: hero3,
   },
-  {
-    title: "This is Sofa kitty",
-    price: "49,00",
-    img: assetUrl("./assets/img_hero_4.png"),
-    imgMobile: assetUrl("./assets/img_hero_4.png"),
-  },
+  { title: "This is Sofa kitty", price: "49,00", img: hero4, imgMobile: hero4 },
 ];
 
 function esc(s) {
