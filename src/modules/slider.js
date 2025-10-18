@@ -34,26 +34,26 @@ const FALLBACK_SLIDES = [
   {
     title: "Gold big hoops",
     price: "68,00",
-    img: assetUrl("../assets/img_hero.png"),
-    imgMobile: assetUrl("../assets/img_hero_mobile.png"),
+    img: assetUrl("./assets/img_hero.png"),
+    imgMobile: assetUrl("./assets/img_hero_mobile.png"),
   },
   {
     title: "This is Barsic kitty",
     price: "55,00",
-    img: assetUrl("../assets/img_hero_2.png"),
-    imgMobile: assetUrl("../assets/img_hero_2.png"),
+    img: assetUrl("./assets/img_hero_2.png"),
+    imgMobile: assetUrl("./assets/img_hero_2.png"),
   },
   {
     title: "This is Nikol kitty",
     price: "39,00",
-    img: assetUrl("../assets/img_hero_3.png"),
-    imgMobile: assetUrl("../assets/img_hero_3.png"),
+    img: assetUrl("./assets/img_hero_3.png"),
+    imgMobile: assetUrl("./assets/img_hero_3.png"),
   },
   {
     title: "This is Sofa kitty",
     price: "49,00",
-    img: assetUrl("../assets/img_hero_4.png"),
-    imgMobile: assetUrl("../assets/img_hero_4.png"),
+    img: assetUrl("./assets/img_hero_4.png"),
+    imgMobile: assetUrl("./assets/img_hero_4.png"),
   },
 ];
 
