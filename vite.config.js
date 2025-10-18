@@ -6,11 +6,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   root: ".",
-  base: "./",
-  server: {
-    open: "/index.html",
-    port: 3000,
-  },
+  base: "/", // <— было "./", ставим "/"
+  server: { open: "/index.html", port: 3000 },
   build: {
     outDir: "dist",
     rollupOptions: {
