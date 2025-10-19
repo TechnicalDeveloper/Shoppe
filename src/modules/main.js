@@ -1,6 +1,6 @@
-import '../styles/style.scss';
-import { initHeroSlider } from './slider.js';
+import "../styles/style.scss";
+import { initHeroSlider } from "./hero-slider.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-    initHeroSlider();
+document.addEventListener("DOMContentLoaded", () => {
+  initHeroSlider();
 });
