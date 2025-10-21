@@ -9,7 +9,6 @@ const CONFIG = {
     templateId: "#hero-content-template",
     fallbackContent: ".hero__content",
     pagination: ".hero__pagination",
-    overrides: "[data-hero-override]",
   },
   images: {
     mobileMq: "(max-width: 768px)",
@@ -27,12 +26,6 @@ const CONFIG = {
     slidesPerView: 1,
     loop: true,
     speedMs: 650,
-    grabCursor: true,
-    simulateTouch: true,
-    allowTouchMove: true,
-    touchRatio: 1.05,
-    resistanceRatio: 0.85,
-    dragThresholdPx: 5,
     autoplayDelayMs: 5000,
     effect: "creative",
     creativeEffect: {
@@ -60,6 +53,7 @@ const absolute = (base, url) =>
     : isHttp(url)
       ? url
       : `${base}${url.startsWith("/") ? "" : "/"}${url}`;
+
 function withTimeout(promise, ms, ctrl) {
   return new Promise((resolve, reject) => {
     const id = setTimeout(() => {
@@ -77,6 +71,7 @@ function withTimeout(promise, ms, ctrl) {
       });
   });
 }
+
 function neutralizeImages(container) {
   container.querySelectorAll("img[src]").forEach((img) => {
     img.setAttribute("data-src", img.getAttribute("src"));
@@ -89,6 +84,18 @@ function neutralizeImages(container) {
   container.style.background = "none";
 }
 
+/* ---- API adapter (Strapi) ---- */
+function pickUrl(x) {
+  if (!x) return "";
+  return (
+    x?.data?.attributes?.url ||
+    x?.attributes?.url ||
+    x?.url ||
+    (typeof x === "string" ? x : "") ||
+    ""
+  );
+}
+
 async function fetchSlides(cfgApi) {
   const { baseUrl, promosEndpoint, timeoutMs, limit } = cfgApi;
   const ctrl = new AbortController();
@@ -99,36 +106,47 @@ async function fetchSlides(cfgApi) {
   );
   if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
   const json = await resp.json();
+
   const items = Array.isArray(json?.data) ? json.data : [];
   let slides = items
-    .map((item) => {
-      const desktop = item?.desktopImage;
-      const mobile = item?.mobileImage || null;
-      const title = item?.product?.title || "";
-      const price = item?.product?.price ?? "";
+    .map((node) => {
+      const a = node?.attributes ?? node ?? {};
+      const product = a.product?.data?.attributes || a.product || {};
+      const title = a.title ?? product.title ?? product.name ?? "";
+      const price = a.price ?? product.price ?? product.cost ?? "";
+      const url =
+        a.url ??
+        product.url ??
+        (product.slug ? `/products/${product.slug}` : "");
+
+      const desktop = pickUrl(
+        a.desktopImage ||
+          a.image ||
+          a.cover ||
+          product.desktopImage ||
+          product.image ||
+          product.cover,
+      );
+      const mobile = pickUrl(
+        a.mobileImage ||
+          a.imageMobile ||
+          a.mobile ||
+          product.mobileImage ||
+          product.imageMobile,
+      );
+
       return {
         title,
         price,
+        url: url ? absolute(baseUrl, url) : "",
         img: absolute(baseUrl, desktop),
         imgMobile: mobile ? absolute(baseUrl, mobile) : null,
       };
     })
     .filter((s) => s.img);
+
   if (Number.isInteger(limit) && limit > 0) slides = slides.slice(0, limit);
   return slides;
-}
-
-function readHtmlOverrides(root) {
-  const map = new Map();
-  root.querySelectorAll(CONFIG.selectors.overrides).forEach((el) => {
-    const i = Number(el.dataset.index);
-    if (Number.isInteger(i))
-      map.set(i, {
-        title: el.dataset.title ?? undefined,
-        price: el.dataset.price ?? undefined,
-      });
-  });
-  return map;
 }
 
 function renderHeroPicture(cfgImages, { title, img, imgMobile }, eager) {
@@ -137,24 +155,29 @@ function renderHeroPicture(cfgImages, { title, img, imgMobile }, eager) {
     <picture class="hero-slide__picture">
       ${mobile ? `<source media="${esc(cfgImages.mobileMq)}" srcset="${esc(mobile)}">` : ""}
       <img class="hero-slide__img" src="${esc(img)}" alt="${esc(title)}" loading="${eager ? "eager" : "lazy"}" decoding="async" sizes="${esc(cfgImages.sizes)}" />
-    </picture>
-  `;
+    </picture>`;
 }
 
 function createSlideElement(cfgImages, slideData, contentHTML, eager) {
   const slide = document.createElement("div");
   slide.className = "swiper-slide hero-slide";
   slide.innerHTML = `${renderHeroPicture(cfgImages, slideData, eager)}${contentHTML}`;
+
   const content = slide.querySelector(".hero__content");
   if (content) {
     const t = content.querySelector(".hero__title");
     const p = content.querySelector(".hero__price");
+    const btn = content.querySelector(".hero__btn");
     if (t) t.textContent = slideData.title ?? "";
     if (p)
       p.textContent =
         slideData.price !== "" && slideData.price != null
           ? `$ ${slideData.price}`
           : "";
+    if (btn && slideData.url) {
+      btn.setAttribute("href", slideData.url);
+      btn.setAttribute("aria-label", `View ${slideData.title ?? "product"}`);
+    }
   }
   const img = slide.querySelector(".hero-slide__img");
   if (img) img.draggable = false;
@@ -168,12 +191,6 @@ function buildSwiperOptions(cfg) {
     slidesPerView: s.slidesPerView,
     loop: s.loop,
     speed: s.speedMs,
-    grabCursor: s.grabCursor,
-    simulateTouch: s.simulateTouch,
-    allowTouchMove: s.allowTouchMove,
-    touchRatio: s.touchRatio,
-    resistanceRatio: s.resistanceRatio,
-    threshold: s.dragThresholdPx,
     effect: s.effect,
     creativeEffect: s.creativeEffect,
     autoplay: {
@@ -217,25 +234,21 @@ export async function initHeroSlider(overrides = {}) {
   } catch (e) {
     console.warn("[hero] API error:", e);
   }
-  if (!slides?.length) return;
+  if (!slides?.length) {
+    console.warn("[hero] No slides from API");
+    return;
+  }
 
-  const overridesMap = readHtmlOverrides(root);
   const swiperEl = document.createElement("div");
   swiperEl.className = "hero-swiper swiper";
   const wrapperEl = document.createElement("div");
   wrapperEl.className = "swiper-wrapper";
 
-  slides.forEach((s, idx) => {
-    const ov = overridesMap.get(idx);
-    const merged = {
-      ...s,
-      title: ov?.title ?? s.title,
-      price: ov?.price ?? s.price,
-    };
+  slides.forEach((s, idx) =>
     wrapperEl.appendChild(
-      createSlideElement(cfg.images, merged, contentHTML, idx === 0),
-    );
-  });
+      createSlideElement(cfg.images, s, contentHTML, idx === 0),
+    ),
+  );
 
   swiperEl.appendChild(wrapperEl);
   root.appendChild(swiperEl);
@@ -246,7 +259,9 @@ export async function initHeroSlider(overrides = {}) {
     paginationEl.className = "hero__pagination";
     paginationEl.setAttribute("role", "tablist");
     root.appendChild(paginationEl);
-  } else paginationEl.innerHTML = "";
+  } else {
+    paginationEl.innerHTML = "";
+  }
 
   const swiper = new Swiper(swiperEl, buildSwiperOptions(cfg));
 
@@ -281,7 +296,3 @@ export async function initHeroSlider(overrides = {}) {
   swiper.on("slideChange", setActive);
   setActive();
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  initHeroSlider();
-});
