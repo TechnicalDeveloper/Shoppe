@@ -794,6 +794,20 @@
     line-height: 22px;
     margin-bottom: 10px;
   }
+
+  .hero .hero__bullet {
+    width: 5px;
+    height: 5px;
+  }
+    .hero__pagination {
+      gap: 6px;
+    }
+    .hero__bullet {
+      width: 47px; height: 7px;
+      border-radius: 9999px;
+      margin: 0; padding: 0;
+    }
+
   .hero__btn {
     padding: 7px 13px;
     font-size: 12px;
