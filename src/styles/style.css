@@ -2,23 +2,23 @@
 :root {
   --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
   --color-white-rgb: 255, 255, 255;
-  --color-accent: #A18A68;
+  --color-accent: #a18a68;
   --color-accent-rgb: 161, 138, 104;
-  --color-error: #D82700;
+  --color-error: #d82700;
   --color-error-rgb: 216, 39, 0;
-  --color-gray-light: #EFEFEF;
+  --color-gray-light: #efefef;
   --color-gray-light-rgb: 239, 239, 239;
-  --color-gray: #D8D8D8;
+  --color-gray: #d8d8d8;
   --color-gray-rgb: 216, 216, 216;
   --color-gray-dark: #707070;
   --color-gray-dark-rgb: 112, 112, 112;
   --color-gray-darkest: #222222;
   --color-gray-darkest-rgb: 34, 34, 34;
-  --color-badge: #E5DAC3;
+  --color-badge: #e5dac3;
   --color-badge-rgb: 229, 218, 195;
-  --color-badge-text: #8A7450;
+  --color-badge-text: #8a7450;
   --color-badge-text-rgb: 138, 116, 80;
   --color-shadow-light: rgba(var(--color-black-rgb), 0.02);
   --color-shadow-hover: rgba(var(--color-black-rgb), 0.08);
@@ -188,38 +188,39 @@
   display: flex;
   align-items: center;
 }
+.hero__slider.hero--with-swiper {
+  background: none;
+}
 .hero__content {
   position: relative;
   z-index: 2;
-  color: var(--color-white);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   max-width: 370px;
   margin-left: clamp(16px, 5vw, 48px);
+  color: var(--color-white);
   box-sizing: border-box;
   max-height: 90%;
   overflow: hidden;
 }
 .hero__title {
   font-family: "DM Sans", Arial, sans-serif;
-  margin-bottom: 16px;
-  font-style: normal;
-  color: var(--color-white);
   font-size: 33px;
-  font-weight: 500;
   line-height: 43px;
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 16px;
 }
 .hero__price {
   font-family: "DM Sans", Arial, sans-serif;
-  margin-bottom: 48px;
+  font-size: 26px;
+  line-height: 35px;
+  font-weight: 400;
   opacity: var(--opacity-hero-price);
   color: var(--color-white);
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 35px;
+  margin-bottom: 48px;
 }
 .hero__btn {
   font-family: "DM Sans", Arial, sans-serif;
@@ -237,6 +238,82 @@
 .hero__btn:hover {
   background: var(--color-white);
   color: var(--color-gray-darkest);
+}
+.hero .hero-swiper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: grab;
+}
+.hero .hero-swiper:active {
+  cursor: grabbing;
+}
+.hero .swiper-wrapper,
+.hero .swiper-slide {
+  height: 100%;
+}
+.hero .hero-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.hero .hero-slide__picture {
+  position: absolute;
+  inset: 0;
+}
+.hero .hero-slide__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero .hero-slide .hero__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+.hero__pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+  pointer-events: auto;
+  justify-content: center;
+  align-items: center;
+}
+.hero .hero__bullet {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all 0.25s ease;
+  opacity: 1;
+}
+.hero .hero__bullet:hover, .hero .hero__bullet:focus-visible {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+}
+.hero .hero__bullet:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+.hero .hero__bullet--active {
+  background: transparent;
+  border: 1px solid #fff;
+  box-shadow: none;
+  transform: scale(1.1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero__bullet {
+    transition: none;
+  }
 }
 
 .shop-latest {
@@ -467,7 +544,8 @@
   transform: translateY(-1px);
   outline-offset: 2px;
 }
-.footer__social-link img, .footer__social-link .footer__icon {
+.footer__social-link img,
+.footer__social-link .footer__icon {
   width: 100%;
   height: 100%;
   display: block;
@@ -602,6 +680,23 @@
     font-size: 14px;
     line-height: 22px;
     margin-bottom: 10px;
+  }
+  .hero .hero__bullet {
+    width: 5px;
+    height: 5px;
+  }
+  .hero__pagination {
+    gap: 6px;
+  }
+  .hero__bullet {
+    width: 47px;
+    height: 7px;
+    border-radius: 9999px;
+    margin: 0;
+    padding: 0;
+  }
+  .hero__content {
+    justify-content: end;
   }
   .hero__btn {
     padding: 7px 13px;

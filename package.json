@@ -13,7 +13,8 @@
 	},
 	"dependencies": {
 		"sass": "^1.89.2",
-		"sass-embedded": "^1.85.1"
+		"sass-embedded": "^1.85.1",
+		"swiper": "^12.0.2"
 	},
 	"engines": {
 		"node": ">=23-alpine3.21"

@@ -1,10 +1,13 @@
 @charset "UTF-8";
 @import "/src/styles/reset.css";
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
 }
@@ -50,18 +53,19 @@ html, body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
-.container, .l-container {
+.container,
+.l-container {
   overflow-x: clip;
 }
 
 :root {
   --color-black: #000;
   --color-white: #fff;
-  --color-accent: #A18A68;
+  --color-accent: #a18a68;
   --color-gray-dark: #707070;
-  --color-gray: #D8D8D8;
-  --color-gray-light: #EFEFEF;
-  --color-error: #D82700;
+  --color-gray: #d8d8d8;
+  --color-gray-light: #efefef;
+  --color-error: #d82700;
   --color-border: #ededed;
   --color-background-light: #fafbfc;
   --color-badge: #e5dac3;
@@ -69,11 +73,11 @@ html, body {
   --color-badge-soldout: #888;
   --color-switch: #757575;
   --color-divider: #f3f3f3;
-  --color-text-disabled: rgba(0, 0, 0, 0.40);
+  --color-text-disabled: rgba(0, 0, 0, 0.4);
   --color-shadow-card: rgba(40, 40, 40, 0.02);
   --color-shadow-hover: rgba(40, 40, 40, 0.08);
   --color-switch-shadow: rgba(0, 0, 0, 0.07);
-  --opacity-social-icons: .7;
+  --opacity-social-icons: 0.7;
 }
 
 .u-sr-only {
@@ -115,6 +119,65 @@ html, body {
   font-weight: 700;
   color: var(--color-gray-dark);
   line-height: 1;
+}
+
+.topbar__menu-link {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.topbar__menu-link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+  width: 40px;
+  height: 3px;
+  background: var(--color-black);
+  border-radius: 2px;
+}
+
+/* ==== STICKY ==== */
+:root {
+  --sticky-top: 120px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --sticky-top: 96px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --sticky-top: 64px;
+  }
+}
+.shop-page__sidebar {
+  position: sticky; /* key */
+  top: var(--sticky-top); /* glued under header */
+  align-self: flex-start; /* sticky works inside flex parent */
+  height: max-content;
+  max-height: calc(100vh - var(--sticky-top));
+  overflow: auto; /* scroll if taller than viewport */
+  background: var(--color-white); /* looks solid while scrolling */
+  z-index: 1; /* keep above product cards if needed */
+  padding-right: 2px; /* room for thin scrollbar */
+}
+
+.shop-page__sidebar.is-open {
+  display: block;
+  position: sticky;
+  top: var(--sticky-top);
+}
+
+.shop-page__sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.shop-page__sidebar::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 6px;
 }
 
 /* ===== TOPBAR ===== */
