@@ -84,7 +84,6 @@ function neutralizeImages(container) {
   container.style.background = "none";
 }
 
-/* ---- API adapter (Strapi) ---- */
 function pickUrl(x) {
   if (!x) return "";
   return (
