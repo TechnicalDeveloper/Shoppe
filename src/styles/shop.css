@@ -550,24 +550,6 @@ body {
   background: lightgray 50%/cover no-repeat;
   margin-bottom: 24px;
 }
-.shop-card__img--lira {
-  background-image: url("/src/assets/Lira-Earrings_shop.png");
-}
-.shop-card__img--hal {
-  background-image: url("/src/assets/Hal-Earrings_shop.png");
-}
-.shop-card__img--kaede {
-  background-image: url("/src/assets/Kaede-Hair_shop.png");
-}
-.shop-card__img--hairpin {
-  background-image: url("/src/assets/Hair-Pin_shop.png");
-}
-.shop-card__img--plaine {
-  background-image: url("/src/assets/Plaine-Necklace_shop.png");
-}
-.shop-card__img--yuki {
-  background-image: url("/src/assets/Yuki-Hair_shop.png");
-}
 .shop-card__badge, .shop-card__badge--soldout {
   position: absolute;
   top: 12px;

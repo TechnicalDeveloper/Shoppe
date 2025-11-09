@@ -183,7 +183,6 @@
   height: 646px;
   border-radius: 8px;
   overflow: hidden;
-  background: url("/src/assets/img_hero.png") var(--color-gray-light) 50%/cover no-repeat;
   background-size: auto, cover;
   display: flex;
   align-items: center;
@@ -646,7 +645,6 @@
     display: none;
   }
   .hero__slider {
-    background-image: url(/src/assets/img_hero_mobile.png);
     width: 100%;
     max-width: none;
     height: auto;
@@ -839,7 +837,6 @@
     height: 354px;
     align-items: end;
     margin-bottom: 0;
-    background-image: url("/src/assets/img_hero_mobile.png");
   }
   .hero__content {
     max-width: 90vw;
