@@ -1,11 +1,14 @@
 import "../styles/style.scss";
-import "../styles/shop.scss";
 import { initHeroSlider } from "./hero-slider.js";
 import { initIndexShop } from "./shop-index-api.js";
-import { initCatalogShop } from "./shop-page-api.js";
+
+function initBurger() {
+  const burger = document.querySelector(".header__menu-toggle");
+  burger?.addEventListener("click", () => burger.classList.toggle("open"));
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+  initBurger();
   initHeroSlider();
-  initIndexShop();    // index.html → .shop-latest__grid
-  initCatalogShop();  // shop.html   → .shop-page__grid
+  initIndexShop();
 });

@@ -81,6 +81,7 @@
         </aside>
 
         <div class="shop-page__products">
+          <!-- ТОВАРЫ РЕНДЕРИТСЯ ИЗ shop-page-api.js -->
           <div class="shop-page__grid"></div>
 
           <nav class="shop-page__pagination" aria-label="Pagination">
@@ -121,7 +122,7 @@
   </footer>
 </div>
 
-<script type="module" src="/src/modules/main.js"></script>
+<script type="module" src="/src/modules/main-shop.js"></script>
 
 <script>
   const burger = document.querySelector(".topbar__menu-toggle");
@@ -129,6 +130,7 @@
     const isOpen = burger.classList.toggle("open");
     burger.setAttribute("aria-expanded", String(isOpen));
   });
+
   const filtersToggle = document.querySelector(".shop-page__filters-toggle");
   const sidebar = document.getElementById("shop-filters");
   filtersToggle?.addEventListener("click", () => {

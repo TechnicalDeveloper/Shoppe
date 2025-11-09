@@ -551,12 +551,6 @@
   display: block;
 }
 
-.shop-latest__image.is-hover .shop-latest__actions {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 @media (max-width: 1200px) {
   .container {
     padding-left: 32px;
