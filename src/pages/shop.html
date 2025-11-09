@@ -31,7 +31,8 @@
         </ul>
         <span class="topbar__divider" aria-hidden="true"></span>
         <a href="#" class="topbar__icon topbar__icon_cart header__icon header__icon_cart" aria-label="Cart">
-          <img src="../assets/svg/header_shopping-cart.svg" alt="" class="topbar__icon-img header__icon-img" aria-hidden="true" />
+          <img src="/src/assets/svg/header_shopping-cart.svg" alt="" class="topbar__icon-img header__icon-img" aria-hidden="true" />
+          <span class="header__cart-count">1</span>
         </a>
         <a href="#" class="topbar__icon topbar__icon_user" aria-label="Account">
           <img src="../assets/svg/header_icon-color.svg" alt="" class="topbar__icon-img" aria-hidden="true" />
@@ -127,16 +128,7 @@
 <script>
   const burger = document.querySelector(".topbar__menu-toggle");
   burger?.addEventListener("click", () => {
-    const isOpen = burger.classList.toggle("open");
-    burger.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  const filtersToggle = document.querySelector(".shop-page__filters-toggle");
-  const sidebar = document.getElementById("shop-filters");
-  filtersToggle?.addEventListener("click", () => {
-    const visible = sidebar.classList.toggle("is-open");
-    filtersToggle.setAttribute("aria-expanded", String(visible));
-  });
+    const isOpen = burger.classList.toggle("open");});
 </script>
 </body>
 </html>
