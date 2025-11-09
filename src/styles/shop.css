@@ -720,6 +720,12 @@ body {
     aspect-ratio: 1/1;
   }
 }
+.shop-latest__image.is-hover .shop-latest__actions {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /* ≤1024 */
 @media (max-width: 1024px) {
   .shop-page__grid {
