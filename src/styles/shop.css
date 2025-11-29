@@ -154,15 +154,15 @@ body {
   }
 }
 .shop-page__sidebar {
-  position: sticky; /* key */
-  top: var(--sticky-top); /* glued under header */
-  align-self: flex-start; /* sticky works inside flex parent */
+  position: sticky;
+  top: var(--sticky-top);
+  align-self: flex-start;
   height: max-content;
   max-height: calc(100vh - var(--sticky-top));
-  overflow: auto; /* scroll if taller than viewport */
-  background: var(--color-white); /* looks solid while scrolling */
-  z-index: 1; /* keep above product cards if needed */
-  padding-right: 2px; /* room for thin scrollbar */
+  overflow: auto;
+  background: var(--color-white);
+  z-index: 1;
+  padding-right: 2px;
 }
 
 .shop-page__sidebar.is-open {
@@ -476,32 +476,22 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.98);
+  transform: translate(-50%, -50%);
   display: flex;
   gap: 16px;
   z-index: 2;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .shop-card:hover .shop-latest__actions {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-.shop-card:has(.shop-card__img:active) .shop-latest__actions {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translate(-50%, -50%) scale(1);
+.shop-latest__cta--mobile {
+  display: none;
 }
 
+.shop-card:hover .shop-latest__actions,
+.shop-card:has(.shop-card__img:active) .shop-latest__actions,
 .shop-card:focus-within .shop-latest__actions {
   opacity: 1;
-  pointer-events: auto;
-  transform: translate(-50%, -50%) scale(1);
 }
 
 .shop-latest__icon-btn {
@@ -547,8 +537,19 @@ body {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 8px;
-  background: lightgray 50%/cover no-repeat;
+  background: var(--color-gray-light);
+  overflow: hidden;
   margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  display: block;
+  border-radius: 0;
 }
 .shop-card__badge, .shop-card__badge--soldout {
   position: absolute;
@@ -561,10 +562,14 @@ body {
   height: 24px;
   padding: 0 8px;
   border-radius: 4px;
-  font: 400 12px/20px "DM Sans", sans-serif;
-  color: var(--color-white);
-  background: var(--color-accent);
+  font: 500 12px/20px "DM Sans", sans-serif;
+  color: var(--color-badge-text);
+  background: var(--color-badge);
   min-width: 46px;
+}
+.shop-card__badge--soldout {
+  color: var(--color-white);
+  background: var(--color-badge-soldout);
 }
 .shop-card__info {
   padding: 0 0;
@@ -702,12 +707,6 @@ body {
     aspect-ratio: 1/1;
   }
 }
-.shop-latest__image.is-hover .shop-latest__actions {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 /* ≤1024 */
 @media (max-width: 1024px) {
   .shop-page__grid {
@@ -857,27 +856,33 @@ body {
   .shop-card__price--old {
     display: none;
   }
-  .shop-card__img::after {
-    content: "ADD TO CART";
+  .shop-latest__actions {
+    display: none;
+  }
+  .shop-latest__cta--mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 33px;
     background: var(--color-gray-light);
-    color: var(--color-black);
-    font: 700 8.2px/1 "DM Sans", sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+    z-index: 3;
     border-radius: 0 0 6px 6px;
   }
-  .shop-card:has(.shop-card__img:active) .shop-card__img::after,
-  .shop-card:focus-within .shop-card__img::after {
-    display: none;
+  .shop-latest__add-to-cart {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    color: var(--color-black);
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-size: 8.231px;
+    line-height: normal;
   }
   .shop-page__pagination {
     display: none;
