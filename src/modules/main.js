@@ -21,13 +21,13 @@ function createLatestCard(product) {
       ${badge}
       <div class="shop-latest__actions">
         <button class="shop-latest__icon-btn js-add-to-cart" aria-label="Add to cart" data-id="${product.id}">
-          <img src="/src/assets/svg/cart.svg" alt="Add to cart" />
+          <img src="/icons/cart.svg" alt="Add to cart" />
         </button>
         <button class="shop-latest__icon-btn" aria-label="View">
-          <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View" />
+          <img src="/icons/eye-svgrepo-mini.svg" alt="View" />
         </button>
         <button class="shop-latest__icon-btn" aria-label="Wishlist">
-          <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist" />
+          <img src="/icons/heart-svgrepo-mini.svg" alt="Wishlist" />
         </button>
       </div>
       <div class="shop-latest__cta--mobile">
@@ -38,12 +38,12 @@ function createLatestCard(product) {
       <div class="shop-latest__name">${product.title}</div>
       <div class="shop-latest__prices">
         ${
-          product.discountPercent > 0
-            ? `<span class="shop-latest__price shop-latest__price--old">${formatPrice(
-                product.price,
-              )}</span>`
-            : ""
-        }
+      product.discountPercent > 0
+          ? `<span class="shop-latest__price shop-latest__price--old">${formatPrice(
+              product.price,
+          )}</span>`
+          : ""
+  }
         <span class="shop-latest__price shop-latest__price--new">${formatPrice(product.finalPrice)}</span>
       </div>
     </div>

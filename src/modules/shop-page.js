@@ -23,13 +23,13 @@ function createShopCard(product) {
       <img src="${product.image}" alt="${product.title}" loading="lazy" />
       <div class="shop-latest__actions" aria-hidden="true">
         <button type="button" class="shop-latest__icon-btn js-add-to-cart" aria-label="Add to cart" data-id="${product.id}" ${disabledAttr}>
-          <img src="/src/assets/svg/cart.svg" alt="Add to cart" aria-hidden="true" />
+          <img src="/icons/cart.svg" alt="Add to cart" aria-hidden="true" />
         </button>
         <button type="button" class="shop-latest__icon-btn" aria-label="View">
-          <img src="/src/assets/svg/eye-svgrepo-mini.svg" alt="View" aria-hidden="true" />
+          <img src="/icons/eye-svgrepo-mini.svg" alt="View" aria-hidden="true" />
         </button>
         <button type="button" class="shop-latest__icon-btn" aria-label="Wishlist">
-          <img src="/src/assets/svg/heart-svgrepo-mini.svg" alt="Wishlist" aria-hidden="true" />
+          <img src="/icons/heart-svgrepo-mini.svg" alt="Wishlist" aria-hidden="true" />
         </button>
       </div>
       <div class="shop-latest__cta--mobile">
@@ -40,12 +40,12 @@ function createShopCard(product) {
       <div class="shop-card__name">${product.title}</div>
       <div class="shop-card__prices">
         ${
-          product.discountPercent > 0
-            ? `<span class="shop-card__price shop-card__price--old">${formatPrice(
-                product.price,
-              )}</span>`
-            : ""
-        }
+      product.discountPercent > 0
+          ? `<span class="shop-card__price shop-card__price--old">${formatPrice(
+              product.price,
+          )}</span>`
+          : ""
+  }
         <span class="shop-card__price shop-card__price--new">${formatPrice(product.finalPrice)}</span>
       </div>
     </div>
