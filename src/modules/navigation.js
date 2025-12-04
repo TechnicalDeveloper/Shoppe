@@ -95,7 +95,7 @@ function buildNavDrawer() {
     <div class="nav-drawer__panel">
       <div class="nav-drawer__header">
         <a href="/" class="nav-drawer__logo" aria-label="Shoppe">
-          <img src="/src/assets/svg/header_logo.svg" alt="Shoppe" class="nav-drawer__logo-img" />
+          <img src="/assets/svg/header_logo.svg" alt="Shoppe" class="nav-drawer__logo-img" />
         </a>
         <div class="nav-drawer__actions">
           <a
@@ -105,7 +105,7 @@ function buildNavDrawer() {
             data-cart-toggle
           >
             <img
-              src="/src/assets/svg/header_shopping-cart.svg"
+              src="/assets/svg/header_shopping-cart.svg"
               alt=""
               class="header__icon-img"
               aria-hidden="true"
