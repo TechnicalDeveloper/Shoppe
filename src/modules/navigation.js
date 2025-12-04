@@ -9,8 +9,8 @@ const NAV_SECTIONS = [
   {
     key: "account",
     items: [
-      { label: "My account", href: "#", icon: "public/icons/profile.svg" },
-      { label: "Logout", href: "#", icon: "public/icons/icon-logout.svg" },
+      { label: "My account", href: "#", icon: "/icons/profile.svg" },
+      { label: "Logout", href: "#", icon: "/icons/icon-logout.svg" },
     ],
   },
 ];
