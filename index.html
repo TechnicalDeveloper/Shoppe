@@ -52,19 +52,20 @@
             />
           </a>
         </nav>
-        <div class="header__menu-toggle" aria-label="Toggle menu">
+        <button
+          type="button"
+          class="header__menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          data-nav-toggle
+        >
           <img
             src="src/assets/svg/icon-burger.svg"
-            alt="Menu"
+            alt=""
             class="header__menu-icon"
+            aria-hidden="true"
           />
-          <div class="header__menu-dropdown">
-            <a href="/" class="header__menu-dropdown-link">HOME</a>
-            <a href="/src/pages/shop.html" class="header__menu-dropdown-link"
-              >SHOP</a
-            >
-          </div>
-        </div>
+        </button>
       </div>
     </header>
 
