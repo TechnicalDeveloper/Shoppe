@@ -28,6 +28,8 @@ function mapProduct(node) {
     discountPercent > 0
       ? Math.max(price - (price * discountPercent) / 100, 0)
       : price;
+  const material = source.material || source.materials || "";
+  const size = source.size || source.dimension || source.dimensions || "";
 
   return {
     id: node?.id ?? source.id ?? null,
@@ -37,6 +39,8 @@ function mapProduct(node) {
     discountPercent,
     itemsInStock: Number.isFinite(source.itemsInStock) ? source.itemsInStock : 0,
     image: absoluteUrl(API_BASE, coverUrl),
+    material: typeof material === "string" ? material : "",
+    size: typeof size === "string" ? size : "",
   };
 }
 
