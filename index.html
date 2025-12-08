@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPE | Главная</title>
+    <link rel="stylesheet" href="src/styles/style.scss" />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <a href="index.html" class="header__logo" aria-label="Shoppe">
+          <img
+            src="public/icons/header_logo.svg"
+            alt="Shoppe Logo"
+            class="header__logo-img"
+          />
+        </a>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a href="/src/pages/shop.html" class="header__menu-link">Shop</a>
+            </li>
+          </ul>
+          <span class="header__divider"></span>
+          <a
+            href="#"
+            class="header__icon header__icon_cart"
+            aria-label="Корзина"
+          >
+            <img
+              src="public/icons/header_shopping-cart.svg"
+              alt="Cart"
+              class="header__icon-img"
+            />
+            <span class="header__cart-count">0</span>
+          </a>
+          <a
+            href="#"
+            class="header__icon header__icon_user"
+            aria-label="Профиль"
+          >
+            <img
+              src="public/icons/header_icon-color.svg"
+              alt="User"
+              class="header__icon-img"
+            />
+          </a>
+        </nav>
+        <button
+          type="button"
+          class="header__menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          <img
+            src="public/icons/icon-burger.svg"
+            alt=""
+            class="header__menu-icon"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__slider">
+            <template id="hero-content-template">
+              <div class="hero__content">
+                <h2 class="hero__title"></h2>
+                <div class="hero__price"></div>
+                <a href="#" class="hero__btn">View Product</a>
+              </div>
+            </template>
+
+            <div class="hero__pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-latest">
+        <div class="container">
+          <div class="shop-latest__header">
+            <h2 class="shop-latest__title">Shop The Latest</h2>
+            <a href="/src/pages/shop.html" class="shop-latest__view-all"
+              >View All</a
+            >
+          </div>
+          <div class="shop-latest__grid">
+            <div class="shop-latest__card">
+              <div class="shop-latest__image">
+                <img
+                  src="/src/assets/Lira-Earrings_shop.png"
+                  alt="Lira Earrings"
+                />
+                <span class="shop-latest__badge">-31%</span>
+                <div class="shop-latest__actions">
+                  <button
+                    class="shop-latest__icon-btn"
+                    aria-label="Add to cart"
+                  >
+                    <img src="/icons/cart.svg" alt="Add to cart" />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="View">
+                    <img
+                      src="/icons/eye-svgrepo-mini.svg"
+                      alt="View"
+                    />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                    <img
+                      src="/icons/heart-svgrepo-mini.svg"
+                      alt="Wishlist"
+                    />
+                  </button>
+                </div>
+                <div class="shop-latest__cta--mobile">
+                  <button class="shop-latest__add-to-cart">ADD TO CART</button>
+                </div>
+              </div>
+              <div class="shop-latest__info">
+                <div class="shop-latest__name">Lira Earrings</div>
+                <div class="shop-latest__prices">
+                  <span class="shop-latest__price shop-latest__price--old"
+                    >$ 29,00</span
+                  >
+                  <span class="shop-latest__price shop-latest__price--new"
+                    >$ 20,00</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="shop-latest__card">
+              <div class="shop-latest__image">
+                <img
+                  src="/src/assets/Hal-Earrings_shop.png"
+                  alt="Hal Earrings"
+                />
+                <div class="shop-latest__actions">
+                  <button
+                    class="shop-latest__icon-btn"
+                    aria-label="Add to cart"
+                  >
+                    <img src="/icons/cart.svg" alt="Add to cart" />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="View">
+                    <img
+                      src="/icons/eye-svgrepo-mini.svg"
+                      alt="View"
+                    />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                    <img
+                      src="/icons/heart-svgrepo-mini.svg"
+                      alt="Wishlist"
+                    />
+                  </button>
+                </div>
+                <div class="shop-latest__cta--mobile">
+                  <button class="shop-latest__add-to-cart">ADD TO CART</button>
+                </div>
+              </div>
+              <div class="shop-latest__info">
+                <div class="shop-latest__name">Hal Earrings</div>
+                <div class="shop-latest__prices">
+                  <span class="shop-latest__price shop-latest__price--new"
+                    >$ 30,00</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="shop-latest__card">
+              <div class="shop-latest__image">
+                <img
+                  src="/src/assets/Kaede-Hair_shop.png"
+                  alt="Kaede Hair Pin"
+                />
+                <div class="shop-latest__actions">
+                  <button
+                    class="shop-latest__icon-btn"
+                    aria-label="Add to cart"
+                  >
+                    <img src="/icons/cart.svg" alt="Add to cart" />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="View">
+                    <img
+                      src="/icons/eye-svgrepo-mini.svg"
+                      alt="View"
+                    />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                    <img
+                      src="/icons/heart-svgrepo-mini.svg"
+                      alt="Wishlist"
+                    />
+                  </button>
+                </div>
+                <div class="shop-latest__cta--mobile">
+                  <button class="shop-latest__add-to-cart">ADD TO CART</button>
+                </div>
+              </div>
+              <div class="shop-latest__info">
+                <div class="shop-latest__name">Kaede Hair Pin</div>
+                <div class="shop-latest__prices">
+                  <span class="shop-latest__price shop-latest__price--new"
+                    >$ 30,00</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="shop-latest__card">
+              <div class="shop-latest__image">
+                <img src="/src/assets/Yuki-Hair_shop.png" alt="Yuki Hair Pin" />
+                <span class="shop-latest__badge">-10%</span>
+                <div class="shop-latest__actions">
+                  <button
+                    class="shop-latest__icon-btn"
+                    aria-label="Add to cart"
+                  >
+                    <img src="/icons/cart.svg" alt="Add to cart" />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="View">
+                    <img
+                      src="/icons/eye-svgrepo-mini.svg"
+                      alt="View"
+                    />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                    <img
+                      src="/icons/heart-svgrepo-mini.svg"
+                      alt="Wishlist"
+                    />
+                  </button>
+                </div>
+                <div class="shop-latest__cta--mobile">
+                  <button class="shop-latest__add-to-cart">ADD TO CART</button>
+                </div>
+              </div>
+              <div class="shop-latest__info">
+                <div class="shop-latest__name">Yuki Hair Pin</div>
+                <div class="shop-latest__prices">
+                  <span class="shop-latest__price shop-latest__price--old"
+                    >$ 29,00</span
+                  >
+                  <span class="shop-latest__price shop-latest__price--new"
+                    >$ 25,00</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="shop-latest__card">
+              <div class="shop-latest__image">
+                <img
+                  src="/src/assets/Plaine-Necklace_shop.png"
+                  alt="Plaine Necklace"
+                />
+                <div class="shop-latest__actions">
+                  <button
+                    class="shop-latest__icon-btn"
+                    aria-label="Add to cart"
+                  >
+                    <img src="/icons/cart.svg" alt="Add to cart" />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="View">
+                    <img
+                      src="/icons/eye-svgrepo-mini.svg"
+                      alt="View"
+                    />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                    <img
+                      src="/icons/heart-svgrepo-mini.svg"
+                      alt="Wishlist"
+                    />
+                  </button>
+                </div>
+                <div class="shop-latest__cta--mobile">
+                  <button class="shop-latest__add-to-cart">ADD TO CART</button>
+                </div>
+              </div>
+              <div class="shop-latest__info">
+                <div class="shop-latest__name">Plaine Necklace</div>
+                <div class="shop-latest__prices">
+                  <span class="shop-latest__price shop-latest__price--new"
+                    >$ 19,00</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="shop-latest__card">
+              <div class="shop-latest__image">
+                <img src="/src/assets/Hair-Pin_shop.png" alt="Hair Pin Set" />
+                <div class="shop-latest__actions">
+                  <button
+                    class="shop-latest__icon-btn"
+                    aria-label="Add to cart"
+                  >
+                    <img src="/icons/cart.svg" alt="Add to cart" />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="View">
+                    <img
+                      src="/icons/eye-svgrepo-mini.svg"
+                      alt="View"
+                    />
+                  </button>
+                  <button class="shop-latest__icon-btn" aria-label="Wishlist">
+                    <img
+                      src="/icons/heart-svgrepo-mini.svg"
+                      alt="Wishlist"
+                    />
+                  </button>
+                </div>
+                <div class="shop-latest__cta--mobile">
+                  <button class="shop-latest__add-to-cart">ADD TO CART</button>
+                </div>
+              </div>
+              <div class="shop-latest__info">
+                <div class="shop-latest__name">Hair Pin Set of 3</div>
+                <div class="shop-latest__prices">
+                  <span class="shop-latest__price shop-latest__price--new"
+                    >$ 29,00</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__line"></div>
+        <div class="footer__bottom">
+          <div class="footer__copy">© 2025 Shelly</div>
+          <div class="footer__social">
+            <nav class="footer__social" aria-label="Социальные сети">
+              <ul class="footer__social-list">
+                <li>
+                  <a
+                    class="footer__social-link"
+                    href="https://www.linkedin.com/company/your-company"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="LinkedIn"
+                    ><img
+                      src="src/assets/svg/social/footer_linkin.svg"
+                      alt=""
+                      aria-hidden="true"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    class="footer__social-link"
+                    href="https://www.facebook.com/your-page"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Facebook"
+                    ><img
+                      src="src/assets/svg/social/footer_facebook.svg"
+                      alt=""
+                      aria-hidden="true"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    class="footer__social-link"
+                    href="https://www.instagram.com/your-handle"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Instagram"
+                    ><img
+                      src="src/assets/svg/social/footer_instagram.svg"
+                      alt=""
+                      aria-hidden="true"
+                  /></a>
+                </li>
+                <li>
+                  <a
+                    class="footer__social-link"
+                    href="https://twitter.com/your-handle"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Twitter"
+                    ><img
+                      src="src/assets/svg/social/footer_twitter.svg"
+                      alt=""
+                      aria-hidden="true"
+                  /></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/modules/main.js"></script>
+    <script>
+      const burger = document.querySelector(".header__menu-toggle");
+      burger?.addEventListener("click", () => burger.classList.toggle("open"));
+    </script>
+  </body>
+</html>
