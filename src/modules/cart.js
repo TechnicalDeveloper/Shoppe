@@ -14,6 +14,8 @@ const normalizeCartItem = (item) => {
     title: item?.title ?? "",
     price: Number(item?.price) || 0,
     image: item?.image || "",
+    material: typeof item?.material === "string" ? item.material : "",
+    size: typeof item?.size === "string" ? item.size : "",
     quantity: Number.isFinite(item?.quantity)
       ? Math.max(1, Math.trunc(item.quantity))
       : Math.max(1, Number(item?.quantity) || 1),
@@ -49,6 +51,8 @@ function ensureCartItem(product) {
     title: product.title,
     price: product.finalPrice ?? product.price ?? 0,
     image: product.image || "",
+    material: product.material || "",
+    size: product.size || "",
     quantity: 1,
     itemsInStock: Number.isFinite(product.itemsInStock) ? product.itemsInStock : null,
   });
@@ -86,6 +90,16 @@ function getCartElementTemplate(item) {
   const stockHint = isLimited
     ? `<span class="cart-item__stock">Доступно: ${maxQty}</span>`
     : "";
+  const metaRows = [
+    ["Размер", item.size],
+    ["Материал", item.material],
+  ]
+    .filter(([, value]) => typeof value === "string" && value.trim() !== "")
+    .map(
+      ([label, value]) =>
+        `<span class=\"cart-item__meta-item\"><span class=\"cart-item__meta-label\">${label}:</span> ${value}</span>`,
+    )
+    .join("");
 
   return `
       <div class="cart-item__img-wrapper">
@@ -94,6 +108,7 @@ function getCartElementTemplate(item) {
       <div class="cart-item__info">
         <div class="cart-item__title">${item.title}</div>
         <div class="cart-item__price">${formatPrice(item.price)}</div>
+        ${metaRows ? `<div class="cart-item__meta">${metaRows}</div>` : ""}
         ${stockHint}
         <div class="cart-item__controls" data-max="${isLimited ? maxQty : ""}">
           <button type="button" class="cart-item__btn" data-action="dec" ${
