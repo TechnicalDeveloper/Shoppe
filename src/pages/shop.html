@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPE I Каталог</title>
+    <link rel="stylesheet" href="../styles/shop.scss" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar" role="banner">
+        <div class="topbar__container container">
+          <button
+            type="button"
+            class="topbar__menu-toggle"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+            data-nav-toggle
+          >
+            <img
+              src="../../public/icons/icon-burger.svg"
+              alt=""
+              class="topbar__menu-icon"
+              aria-hidden="true"
+            />
+          </button>
+
+          <a href="../../index.html" class="topbar__logo" aria-label="Shoppe">
+            <img
+              src="../../public/icons/header_logo.svg"
+              alt="Shoppe Logo"
+              class="topbar__logo-img"
+            />
+          </a>
+
+          <nav class="topbar__nav" aria-label="Primary">
+            <ul class="topbar__menu">
+              <li class="topbar__menu-item">
+                <a
+                  href="/src/pages/shop.html"
+                  class="topbar__menu-link is-active"
+                  >Shop</a
+                >
+              </li>
+            </ul>
+            <span class="topbar__divider" aria-hidden="true"></span>
+            <a
+              href="#"
+              class="topbar__icon topbar__icon_cart header__icon header__icon_cart"
+              aria-label="Cart"
+            >
+              <img
+                src="../../public/icons/header_shopping-cart.svg"
+                alt=""
+                class="topbar__icon-img header__icon-img"
+                aria-hidden="true"
+              />
+              <span class="header__cart-count" aria-hidden="true">0</span>
+            </a>
+            <a
+              href="#"
+              class="topbar__icon topbar__icon_user"
+              aria-label="Account"
+            >
+              <img
+                src="../../public/icons/header_icon-color.svg"
+                alt=""
+                class="topbar__icon-img"
+                aria-hidden="true"
+              />
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="content" role="main">
+        <section class="shop-page" aria-labelledby="shop-title">
+          <div class="shop-page__header">
+            <h1 id="shop-title" class="shop-page__title">Shop The Latest</h1>
+            <button
+              type="button"
+              class="shop-page__filters-toggle"
+              aria-controls="shop-filters"
+              aria-expanded="false"
+            >
+              Filters
+            </button>
+          </div>
+
+          <div class="shop-page__main">
+            <aside
+              id="shop-filters"
+              class="shop-page__sidebar"
+              aria-label="Filters"
+            >
+              <div class="shop-page__search-wrapper">
+                <input
+                  class="shop-page__search"
+                  type="text"
+                  placeholder="Search…"
+                  aria-label="Search products"
+                  inputmode="search"
+                />
+                <img
+                  src="../../public/icons/search.svg"
+                  alt=""
+                  class="shop-page__search-icon"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <div class="shop-page__sort">
+                <label class="u-sr-only" for="sort">Sort</label>
+                <select
+                  id="sort"
+                  class="shop-page__sort-select"
+                  aria-label="Sort By"
+                >
+                  <option>Sort By</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                </select>
+              </div>
+
+              <div class="shop-page__filter">
+                <label for="filter-sale" class="shop-page__filter-label">
+                  On Sale
+                  <input
+                    id="filter-sale"
+                    type="checkbox"
+                    class="shop-page__filter-switch u-sr-only"
+                  />
+                  <span class="shop-page__switch" aria-hidden="true"></span>
+                </label>
+              </div>
+
+              <div class="shop-page__filter">
+                <label for="filter-stock" class="shop-page__filter-label">
+                  In Stock
+                  <input
+                    id="filter-stock"
+                    type="checkbox"
+                    class="shop-page__filter-switch u-sr-only"
+                  />
+                  <span class="shop-page__switch" aria-hidden="true"></span>
+                </label>
+              </div>
+            </aside>
+            <div class="shop-page__products">
+              <div class="shop-page__grid">
+                <div class="shop-card shop-card--onsale">
+                  <span class="shop-card__badge">- 31 %</span>
+                  <div class="shop-card__img shop-card__img--lira">
+                    <div class="shop-latest__actions" aria-hidden="true">
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Add to cart"
+                      >
+                        <img
+                          src="/icons/cart.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="View"
+                      >
+                        <img
+                          src="/icons/eye-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Wishlist"
+                      >
+                        <img
+                          src="/icons/heart-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="shop-card__info">
+                    <div class="shop-card__name">Lira Earrings</div>
+                    <div class="shop-card__prices">
+                      <span class="shop-card__price shop-card__price--old"
+                        >$ 29,00</span
+                      >
+                      <span class="shop-card__price shop-card__price--new"
+                        >$ 20,00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="shop-card">
+                  <div class="shop-card__img shop-card__img--hal">
+                    <div class="shop-latest__actions" aria-hidden="true">
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Add to cart"
+                      >
+                        <img
+                          src="/icons/cart.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="View"
+                      >
+                        <img
+                          src="/icons/eye-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Wishlist"
+                      >
+                        <img
+                          src="/icons/heart-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="shop-card__info">
+                    <div class="shop-card__name">Hal Earrings</div>
+                    <div class="shop-card__prices">
+                      <span class="shop-card__price shop-card__price--new"
+                        >$ 25,00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="shop-card">
+                  <div class="shop-card__img shop-card__img--kaede">
+                    <div class="shop-latest__actions" aria-hidden="true">
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Add to cart"
+                      >
+                        <img
+                          src="/icons/cart.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="View"
+                      >
+                        <img
+                          src="/icons/eye-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Wishlist"
+                      >
+                        <img
+                          src="/icons/heart-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="shop-card__info">
+                    <div class="shop-card__name">Kaede Hair Pin Set Of 3</div>
+                    <div class="shop-card__prices">
+                      <span class="shop-card__price shop-card__price--new"
+                        >$ 30,00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="shop-card">
+                  <div class="shop-card__img shop-card__img--hairpin">
+                    <div class="shop-latest__actions" aria-hidden="true">
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Add to cart"
+                      >
+                        <img
+                          src="/icons/cart.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="View"
+                      >
+                        <img
+                          src="/icons/eye-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Wishlist"
+                      >
+                        <img
+                          src="/icons/heart-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="shop-card__info">
+                    <div class="shop-card__name">Hair Pin Set of 3</div>
+                    <div class="shop-card__prices">
+                      <span class="shop-card__price shop-card__price--new"
+                        >$ 30,00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="shop-card shop-card--soldout">
+                  <span class="shop-card__badge shop-card__badge--soldout"
+                    >Sold out</span
+                  >
+                  <div class="shop-card__img shop-card__img--plaine">
+                    <div class="shop-latest__actions" aria-hidden="true">
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Add to cart"
+                        disabled
+                      >
+                        <img
+                          src="/icons/cart.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="View"
+                      >
+                        <img
+                          src="/icons/eye-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Wishlist"
+                      >
+                        <img
+                          src="/icons/heart-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="shop-card__info">
+                    <div class="shop-card__name">Plaine Necklace</div>
+                    <div class="shop-card__prices">
+                      <span class="shop-card__price shop-card__price--new"
+                        >$ 30,00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="shop-card">
+                  <div class="shop-card__img shop-card__img--yuki">
+                    <div class="shop-latest__actions" aria-hidden="true">
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Add to cart"
+                      >
+                        <img
+                          src="/icons/cart.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="View"
+                      >
+                        <img
+                          src="/icons/eye-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        class="shop-latest__icon-btn"
+                        aria-label="Wishlist"
+                      >
+                        <img
+                          src="/icons/heart-svgrepo-mini.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                  <div class="shop-card__info">
+                    <div class="shop-card__name">Yuki Hair Pin Set of 3</div>
+                    <div class="shop-card__prices">
+                      <span class="shop-card__price shop-card__price--new"
+                        >$ 20,00</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <nav class="shop-page__pagination" aria-label="Pagination">
+                <button
+                  type="button"
+                  class="shop-page__page shop-page__page--prev"
+                  disabled
+                >
+                  Prev
+                </button>
+                <button
+                  type="button"
+                  class="shop-page__page shop-page__page--active"
+                  aria-current="page"
+                >
+                  1
+                </button>
+                <button type="button" class="shop-page__page">2</button>
+                <button type="button" class="shop-page__page">3</button>
+                <button
+                  type="button"
+                  class="shop-page__page shop-page__page--next"
+                  disabled
+                >
+                  Next
+                </button>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="brand-footer">
+        <div class="l-container">
+          <div class="brand-footer__rule"></div>
+          <div class="brand-footer__bottom">
+            <div class="brand-footer__legal">© 2025 Shelly</div>
+
+            <div class="brand-footer__social">
+              <nav
+                class="brand-footer__social-nav"
+                aria-label="Социальные сети"
+              >
+                <ul class="brand-footer__social-list">
+                  <li>
+                    <a
+                      class="brand-footer__social-link"
+                      href="https://www.linkedin.com/company/your-company"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                    >
+                      <img
+                        class="brand-footer__icon"
+                        src="../assets/svg/social/footer_linkin.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="brand-footer__social-link"
+                      href="https://www.facebook.com/your-page"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                    >
+                      <img
+                        class="brand-footer__icon"
+                        src="../assets/svg/social/footer_facebook.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="brand-footer__social-link"
+                      href="https://www.instagram.com/your-handle"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                    >
+                      <img
+                        class="brand-footer__icon"
+                        src="../assets/svg/social/footer_instagram.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="brand-footer__social-link"
+                      href="https://twitter.com/your-handle"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Twitter"
+                    >
+                      <img
+                        class="brand-footer__icon"
+                        src="../assets/svg/social/footer_twitter.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="brand-footer__overlay" aria-hidden="true">
+                <a
+                  href="#"
+                  class="brand-footer__overlay-link"
+                  aria-label="LinkedIn"
+                ></a>
+                <a
+                  href="#"
+                  class="brand-footer__overlay-link"
+                  aria-label="Facebook"
+                ></a>
+                <a
+                  href="#"
+                  class="brand-footer__overlay-link"
+                  aria-label="Instagram"
+                ></a>
+                <a
+                  href="#"
+                  class="brand-footer__overlay-link"
+                  aria-label="Twitter"
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const burger = document.querySelector(".topbar__menu-toggle");
+      burger?.addEventListener("click", () => {
+        const isOpen = burger.classList.toggle("open");
+        burger.setAttribute("aria-expanded", String(isOpen));
+      });
+      const filtersToggle = document.querySelector(
+        ".shop-page__filters-toggle",
+      );
+      const sidebar = document.getElementById("shop-filters");
+      filtersToggle?.addEventListener("click", () => {
+        const visible = sidebar.classList.toggle("is-open");
+        filtersToggle.setAttribute("aria-expanded", String(visible));
+      });
+    </script>
+    <script type="module" src="../modules/shop-page.js"></script>
+  </body>
+</html>
