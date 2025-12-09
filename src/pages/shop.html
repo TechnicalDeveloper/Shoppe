@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOPPE I Каталог</title>
-    <link rel="stylesheet" href="../styles/shop.css" />
+    <link rel="stylesheet" href="../styles/shop.scss" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap"
@@ -21,32 +21,19 @@
             aria-haspopup="true"
             aria-expanded="false"
             aria-label="Toggle menu"
+            data-nav-toggle
           >
             <img
-              src="../assets/svg/icon-burger.svg"
+              src="../../public/icons/icon-burger.svg"
               alt=""
               class="topbar__menu-icon"
               aria-hidden="true"
             />
-            <div class="topbar__menu-dropdown" role="menu">
-              <a
-                href="/public"
-                class="topbar__menu-dropdown-link"
-                role="menuitem"
-                >HOME</a
-              >
-              <a
-                href="/src/pages/shop.html"
-                class="topbar__menu-dropdown-link"
-                role="menuitem"
-                >SHOP</a
-              >
-            </div>
           </button>
 
           <a href="../../index.html" class="topbar__logo" aria-label="Shoppe">
             <img
-              src="../assets/svg/header_logo.svg"
+              src="../../public/icons/header_logo.svg"
               alt="Shoppe Logo"
               class="topbar__logo-img"
             />
@@ -69,12 +56,12 @@
               aria-label="Cart"
             >
               <img
-                src="../assets/svg/header_shopping-cart.svg"
+                src="../../public/icons/header_shopping-cart.svg"
                 alt=""
                 class="topbar__icon-img header__icon-img"
                 aria-hidden="true"
               />
-              <span class="header__cart-count" aria-hidden="true">1</span>
+              <span class="header__cart-count" aria-hidden="true">0</span>
             </a>
             <a
               href="#"
@@ -82,7 +69,7 @@
               aria-label="Account"
             >
               <img
-                src="../assets/svg/header_icon-color.svg"
+                src="../../public/icons/header_icon-color.svg"
                 alt=""
                 class="topbar__icon-img"
                 aria-hidden="true"
@@ -121,7 +108,7 @@
                   inputmode="search"
                 />
                 <img
-                  src="../assets/svg/search.svg"
+                  src="../../public/icons/search.svg"
                   alt=""
                   class="shop-page__search-icon"
                   aria-hidden="true"
@@ -177,7 +164,7 @@
                         aria-label="Add to cart"
                       >
                         <img
-                          src="/src/assets/svg/cart.svg"
+                          src="/icons/cart.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -188,7 +175,7 @@
                         aria-label="View"
                       >
                         <img
-                          src="/src/assets/svg/eye-svgrepo-mini.svg"
+                          src="/icons/eye-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -199,7 +186,7 @@
                         aria-label="Wishlist"
                       >
                         <img
-                          src="/src/assets/svg/heart-svgrepo-mini.svg"
+                          src="/icons/heart-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -228,7 +215,7 @@
                         aria-label="Add to cart"
                       >
                         <img
-                          src="/src/assets/svg/cart.svg"
+                          src="/icons/cart.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -239,7 +226,7 @@
                         aria-label="View"
                       >
                         <img
-                          src="/src/assets/svg/eye-svgrepo-mini.svg"
+                          src="/icons/eye-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -250,7 +237,7 @@
                         aria-label="Wishlist"
                       >
                         <img
-                          src="/src/assets/svg/heart-svgrepo-mini.svg"
+                          src="/icons/heart-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -276,7 +263,7 @@
                         aria-label="Add to cart"
                       >
                         <img
-                          src="/src/assets/svg/cart.svg"
+                          src="/icons/cart.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -287,7 +274,7 @@
                         aria-label="View"
                       >
                         <img
-                          src="/src/assets/svg/eye-svgrepo-mini.svg"
+                          src="/icons/eye-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -298,7 +285,7 @@
                         aria-label="Wishlist"
                       >
                         <img
-                          src="/src/assets/svg/heart-svgrepo-mini.svg"
+                          src="/icons/heart-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -324,7 +311,7 @@
                         aria-label="Add to cart"
                       >
                         <img
-                          src="/src/assets/svg/cart.svg"
+                          src="/icons/cart.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -335,7 +322,7 @@
                         aria-label="View"
                       >
                         <img
-                          src="/src/assets/svg/eye-svgrepo-mini.svg"
+                          src="/icons/eye-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -346,7 +333,7 @@
                         aria-label="Wishlist"
                       >
                         <img
-                          src="/src/assets/svg/heart-svgrepo-mini.svg"
+                          src="/icons/heart-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -376,7 +363,7 @@
                         disabled
                       >
                         <img
-                          src="/src/assets/svg/cart.svg"
+                          src="/icons/cart.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -387,7 +374,7 @@
                         aria-label="View"
                       >
                         <img
-                          src="/src/assets/svg/eye-svgrepo-mini.svg"
+                          src="/icons/eye-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -398,7 +385,7 @@
                         aria-label="Wishlist"
                       >
                         <img
-                          src="/src/assets/svg/heart-svgrepo-mini.svg"
+                          src="/icons/heart-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -424,7 +411,7 @@
                         aria-label="Add to cart"
                       >
                         <img
-                          src="/src/assets/svg/cart.svg"
+                          src="/icons/cart.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -435,7 +422,7 @@
                         aria-label="View"
                       >
                         <img
-                          src="/src/assets/svg/eye-svgrepo-mini.svg"
+                          src="/icons/eye-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -446,7 +433,7 @@
                         aria-label="Wishlist"
                       >
                         <img
-                          src="/src/assets/svg/heart-svgrepo-mini.svg"
+                          src="/icons/heart-svgrepo-mini.svg"
                           alt=""
                           aria-hidden="true"
                         />
@@ -615,5 +602,6 @@
         filtersToggle.setAttribute("aria-expanded", String(visible));
       });
     </script>
+    <script type="module" src="../modules/shop-page.js"></script>
   </body>
 </html>

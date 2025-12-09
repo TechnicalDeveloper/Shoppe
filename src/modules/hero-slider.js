@@ -3,6 +3,8 @@ import { Autoplay, Keyboard, A11y, EffectCreative } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-creative";
 
+const MOBILE_BREAKPOINT_PX = 768;
+
 const CONFIG = {
   selectors: {
     root: ".hero__slider",
@@ -11,8 +13,8 @@ const CONFIG = {
     pagination: ".hero__pagination",
   },
   images: {
-    mobileMq: "(max-width: 768px)",
-    sizes: "(max-width: 768px) 100vw, 1248px",
+    mobileMq: `(max-width: ${MOBILE_BREAKPOINT_PX}px)`,
+    sizes: `(max-width: ${MOBILE_BREAKPOINT_PX}px) 100vw, 1248px`,
   },
   api: {
     baseUrl: (

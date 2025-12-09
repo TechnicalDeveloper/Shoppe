@@ -16,7 +16,7 @@
       <div class="header__container container">
         <a href="index.html" class="header__logo" aria-label="Shoppe">
           <img
-            src="src/assets/svg/header_logo.svg"
+            src="public/icons/header_logo.svg"
             alt="Shoppe Logo"
             class="header__logo-img"
           />
@@ -34,11 +34,11 @@
             aria-label="Корзина"
           >
             <img
-              src="src/assets/svg/header_shopping-cart.svg"
+              src="public/icons/header_shopping-cart.svg"
               alt="Cart"
               class="header__icon-img"
             />
-            <span class="header__cart-count">1</span>
+            <span class="header__cart-count">0</span>
           </a>
           <a
             href="#"
@@ -46,25 +46,26 @@
             aria-label="Профиль"
           >
             <img
-              src="src/assets/svg/header_icon-color.svg"
+              src="public/icons/header_icon-color.svg"
               alt="User"
               class="header__icon-img"
             />
           </a>
         </nav>
-        <div class="header__menu-toggle" aria-label="Toggle menu">
+        <button
+          type="button"
+          class="header__menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          data-nav-toggle
+        >
           <img
-            src="src/assets/svg/icon-burger.svg"
-            alt="Menu"
+            src="public/icons/icon-burger.svg"
+            alt=""
             class="header__menu-icon"
+            aria-hidden="true"
           />
-          <div class="header__menu-dropdown">
-            <a href="/" class="header__menu-dropdown-link">HOME</a>
-            <a href="/src/pages/shop.html" class="header__menu-dropdown-link"
-              >SHOP</a
-            >
-          </div>
-        </div>
+        </button>
       </div>
     </header>
 
@@ -106,17 +107,17 @@
                     class="shop-latest__icon-btn"
                     aria-label="Add to cart"
                   >
-                    <img src="/src/assets/svg/cart.svg" alt="Add to cart" />
+                    <img src="/icons/cart.svg" alt="Add to cart" />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="View">
                     <img
-                      src="/src/assets/svg/eye-svgrepo-mini.svg"
+                      src="/icons/eye-svgrepo-mini.svg"
                       alt="View"
                     />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="Wishlist">
                     <img
-                      src="/src/assets/svg/heart-svgrepo-mini.svg"
+                      src="/icons/heart-svgrepo-mini.svg"
                       alt="Wishlist"
                     />
                   </button>
@@ -148,17 +149,17 @@
                     class="shop-latest__icon-btn"
                     aria-label="Add to cart"
                   >
-                    <img src="/src/assets/svg/cart.svg" alt="Add to cart" />
+                    <img src="/icons/cart.svg" alt="Add to cart" />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="View">
                     <img
-                      src="/src/assets/svg/eye-svgrepo-mini.svg"
+                      src="/icons/eye-svgrepo-mini.svg"
                       alt="View"
                     />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="Wishlist">
                     <img
-                      src="/src/assets/svg/heart-svgrepo-mini.svg"
+                      src="/icons/heart-svgrepo-mini.svg"
                       alt="Wishlist"
                     />
                   </button>
@@ -187,17 +188,17 @@
                     class="shop-latest__icon-btn"
                     aria-label="Add to cart"
                   >
-                    <img src="/src/assets/svg/cart.svg" alt="Add to cart" />
+                    <img src="/icons/cart.svg" alt="Add to cart" />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="View">
                     <img
-                      src="/src/assets/svg/eye-svgrepo-mini.svg"
+                      src="/icons/eye-svgrepo-mini.svg"
                       alt="View"
                     />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="Wishlist">
                     <img
-                      src="/src/assets/svg/heart-svgrepo-mini.svg"
+                      src="/icons/heart-svgrepo-mini.svg"
                       alt="Wishlist"
                     />
                   </button>
@@ -224,17 +225,17 @@
                     class="shop-latest__icon-btn"
                     aria-label="Add to cart"
                   >
-                    <img src="/src/assets/svg/cart.svg" alt="Add to cart" />
+                    <img src="/icons/cart.svg" alt="Add to cart" />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="View">
                     <img
-                      src="/src/assets/svg/eye-svgrepo-mini.svg"
+                      src="/icons/eye-svgrepo-mini.svg"
                       alt="View"
                     />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="Wishlist">
                     <img
-                      src="/src/assets/svg/heart-svgrepo-mini.svg"
+                      src="/icons/heart-svgrepo-mini.svg"
                       alt="Wishlist"
                     />
                   </button>
@@ -266,17 +267,17 @@
                     class="shop-latest__icon-btn"
                     aria-label="Add to cart"
                   >
-                    <img src="/src/assets/svg/cart.svg" alt="Add to cart" />
+                    <img src="/icons/cart.svg" alt="Add to cart" />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="View">
                     <img
-                      src="/src/assets/svg/eye-svgrepo-mini.svg"
+                      src="/icons/eye-svgrepo-mini.svg"
                       alt="View"
                     />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="Wishlist">
                     <img
-                      src="/src/assets/svg/heart-svgrepo-mini.svg"
+                      src="/icons/heart-svgrepo-mini.svg"
                       alt="Wishlist"
                     />
                   </button>
@@ -302,17 +303,17 @@
                     class="shop-latest__icon-btn"
                     aria-label="Add to cart"
                   >
-                    <img src="/src/assets/svg/cart.svg" alt="Add to cart" />
+                    <img src="/icons/cart.svg" alt="Add to cart" />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="View">
                     <img
-                      src="/src/assets/svg/eye-svgrepo-mini.svg"
+                      src="/icons/eye-svgrepo-mini.svg"
                       alt="View"
                     />
                   </button>
                   <button class="shop-latest__icon-btn" aria-label="Wishlist">
                     <img
-                      src="/src/assets/svg/heart-svgrepo-mini.svg"
+                      src="/icons/heart-svgrepo-mini.svg"
                       alt="Wishlist"
                     />
                   </button>
