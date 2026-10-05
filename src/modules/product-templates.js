@@ -1,9 +1,10 @@
 export const formatPrice = (value) => `$ ${value.toFixed(2)}`;
 
 export function getLatestCardTemplate(product) {
-  const badge = product.discountPercent > 0
-    ? `<span class="shop-latest__badge">-${product.discountPercent}%</span>`
-    : "";
+  const badge =
+    product.discountPercent > 0
+      ? `<span class="shop-latest__badge">-${product.discountPercent}%</span>`
+      : "";
   const outOfStock = Number.isFinite(product.itemsInStock)
     ? product.itemsInStock <= 0
     : false;
@@ -32,12 +33,12 @@ export function getLatestCardTemplate(product) {
       <div class="shop-latest__name">${product.title}</div>
       <div class="shop-latest__prices">
         ${
-    product.discountPercent > 0
-      ? `<span class="shop-latest__price shop-latest__price--old">${formatPrice(
-        product.price,
-      )}</span>`
-      : ""
-  }
+          product.discountPercent > 0
+            ? `<span class="shop-latest__price shop-latest__price--old">${formatPrice(
+                product.price,
+              )}</span>`
+            : ""
+        }
         <span class="shop-latest__price shop-latest__price--new">${formatPrice(product.finalPrice)}</span>
       </div>
     </div>
@@ -77,12 +78,12 @@ export function getShopCardTemplate(product) {
       <div class="shop-card__name">${product.title}</div>
       <div class="shop-card__prices">
         ${
-    product.discountPercent > 0
-      ? `<span class="shop-card__price shop-card__price--old">${formatPrice(
-        product.price,
-      )}</span>`
-      : ""
-  }
+          product.discountPercent > 0
+            ? `<span class="shop-card__price shop-card__price--old">${formatPrice(
+                product.price,
+              )}</span>`
+            : ""
+        }
         <span class="shop-card__price shop-card__price--new">${formatPrice(product.finalPrice)}</span>
       </div>
     </div>

@@ -6,10 +6,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   root: ".",
-  base: "/", // <— было "./", ставим "/"
+  base: "/",
   server: { open: "/index.html", port: 3000 },
+  esbuild: {
+    // This entirely removes all comments and console logs from the built code
+    legalComments: "none",
+    drop: ["console", "debugger"],
+  },
   build: {
     outDir: "dist",
+    minify: "esbuild", // Minifies the code for the server
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),

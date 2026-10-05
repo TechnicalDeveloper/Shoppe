@@ -19,10 +19,15 @@ const normalizeCartItem = (item) => {
     quantity: Number.isFinite(item?.quantity)
       ? Math.max(1, Math.trunc(item.quantity))
       : Math.max(1, Number(item?.quantity) || 1),
-    itemsInStock: Number.isFinite(item?.itemsInStock) ? item.itemsInStock : null,
+    itemsInStock: Number.isFinite(item?.itemsInStock)
+      ? item.itemsInStock
+      : null,
   };
 
-  normalized.quantity = Math.min(normalized.quantity, getMaxQuantity(normalized));
+  normalized.quantity = Math.min(
+    normalized.quantity,
+    getMaxQuantity(normalized),
+  );
   return normalized;
 };
 
@@ -54,7 +59,9 @@ function ensureCartItem(product) {
     material: product.material || "",
     size: product.size || "",
     quantity: 1,
-    itemsInStock: Number.isFinite(product.itemsInStock) ? product.itemsInStock : null,
+    itemsInStock: Number.isFinite(product.itemsInStock)
+      ? product.itemsInStock
+      : null,
   });
 }
 
@@ -112,12 +119,12 @@ function getCartElementTemplate(item) {
         ${stockHint}
         <div class="cart-item__controls" data-max="${isLimited ? maxQty : ""}">
           <button type="button" class="cart-item__btn" data-action="dec" ${
-    isMin ? "disabled aria-disabled=\"true\"" : ""
-  }>−</button>
+            isMin ? 'disabled aria-disabled="true"' : ""
+          }>−</button>
           <span class="cart-item__qty">${item.quantity}</span>
           <button type="button" class="cart-item__btn" data-action="inc" ${
-    isMax ? "disabled aria-disabled=\"true\"" : ""
-  }>+</button>
+            isMax ? 'disabled aria-disabled="true"' : ""
+          }>+</button>
         </div>
       </div>
       <button type="button" class="cart-item__remove" data-action="remove" aria-label="Удалить">×</button>
@@ -148,7 +155,8 @@ function renderSidebar(cart) {
   if (!itemsRoot || !totalEl) return;
 
   if (!cart.length) {
-    itemsRoot.innerHTML = '<p class="cart-sidebar__empty">Ваша корзина пуста</p>';
+    itemsRoot.innerHTML =
+      '<p class="cart-sidebar__empty">Ваша корзина пуста</p>';
     totalEl.textContent = formatPrice(0);
     return;
   }
@@ -234,7 +242,9 @@ function bindCartToggles() {
   cartTogglesBound = true;
 
   const activate = (event) => {
-    const toggle = event.target.closest(".header__icon_cart, [data-cart-toggle]");
+    const toggle = event.target.closest(
+      ".header__icon_cart, [data-cart-toggle]",
+    );
     if (!toggle) return;
 
     event.preventDefault();
@@ -243,9 +253,11 @@ function bindCartToggles() {
 
   document.addEventListener("click", activate);
 
-  document.querySelectorAll(".header__icon_cart, [data-cart-toggle]").forEach((btn) => {
-    btn.addEventListener("click", activate);
-  });
+  document
+    .querySelectorAll(".header__icon_cart, [data-cart-toggle]")
+    .forEach((btn) => {
+      btn.addEventListener("click", activate);
+    });
 }
 
 export function initCartUI() {
@@ -264,13 +276,21 @@ export function addToCart(product) {
   const maxQty = getMaxQuantity(product);
   if (maxQty <= 0) return;
 
-  const index = cart.findIndex((item) => String(item.id) === String(product.id));
+  const index = cart.findIndex(
+    (item) => String(item.id) === String(product.id),
+  );
   if (index !== -1) {
     const existing = cart[index];
-    if (!Number.isFinite(existing.itemsInStock) && Number.isFinite(product.itemsInStock)) {
+    if (
+      !Number.isFinite(existing.itemsInStock) &&
+      Number.isFinite(product.itemsInStock)
+    ) {
       existing.itemsInStock = product.itemsInStock;
     }
-    existing.quantity = Math.min(existing.quantity + 1, getMaxQuantity(existing));
+    existing.quantity = Math.min(
+      existing.quantity + 1,
+      getMaxQuantity(existing),
+    );
     cart[index] = normalizeCartItem(existing);
   } else {
     cart.push(ensureCartItem(product));

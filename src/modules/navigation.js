@@ -61,7 +61,8 @@ function markActiveLinks(drawer) {
 
   drawer.querySelectorAll(".nav-drawer__link").forEach((link) => {
     const linkPath = normalizePath(link.href);
-    const isActive = linkPath === currentPath || currentPath.startsWith(linkPath);
+    const isActive =
+      linkPath === currentPath || currentPath.startsWith(linkPath);
 
     if (isActive) {
       link.classList.add(CLASSNAMES.activeLink);
@@ -141,7 +142,9 @@ function buildNavDrawer() {
 }
 
 function toggleAriaExpanded(toggles, isExpanded) {
-  toggles.forEach((toggle) => toggle.setAttribute("aria-expanded", String(isExpanded)));
+  toggles.forEach((toggle) =>
+    toggle.setAttribute("aria-expanded", String(isExpanded)),
+  );
 }
 
 function createControls(drawer, toggles) {
@@ -149,6 +152,7 @@ function createControls(drawer, toggles) {
   const links = Array.from(drawer.querySelectorAll(".nav-drawer__link"));
 
   const closeDrawer = () => {
+    toggles.forEach((t) => t.classList.remove("open"));
     drawer.classList.remove(CLASSNAMES.open);
     drawer.setAttribute("aria-hidden", "true");
     document.body.classList.remove(CLASSNAMES.bodyLocked);
@@ -156,6 +160,7 @@ function createControls(drawer, toggles) {
   };
 
   const openDrawer = () => {
+    toggles.forEach((t) => t.classList.add("open"));
     drawer.classList.add(CLASSNAMES.open);
     drawer.setAttribute("aria-hidden", "false");
     document.body.classList.add(CLASSNAMES.bodyLocked);
@@ -171,7 +176,9 @@ function createControls(drawer, toggles) {
     }
   };
 
-  toggles.forEach((toggle) => toggle.addEventListener("click", handleToggleClick));
+  toggles.forEach((toggle) =>
+    toggle.addEventListener("click", handleToggleClick),
+  );
   closeButton?.addEventListener("click", closeDrawer);
 
   drawer.addEventListener("click", (event) => {
