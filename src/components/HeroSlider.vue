@@ -27,13 +27,22 @@ onMounted(async () => {
   <Swiper
     v-else
     :modules="modules"
-    :pagination="{ clickable: true, el: '.hero__pagination' }"
+    :pagination="{
+      clickable: true,
+      el: '.hero__pagination',
+      bulletClass: 'hero__bullet',
+      bulletActiveClass: 'hero__bullet--active',
+    }"
     :autoplay="{ delay: 5000, disableOnInteraction: false }"
     class="hero__slider"
   >
     <SwiperSlide v-for="promo in promos" :key="promo.documentId">
-      <div class="hero__slide-wrapper">
-        <img :src="promo.desktopImage" alt="Promo" class="hero__image" />
+      <div class="hero-slide">
+        <!-- Using the picture element to automatically swap images based on screen width -->
+        <picture class="hero-slide__picture">
+          <source media="(max-width: 768px)" :srcset="promo.mobileImage" />
+          <img :src="promo.desktopImage" alt="Promo" class="hero-slide__img" />
+        </picture>
         <div class="hero__content">
           <h2 class="hero__title">{{ promo.product?.title }}</h2>
           <div class="hero__price">
@@ -58,58 +67,70 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 646px; /* Matches old CSS height */
+  height: 646px;
   background-color: var(--color-gray-light, #efefef);
-  border-radius: 16px;
+  border-radius: 8px;
 }
 
 .hero__slider {
   position: relative;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
+  height: 646px; /* Default desktop height */
 }
 
-.hero__slide-wrapper {
+.hero-slide {
   position: relative;
   width: 100%;
-  height: 646px;
+  height: 100%;
   display: flex;
   align-items: center;
 }
 
-.hero__image {
+.hero-slide__picture {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-slide__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  display: block;
 }
 
 .hero__content {
   position: relative;
   z-index: 2;
-  margin-left: 39px; /* Matches old layout spacing */
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 370px;
+  margin-left: clamp(16px, 5vw, 48px);
+  color: var(--color-white, #ffffff);
+  box-sizing: border-box;
+  max-height: 90%;
+  overflow: hidden;
 }
 
 .hero__title {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: 33px;
   line-height: 43px;
-  color: #ffffff;
+  font-weight: 500;
   margin-bottom: 16px;
+  color: inherit;
 }
 
 .hero__price {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
+  font-family: 'DM Sans', Arial, sans-serif;
   font-size: 30px;
   line-height: 39px;
-  color: #ffffff;
+  font-weight: 500;
   margin-bottom: 48px;
+  color: inherit;
 }
 
 .hero__btn {
@@ -134,25 +155,126 @@ onMounted(async () => {
 
 .hero__pagination {
   position: absolute;
-  bottom: 30px;
   left: 50%;
+  bottom: 28px;
   transform: translateX(-50%);
-  z-index: 10;
   display: flex;
   gap: 12px;
+  z-index: 5;
+  pointer-events: auto;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Custom Swiper pagination bullets to match old design */
-:deep(.swiper-pagination-bullet) {
-  width: 12px;
-  height: 12px;
-  background-color: transparent;
-  border: 2px solid #ffffff;
-  opacity: 1;
+/* Base custom bullets */
+:deep(.hero__bullet) {
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all 0.25s ease;
+  opacity: 1;
 }
 
-:deep(.swiper-pagination-bullet-active) {
-  background-color: #ffffff;
+:deep(.hero__bullet:hover),
+:deep(.hero__bullet:focus-visible) {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+:deep(.hero__bullet:active) {
+  transform: scale(0.9);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+:deep(.hero__bullet--active) {
+  background: transparent;
+  border: 1px solid #fff;
+  box-shadow: none;
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments exactly matching the old SCSS */
+@media (max-width: 1024px) {
+  .hero__slider {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__slider {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 288 / 354;
+    display: flex;
+    margin: 0;
+  }
+
+  .hero-slide {
+    align-items: flex-end; /* Push content to bottom on mobile */
+  }
+
+  .hero__title {
+    font-size: 20px;
+    line-height: 26px;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+  }
+
+  .hero__price {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+
+  .hero__btn {
+    padding: 7px 13px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero__content {
+    justify-content: flex-end;
+    margin-left: 16px;
+    max-width: 90vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__slider {
+    max-width: 288px; /* Enforced by old styles on mobile */
+    height: 354px;
+    margin: 0 auto;
+  }
+
+  .hero__pagination {
+    gap: 6px;
+    bottom: 20px; /* Slight bump up */
+  }
+
+  /* Specific mobile pill-shaped active bullet from old styles */
+  :deep(.hero__bullet) {
+    width: 5px;
+    height: 5px;
+  }
+
+  :deep(.hero__bullet--active) {
+    width: 47px;
+    height: 7px;
+    border-radius: 9999px;
+    background: #fff;
+    border: none;
+    margin: 0;
+    padding: 0;
+    transform: none;
+  }
 }
 </style>
