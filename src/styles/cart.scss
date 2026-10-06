@@ -2,7 +2,7 @@
 .cart-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(var(--color-black-rgb), 0.35);
+  background: rgb(var(--color-black-rgb), 0.35);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
@@ -22,7 +22,7 @@
   width: min(420px, 90vw);
   height: calc(100vh - 24px);
   background: var(--color-white);
-  box-shadow: -6px 0 18px rgba(var(--color-black-rgb), 0.06);
+  box-shadow: -6px 0 18px rgb(var(--color-black-rgb), 0.06);
   transform: translateX(110%);
   transition: transform 0.25s ease;
   z-index: 1200;

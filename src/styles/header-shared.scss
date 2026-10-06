@@ -1,4 +1,4 @@
-@import "/src/styles/theme.scss";
+@import "/src/styles/theme";
 
 :root {
   --nav-icon-size: 20px;
@@ -22,7 +22,7 @@
   --nav-drawer-icon-size: 24px;
   --nav-drawer-close-stroke: 2px;
   --nav-drawer-divider-height: 1px;
-  --nav-drawer-divider-color: rgba(var(--color-gray-darkest-rgb), 0.08);
+  --nav-drawer-divider-color: rgb(var(--color-gray-darkest-rgb), 0.08);
   --nav-drawer-radius: 0;
   --nav-drawer-shadow: none;
   --nav-drawer-backdrop: var(--color-gray-light);
@@ -234,7 +234,7 @@ body.has-nav-open {
   gap: var(--nav-drawer-row-gap);
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   :root {
     --nav-toggle-icon-size: var(--nav-toggle-icon-size-sm);
   }
@@ -251,7 +251,7 @@ body.has-nav-open {
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   :root {
     --nav-toggle-padding: 6px;
     --nav-drawer-padding: 24px;
