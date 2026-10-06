@@ -277,4 +277,11 @@ onMounted(async () => {
     transform: none;
   }
 }
+
+/* Hide pagination on super super small screens where it breaks layout */
+@media (max-width: 320px) {
+  .hero__pagination {
+    display: none;
+  }
+}
 </style>
