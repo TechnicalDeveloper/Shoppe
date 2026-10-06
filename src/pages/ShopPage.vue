@@ -10,7 +10,7 @@ onMounted(async () => {
   try {
     products.value = await getProducts();
   } catch (error) {
-    console.error('Failed to load shop products:', error);
+    console.error(error);
   } finally {
     isLoading.value = false;
   }
@@ -22,7 +22,6 @@ onMounted(async () => {
     <h1 class="shop-page__title">Shop</h1>
     <div class="shop-page__content">
       <aside id="shop-filters" class="shop-page__sidebar">
-        <!-- Temporary placeholders for filters -->
         <div class="filter-group">
           <h3>Categories</h3>
           <ul>
@@ -33,7 +32,7 @@ onMounted(async () => {
         </div>
       </aside>
       <div class="shop-page__main">
-        <div v-if="isLoading">Loading products...</div>
+        <div v-if="isLoading"></div>
         <div v-else class="shop-latest__grid">
           <ProductCard
             v-for="product in products"

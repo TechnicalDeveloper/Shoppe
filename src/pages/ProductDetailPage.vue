@@ -12,7 +12,6 @@ const product = ref(null);
 const similarProducts = ref([]);
 const isLoading = ref(true);
 
-// Swap image logic
 const activeImage = ref('');
 
 const fetchProductData = async (documentId) => {
@@ -23,7 +22,7 @@ const fetchProductData = async (documentId) => {
     activeImage.value = fetchedProduct.image || '/src/assets/placeholder.png';
     similarProducts.value = await getProducts(3);
   } catch (error) {
-    console.error('Failed to load product details:', error);
+    console.error(error);
   } finally {
     isLoading.value = false;
   }
@@ -64,15 +63,13 @@ const displayPrice = computed(() => {
   return `$ ${product.value?.price?.toFixed(2) || '0.00'}`;
 });
 
-// Calculate average rating
 const averageRating = computed(() => {
   const reviews = product.value?.reviews || [];
   if (reviews.length === 0) return 0;
   const total = reviews.reduce((sum, r) => sum + (r.rating || 0), 0);
-  return Math.round((total / reviews.length) * 2) / 2; // round to 0.5
+  return Math.round((total / reviews.length) * 2) / 2;
 });
 
-// Star rendering logic
 const renderStars = computed(() => {
   const stars = [];
   const rating = averageRating.value;
@@ -87,9 +84,7 @@ const renderStars = computed(() => {
 
 <template>
   <div class="product-page container">
-    <div v-if="isLoading" class="product-page__loading">
-      Loading product details...
-    </div>
+    <div v-if="isLoading" class="product-page__loading"></div>
 
     <div v-else-if="product" class="product-page__wrapper">
       <div class="product-page__gallery">
@@ -151,7 +146,6 @@ const renderStars = computed(() => {
       </div>
     </div>
 
-    <!-- Similar Items Section -->
     <section class="shop-latest" style="margin-top: 80px">
       <div class="shop-latest__header">
         <h2 class="shop-latest__title">Similar Items</h2>
@@ -250,7 +244,6 @@ const renderStars = computed(() => {
   position: relative;
 }
 
-/* Basic half-star hack for simplicity */
 .stars .half::after {
   content: '★';
   position: absolute;

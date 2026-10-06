@@ -52,7 +52,6 @@ const displayPrice = computed(() => {
           aria-label="Wishlist"
           @click="toggleFavorite"
         >
-          <!-- Swap the stroke/fill values and shrink the SVG to match the provided image -->
           <svg
             width="20"
             height="20"
@@ -84,7 +83,6 @@ const displayPrice = computed(() => {
 </template>
 
 <style scoped>
-/* Adjust icons to sit perfectly in the center of their circles like the screenshot */
 .shop-latest__icon-btn img {
   width: 20px;
   height: 20px;
@@ -96,17 +94,16 @@ const displayPrice = computed(() => {
 }
 
 .shop-latest__icon-btn {
-  /* Using standard flex centering for the icons */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px; /* Slight bump in size to give the icon breathing room like the image */
+  width: 44px;
   height: 44px;
   background-color: #fff;
   border-radius: 50%;
   border: none;
-  box-shadow: 0 4px 10px rgb(0 0 0 / 8%); /* Smoother shadow matching screenshot */
-  gap: 0; /* Remove gap */
+  box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
+  gap: 0;
   cursor: pointer;
   transition:
     transform 0.2s ease,
@@ -119,6 +116,6 @@ const displayPrice = computed(() => {
 }
 
 .shop-latest__actions {
-  gap: 20px; /* Space between the circular buttons */
+  gap: 20px;
 }
 </style>

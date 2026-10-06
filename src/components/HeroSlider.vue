@@ -15,7 +15,7 @@ onMounted(async () => {
   try {
     promos.value = await getPromos();
   } catch (error) {
-    console.error('Failed to load promos:', error);
+    console.error(error);
   } finally {
     isLoading.value = false;
   }
@@ -23,7 +23,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="isLoading" class="hero__loading">Loading...</div>
+  <div v-if="isLoading" class="hero__loading"></div>
   <Swiper
     v-else
     :modules="modules"
@@ -39,7 +39,7 @@ onMounted(async () => {
     <SwiperSlide v-for="promo in promos" :key="promo.documentId">
       <div class="hero-slide">
         <picture class="hero-slide__picture">
-          <source media="(max-width: 768px)" :srcset="promo.mobileImage" />
+          <source media="(width <= 768px)" :srcset="promo.mobileImage" />
           <img :src="promo.desktopImage" alt="Promo" class="hero-slide__img" />
         </picture>
         <div class="hero__content">

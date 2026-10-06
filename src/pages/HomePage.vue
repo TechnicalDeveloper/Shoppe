@@ -10,10 +10,9 @@ const isLoading = ref(true);
 
 onMounted(async () => {
   try {
-    // For homepage latest products, let's fetch first 6
     latestProducts.value = await getProducts(6);
   } catch (error) {
-    console.error('Failed to load products:', error);
+    console.error(error);
   } finally {
     isLoading.value = false;
   }
@@ -35,7 +34,7 @@ onMounted(async () => {
           >View All</RouterLink
         >
       </div>
-      <div v-if="isLoading" class="shop-latest__loading">Loading...</div>
+      <div v-if="isLoading" class="shop-latest__loading"></div>
       <div v-else class="shop-latest__grid">
         <ProductCard
           v-for="product in latestProducts"
