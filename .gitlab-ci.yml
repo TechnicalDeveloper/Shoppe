@@ -1,0 +1,4 @@
+include:
+  - project: 'infra/common-ci'
+    file: 'ci/common-js-ci.yml'
+    ref: 'master'
