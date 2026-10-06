@@ -109,7 +109,7 @@ onMounted(async () => {
   align-items: flex-start;
   max-width: 370px;
   margin-left: clamp(16px, 5vw, 48px);
-  color: var(--color-white, #ffffff);
+  color: var(--color-white, #fff);
   box-sizing: border-box;
   max-height: 90%;
   overflow: hidden;
@@ -136,21 +136,21 @@ onMounted(async () => {
 .hero__btn {
   display: inline-block;
   padding: 12px 24px;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
   border-radius: 6px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   background-color: transparent;
   transition: all 0.3s ease;
 }
 
 .hero__btn:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #fff;
+  color: #000;
 }
 
 .hero__pagination {
@@ -183,12 +183,12 @@ onMounted(async () => {
 :deep(.hero__bullet:hover),
 :deep(.hero__bullet:focus-visible) {
   transform: scale(1.15);
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 6px rgb(255 255 255 / 20%);
 }
 
 :deep(.hero__bullet:active) {
   transform: scale(0.9);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgb(255 255 255 / 15%);
 }
 
 :deep(.hero__bullet--active) {
@@ -199,14 +199,14 @@ onMounted(async () => {
 }
 
 /* Responsive adjustments exactly matching the old SCSS */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .hero__slider {
     height: auto;
     aspect-ratio: 16 / 9;
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .hero__slider {
     width: 100%;
     max-width: none;
@@ -248,7 +248,7 @@ onMounted(async () => {
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .hero__slider {
     max-width: 288px; /* Enforced by old styles on mobile */
     height: 354px;
@@ -276,10 +276,7 @@ onMounted(async () => {
     padding: 0;
     transform: none;
   }
-}
 
-/* Hide pagination on super super small screens where it breaks layout */
-@media (max-width: 320px) {
   .hero__pagination {
     display: none;
   }

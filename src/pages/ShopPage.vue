@@ -51,24 +51,30 @@ onMounted(async () => {
   padding-top: 40px;
   padding-bottom: 80px;
 }
+
 .shop-page__title {
   font-size: 32px;
   margin-bottom: 40px;
 }
+
 .shop-page__content {
   display: flex;
   gap: 32px;
 }
+
 .shop-page__sidebar {
   width: 250px;
   flex-shrink: 0;
 }
+
 .shop-page__main {
   flex: 1;
 }
+
 .filter-group h3 {
   margin-bottom: 16px;
 }
+
 .filter-group li {
   margin-bottom: 8px;
   color: var(--color-gray-dark);

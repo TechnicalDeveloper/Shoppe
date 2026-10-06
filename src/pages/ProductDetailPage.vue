@@ -172,25 +172,30 @@ const renderStars = computed(() => {
   padding-top: 40px;
   padding-bottom: 80px;
 }
+
 .product-page__wrapper {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
 }
+
 .product-page__gallery {
   flex: 1;
   min-width: 300px;
 }
+
 .product-page__gallery-main img {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
 }
+
 .product-page__gallery-thumbs {
   display: flex;
   gap: 10px;
   margin-top: 10px;
 }
+
 .product-page__gallery-thumbs img {
   width: 80px;
   height: 80px;
@@ -200,42 +205,51 @@ const renderStars = computed(() => {
   border: 2px solid transparent;
   transition: border-color 0.2s;
 }
+
 .product-page__gallery-thumbs img.is-active {
   border-color: var(--color-accent, #000);
 }
+
 .product-page__details {
   flex: 1;
   min-width: 300px;
 }
+
 .product-page__title {
   font-size: 28px;
   margin-bottom: 16px;
 }
+
 .product-page__price {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 24px;
   color: var(--color-accent, #a18a68);
 }
+
 .product-page__rating {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
 }
+
 .stars {
   color: #ccc;
   display: flex;
   gap: 2px;
   font-size: 20px;
 }
+
 .stars .full {
   color: #000;
 }
+
 .stars .half {
   color: #000;
   position: relative;
 }
+
 /* Basic half-star hack for simplicity */
 .stars .half::after {
   content: '★';
@@ -245,15 +259,18 @@ const renderStars = computed(() => {
   color: #ccc;
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
 }
+
 .product-page__description {
   color: var(--color-gray-dark, #707070);
   line-height: 1.6;
   margin-bottom: 32px;
 }
+
 .product-page__actions {
   display: flex;
   gap: 16px;
 }
+
 .btn {
   padding: 12px 24px;
   border-radius: 6px;
@@ -261,11 +278,13 @@ const renderStars = computed(() => {
   border: none;
   font-weight: bold;
 }
+
 .btn-add-cart {
   background: #000;
   color: #fff;
   flex: 1;
 }
+
 .btn-icon {
   background: transparent;
   border: 1px solid #ddd;

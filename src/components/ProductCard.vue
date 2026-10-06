@@ -90,9 +90,11 @@ const displayPrice = computed(() => {
   height: 20px;
   display: block;
 }
+
 .shop-latest__icon-btn svg {
   display: block;
 }
+
 .shop-latest__icon-btn {
   /* Using standard flex centering for the icons */
   display: flex;
@@ -100,20 +102,22 @@ const displayPrice = computed(() => {
   justify-content: center;
   width: 44px; /* Slight bump in size to give the icon breathing room like the image */
   height: 44px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 50%;
   border: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Smoother shadow matching screenshot */
+  box-shadow: 0 4px 10px rgb(0 0 0 / 8%); /* Smoother shadow matching screenshot */
   gap: 0; /* Remove gap */
   cursor: pointer;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
+
 .shop-latest__icon-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 14px rgb(0 0 0 / 12%);
 }
+
 .shop-latest__actions {
   gap: 20px; /* Space between the circular buttons */
 }
