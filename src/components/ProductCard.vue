@@ -30,9 +30,9 @@ const displayPrice = computed(() => {
 </script>
 
 <template>
-  <div class="shop-latest__card">
+  <div class="shop-latest__card shop-card">
     <div class="shop-latest__image">
-      <img :src="productImage" :alt="product.title" />
+      <img :src="productImage" :alt="product.title" class="shop-card__img" />
       <span v-if="product.discountPercent" class="shop-latest__badge"
         >-{{ product.discountPercent }}%</span
       >
@@ -52,13 +52,14 @@ const displayPrice = computed(() => {
           aria-label="Wishlist"
           @click="toggleFavorite"
         >
+          <!-- Swap the stroke/fill values and shrink the SVG to match the provided image -->
           <svg
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
-            :fill="isFavorite ? '#ff4d4f' : 'none'"
-            :stroke="isFavorite ? '#ff4d4f' : 'currentColor'"
-            stroke-width="2"
+            :fill="isFavorite ? '#ff4d4f' : 'transparent'"
+            :stroke="isFavorite ? '#ff4d4f' : '#000'"
+            stroke-width="1.5"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -81,3 +82,39 @@ const displayPrice = computed(() => {
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Adjust icons to sit perfectly in the center of their circles like the screenshot */
+.shop-latest__icon-btn img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.shop-latest__icon-btn svg {
+  display: block;
+}
+.shop-latest__icon-btn {
+  /* Using standard flex centering for the icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; /* Slight bump in size to give the icon breathing room like the image */
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Smoother shadow matching screenshot */
+  gap: 0; /* Remove gap */
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.shop-latest__icon-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+}
+.shop-latest__actions {
+  gap: 20px; /* Space between the circular buttons */
+}
+</style>
