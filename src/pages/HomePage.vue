@@ -1,65 +1,29 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import ProductCard from '../components/ProductCard.vue';
+import HeroSlider from '../components/HeroSlider.vue';
+import { getProducts } from '../services/api';
 
-// Temporary mock data until we connect the API
-const latestProducts = ref([
-  {
-    id: 1,
-    name: 'Lira Earrings',
-    price: '20,00',
-    oldPrice: '29,00',
-    badge: '-31%',
-    image: '/src/assets/Lira-Earrings_shop.png',
-  },
-  {
-    id: 2,
-    name: 'Hal Earrings',
-    price: '30,00',
-    image: '/src/assets/Hal-Earrings_shop.png',
-  },
-  {
-    id: 3,
-    name: 'Kaede Hair Pin',
-    price: '30,00',
-    image: '/src/assets/Kaede-Hair_shop.png',
-  },
-  {
-    id: 4,
-    name: 'Yuki Hair Pin',
-    price: '25,00',
-    oldPrice: '29,00',
-    badge: '-10%',
-    image: '/src/assets/Yuki-Hair_shop.png',
-  },
-  {
-    id: 5,
-    name: 'Plaine Necklace',
-    price: '19,00',
-    image: '/src/assets/Plaine-Necklace_shop.png',
-  },
-  {
-    id: 6,
-    name: 'Hair Pin Set of 3',
-    price: '29,00',
-    image: '/src/assets/Hair-Pin_shop.png',
-  },
-]);
+const latestProducts = ref([]);
+const isLoading = ref(true);
+
+onMounted(async () => {
+  try {
+    // For homepage latest products, let's fetch first 6
+    latestProducts.value = await getProducts(6);
+  } catch (error) {
+    console.error('Failed to load products:', error);
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>
 
 <template>
   <section class="hero">
     <div class="container">
-      <div class="hero__slider">
-        <!-- Hero content will be dynamic later based on Swiper and API -->
-        <div class="hero__content">
-          <h2 class="hero__title">Gold big hoops</h2>
-          <div class="hero__price">$ 68,00</div>
-          <RouterLink to="/shop" class="hero__btn">View Product</RouterLink>
-        </div>
-        <div class="hero__pagination"></div>
-      </div>
+      <HeroSlider />
     </div>
   </section>
 
@@ -71,13 +35,22 @@ const latestProducts = ref([
           >View All</RouterLink
         >
       </div>
-      <div class="shop-latest__grid">
+      <div v-if="isLoading" class="shop-latest__loading">Loading...</div>
+      <div v-else class="shop-latest__grid">
         <ProductCard
           v-for="product in latestProducts"
-          :key="product.id"
+          :key="product.documentId"
           :product="product"
         />
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.shop-latest__loading {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--color-gray-dark);
+}
+</style>
