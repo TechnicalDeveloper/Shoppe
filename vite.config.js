@@ -9,6 +9,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  esbuild: {
+    legalComments: "none",
+    drop: ["console", "debugger"]
+  },
+  build: {
+    minify: "esbuild"
+  },
   css: {
     preprocessorOptions: {
       scss: {
