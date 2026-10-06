@@ -38,7 +38,6 @@ onMounted(async () => {
   >
     <SwiperSlide v-for="promo in promos" :key="promo.documentId">
       <div class="hero-slide">
-        <!-- Using the picture element to automatically swap images based on screen width -->
         <picture class="hero-slide__picture">
           <source media="(max-width: 768px)" :srcset="promo.mobileImage" />
           <img :src="promo.desktopImage" alt="Promo" class="hero-slide__img" />
@@ -57,7 +56,6 @@ onMounted(async () => {
         </div>
       </div>
     </SwiperSlide>
-    <!-- Pagination container inside the Swiper component to match old design -->
     <div class="hero__pagination"></div>
   </Swiper>
 </template>
@@ -76,7 +74,7 @@ onMounted(async () => {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  height: 646px; /* Default desktop height */
+  height: 646px;
 }
 
 .hero-slide {
@@ -166,7 +164,6 @@ onMounted(async () => {
   align-items: center;
 }
 
-/* Base custom bullets */
 :deep(.hero__bullet) {
   width: 15px;
   height: 15px;
@@ -198,7 +195,6 @@ onMounted(async () => {
   transform: scale(1.1);
 }
 
-/* Responsive adjustments exactly matching the old SCSS */
 @media (width <= 1024px) {
   .hero__slider {
     height: auto;
@@ -217,7 +213,7 @@ onMounted(async () => {
   }
 
   .hero-slide {
-    align-items: flex-end; /* Push content to bottom on mobile */
+    align-items: flex-end;
   }
 
   .hero__title {
@@ -250,31 +246,9 @@ onMounted(async () => {
 
 @media (width <= 480px) {
   .hero__slider {
-    max-width: 288px; /* Enforced by old styles on mobile */
+    max-width: 288px;
     height: 354px;
     margin: 0 auto;
-  }
-
-  .hero__pagination {
-    gap: 6px;
-    bottom: 20px; /* Slight bump up */
-  }
-
-  /* Specific mobile pill-shaped active bullet from old styles */
-  :deep(.hero__bullet) {
-    width: 5px;
-    height: 5px;
-  }
-
-  :deep(.hero__bullet--active) {
-    width: 47px;
-    height: 7px;
-    border-radius: 9999px;
-    background: #fff;
-    border: none;
-    margin: 0;
-    padding: 0;
-    transform: none;
   }
 
   .hero__pagination {
