@@ -112,7 +112,6 @@
       fill 0.2s,
       stroke 0.2s;
   }
-
 }
 
 // HERO
@@ -345,7 +344,10 @@
   }
 
   &__error {
-    font: 500 18px/24px "DM Sans", Arial, sans-serif;
+    font:
+      500 18px/24px "DM Sans",
+      Arial,
+      sans-serif;
     color: var(--color-error);
   }
 
@@ -693,14 +695,16 @@
     width: 5px;
     height: 5px;
   }
-    .hero__pagination {
-      gap: 6px;
-    }
-    .hero__bullet {
-      width: 47px; height: 7px;
-      border-radius: 9999px;
-      margin: 0; padding: 0;
-    }
+  .hero__pagination {
+    gap: 6px;
+  }
+  .hero__bullet {
+    width: 47px;
+    height: 7px;
+    border-radius: 9999px;
+    margin: 0;
+    padding: 0;
+  }
 
   .hero__content {
     justify-content: end;

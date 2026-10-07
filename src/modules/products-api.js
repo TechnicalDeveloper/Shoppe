@@ -1,5 +1,6 @@
-const API_BASE = (import.meta?.env?.VITE_API_URL || "https://api.dev.cwe.su")
-  .replace(/\/+$/, "");
+const API_BASE = (
+  import.meta?.env?.VITE_API_URL || "https://api.dev.cwe.su"
+).replace(/\/+$/, "");
 
 const PRODUCTS_ENDPOINT = "/api/products/?populate=*";
 
@@ -37,7 +38,9 @@ function mapProduct(node) {
     price,
     finalPrice,
     discountPercent,
-    itemsInStock: Number.isFinite(source.itemsInStock) ? source.itemsInStock : 0,
+    itemsInStock: Number.isFinite(source.itemsInStock)
+      ? source.itemsInStock
+      : 0,
     image: absoluteUrl(API_BASE, coverUrl),
     material: typeof material === "string" ? material : "",
     size: typeof size === "string" ? size : "",

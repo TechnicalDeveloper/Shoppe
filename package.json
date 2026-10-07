@@ -1,22 +1,24 @@
 {
-	"name": "nuxt-program",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
-	"devDependencies": {
-		"vite": "^6.3.5"
-	},
-	"dependencies": {
-		"sass": "^1.89.2",
-		"sass-embedded": "^1.85.1",
-		"swiper": "^12.0.2"
-	},
-	"engines": {
-		"node": ">=23-alpine3.21"
-	}
+  "name": "shoppe-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{js,css,scss,html}\" \"*.{js,html}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "sass": "^1.89.2",
+    "sass-embedded": "^1.85.1",
+    "swiper": "^12.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

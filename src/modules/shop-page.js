@@ -49,5 +49,17 @@ function runWhenReady(callback) {
 runWhenReady(() => {
   initCartUI();
   initNavigation();
+  initFilters();
   renderCatalog();
 });
+
+function initFilters() {
+  const filtersToggle = document.querySelector(".shop-page__filters-toggle");
+  const sidebar = document.getElementById("shop-filters");
+  if (filtersToggle && sidebar) {
+    filtersToggle.addEventListener("click", () => {
+      const visible = sidebar.classList.toggle("is-open");
+      filtersToggle.setAttribute("aria-expanded", String(visible));
+    });
+  }
+}
