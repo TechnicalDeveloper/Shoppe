@@ -1,25 +1,26 @@
-import { defineConfig } from "vite";
-import { resolve, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  root: ".",
-  base: "/",
-  server: { open: "/index.html", port: 3000 },
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
   esbuild: {
     legalComments: "none",
-    drop: ["console", "debugger"],
+    drop: ["console", "debugger"]
   },
   build: {
-    outDir: "dist",
-    minify: "esbuild",
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, "index.html"),
-        shop: resolve(__dirname, "src/pages/shop.html"),
-      },
-    },
+    minify: "esbuild"
   },
-});
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      }
+    }
+  }
+})

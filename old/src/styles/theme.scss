@@ -1,7 +1,7 @@
 :root {
-  --color-black: #000;
+  --color-black: #000000;
   --color-black-rgb: 0, 0, 0;
-  --color-white: #fff;
+  --color-white: #ffffff;
   --color-white-rgb: 255, 255, 255;
   --color-accent: #a18a68;
   --color-accent-rgb: 161, 138, 104;
@@ -15,20 +15,20 @@
   --color-gray-rgb: 216, 216, 216;
   --color-gray-dark: #707070;
   --color-gray-dark-rgb: 112, 112, 112;
-  --color-gray-darkest: #222;
+  --color-gray-darkest: #222222;
   --color-gray-darkest-rgb: 34, 34, 34;
   --color-badge: #e5dac3;
   --color-badge-rgb: 229, 218, 195;
   --color-badge-text: #8a7450;
   --color-badge-text-rgb: 138, 116, 80;
-  --color-badge-soldout: #888;
+  --color-badge-soldout: #888888;
   --color-divider: #f3f3f3;
-  --color-shadow-light: rgb(var(--color-black-rgb), 0.02);
+  --color-shadow-light: rgba(var(--color-black-rgb), 0.02);
   --color-shadow-card: var(--color-shadow-light);
-  --color-shadow-hover: rgb(var(--color-black-rgb), 0.08);
+  --color-shadow-hover: rgba(var(--color-black-rgb), 0.08);
   --color-switch: #757575;
-  --color-switch-shadow: rgb(var(--color-black-rgb), 0.07);
-  --color-text-disabled: rgb(var(--color-black-rgb), 0.4);
+  --color-switch-shadow: rgba(var(--color-black-rgb), 0.07);
+  --color-text-disabled: rgba(var(--color-black-rgb), 0.4);
   --opacity-hero-price: 0.85;
   --opacity-social-icons: 0.7;
 }

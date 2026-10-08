@@ -1,24 +1,39 @@
 {
-  "name": "shoppe-frontend",
+  "name": "shoppe",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{js,css,scss,html}\" \"*.{js,html}\""
-  },
-  "devDependencies": {
-    "prettier": "^3.9.9",
-    "vite": "^6.3.5"
+    "lint": "eslint .",
+    "lint:style": "stylelint \"src/**/*.scss\"",
+    "format": "prettier --write \"src/**/*.{js,vue,scss,html}\""
   },
   "dependencies": {
-    "sass": "^1.89.2",
-    "sass-embedded": "^1.85.1",
-    "swiper": "^12.0.2"
+    "@rushstack/eslint-patch": "^1.16.1",
+    "axios": "^1.20.0",
+    "pinia": "^4.0.3",
+    "pinia-plugin-persistedstate": "^4.7.1",
+    "sass": "^1.105.1",
+    "sass-embedded": "^1.105.1",
+    "swiper": "^14.3.0",
+    "vue": "^3.5.42",
+    "vue-router": "^4.6.4"
   },
-  "engines": {
-    "node": ">=18.0.0"
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.11.1",
+    "postcss-html": "^2.0.0",
+    "prettier": "^3.9.9",
+    "stylelint": "^17.16.0",
+    "stylelint-config-html": "^2.0.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "vite": "^8.3.0"
   }
 }
