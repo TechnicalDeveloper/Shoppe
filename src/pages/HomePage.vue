@@ -3,14 +3,14 @@ import { ref, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import ProductCard from '../components/ProductCard.vue';
 import HeroSlider from '../components/HeroSlider.vue';
-import { getProducts } from '../services/api';
+import { getProducts } from '../transport/api';
 
 const latestProducts = ref([]);
 const isLoading = ref(true);
 
 onMounted(async () => {
   try {
-    latestProducts.value = await getProducts(6);
+    latestProducts.value = (await getProducts(6)).data;
   } catch (error) {
     console.error(error);
   } finally {

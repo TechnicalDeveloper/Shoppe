@@ -2,9 +2,9 @@
 @import "/src/styles/theme";
 @import "/src/styles/layout";
 @import "/src/styles/header-shared";
+@import "/src/styles/shop";
 @import "/src/styles/cart";
 
-// HEADER
 .header {
   width: 100%;
 
@@ -30,15 +30,18 @@
   }
 
   &__container {
-    padding: 64px 96px 50px;
+    padding: 54px 96px 0;
+    margin-bottom: 34px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
+    border-bottom: 1px solid var(--color-gray);
   }
 
   &__logo {
     display: flex;
     align-items: center;
+    padding-bottom: 16px;
     text-decoration: none;
 
     &-svg,
@@ -51,18 +54,20 @@
 
   &__nav {
     display: flex;
-    align-items: center;
+    align-items: stretch;
   }
 
   &__menu {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   &__menu-item {
+    display: flex;
+    align-items: stretch;
     margin-right: 16px;
 
     &:last-child {
@@ -71,6 +76,9 @@
   }
 
   &__menu-link {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
     color: var(--color-black);
     text-decoration: none;
     font-weight: 400;
@@ -84,6 +92,12 @@
     font-size: 16px;
     font-style: normal;
     line-height: 27px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+
+    &.router-link-active {
+      border-bottom-color: var(--color-black);
+    }
   }
 
   &__icon_cart {
@@ -94,14 +108,24 @@
     width: 1px;
     height: 24px;
     background: var(--color-gray-dark);
-    margin: 0 78px;
+    margin: 0 40px; align-self: center; transform: translateY(-8px);
     display: inline-block;
   }
 
   &__icon {
+    margin-right: 20px;
+    &:last-child { margin-right: 0; }
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  &__icon-img {
     width: var(--nav-icon-size);
     height: var(--nav-icon-size);
-    flex-shrink: 0;
+    display: block;
   }
 
   &__icon:hover svg {
@@ -114,7 +138,6 @@
   }
 }
 
-// HERO
 .hero {
   width: 100%;
   display: flex;
@@ -284,7 +307,6 @@
   }
 }
 
-// SHOP-LATEST
 .shop-latest {
   padding: 64px 0 126px;
 
@@ -490,7 +512,6 @@
   }
 }
 
-// FOOTER
 .footer {
   background: var(--color-white);
   padding-top: 126px;
@@ -569,7 +590,6 @@
   }
 }
 
-// Responsive: Media Queries
 @media (width <= 1200px) {
   .container {
     padding-left: 32px;
@@ -590,14 +610,20 @@
 
   .header__container {
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     padding-top: 32px;
-    padding-bottom: 24px;
+    padding-bottom: 0;
   }
 
   .header__logo {
     margin-bottom: 0;
+    padding-bottom: 24px;
+  }
+
+  .header__menu-link,
+  .header__icon {
+    padding-bottom: 24px;
   }
 
   .header__divider {
@@ -616,6 +642,7 @@
   }
 
   .header__logo {
+    padding-bottom: 0;
     order: 1;
     width: 99px;
     height: 36px;
@@ -647,6 +674,7 @@
   }
 
   .header__icon_cart.header__icon_cart {
+    padding-bottom: 0;
     width: var(--nav-icon-size-sm);
     height: var(--nav-icon-size-sm);
     display: inline-block;

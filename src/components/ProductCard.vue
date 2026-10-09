@@ -1,7 +1,8 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useFavoritesStore } from '../stores/favorites';
+import { useCartStore } from '../stores/cart';
 
 const props = defineProps({
   product: {
@@ -11,6 +12,9 @@ const props = defineProps({
 });
 
 const favoritesStore = useFavoritesStore();
+const cartStore = useCartStore();
+
+const showCartNotification = ref(false);
 
 const toggleFavorite = () => {
   favoritesStore.toggleFavorite(props.product);
@@ -27,6 +31,21 @@ const productImage = computed(() => {
 const displayPrice = computed(() => {
   return `$ ${props.product.price?.toFixed(2) || '0.00'}`;
 });
+
+const cartQuantity = computed(() => cartStore.getQuantity(props.product.documentId));
+const isOutOfStock = computed(() => {
+  return props.product.itemsInStock <= 0 || cartQuantity.value >= props.product.itemsInStock;
+});
+
+const addToCart = () => {
+  if (isOutOfStock.value) return;
+  cartStore.addToCart(props.product);
+  showCartNotification.value = true;
+  setTimeout(() => {
+    showCartNotification.value = false;
+  }, 3000);
+};
+
 </script>
 
 <template>
@@ -37,7 +56,7 @@ const displayPrice = computed(() => {
         >-{{ product.discountPercent }}%</span
       >
       <div class="shop-latest__actions">
-        <button class="shop-latest__icon-btn" aria-label="Add to cart">
+        <button class="shop-latest__icon-btn" aria-label="Add to cart" @click="addToCart" :disabled="isOutOfStock">
           <img src="/icons/cart.svg" alt="Add to cart" />
         </button>
         <RouterLink
@@ -68,7 +87,9 @@ const displayPrice = computed(() => {
         </button>
       </div>
       <div class="shop-latest__cta--mobile">
-        <button class="shop-latest__add-to-cart">ADD TO CART</button>
+        <button class="shop-latest__add-to-cart" @click="addToCart" :disabled="isOutOfStock">
+          {{ isOutOfStock ? 'OUT OF STOCK' : 'ADD TO CART' }}
+        </button>
       </div>
     </div>
     <div class="shop-latest__info">
@@ -79,6 +100,8 @@ const displayPrice = computed(() => {
         }}</span>
       </div>
     </div>
+
+    <div v-if="showCartNotification" class="toast-notification">Added to cart!</div>
   </div>
 </template>
 
@@ -115,7 +138,35 @@ const displayPrice = computed(() => {
   box-shadow: 0 6px 14px rgb(0 0 0 / 12%);
 }
 
+.shop-latest__icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .shop-latest__actions {
   gap: 20px;
+}
+
+.toast-notification {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  animation: slideIn 0.3s ease-out;
+  z-index: 100;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.shop-latest__add-to-cart:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 </style>

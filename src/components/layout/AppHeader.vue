@@ -1,6 +1,13 @@
 <script setup>
+import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
-const cartCount = 0;
+import { useCartStore } from '../../stores/cart';
+
+const cartStore = useCartStore();
+
+const cartCount = computed(() => {
+  return cartStore.items.reduce((total, item) => total + item.quantity, 0);
+});
 </script>
 
 <template>
@@ -23,10 +30,11 @@ const cartCount = 0;
 
         <span class="header__divider"></span>
 
-        <RouterLink
-          to="/shop"
+        <button
           class="header__icon header__icon_cart"
           aria-label="Cart"
+          @click="cartStore.toggleCart()"
+          style="background: none; border: none; cursor: pointer; display: flex; align-items: center;"
         >
           <img
             src="/icons/header_shopping-cart.svg"
@@ -34,7 +42,7 @@ const cartCount = 0;
             class="header__icon-img"
           />
           <span class="header__cart-count">{{ cartCount }}</span>
-        </RouterLink>
+        </button>
 
         <a href="#" class="header__icon header__icon_user" aria-label="Profile">
           <img

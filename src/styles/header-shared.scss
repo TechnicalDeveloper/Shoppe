@@ -3,10 +3,10 @@
 :root {
   --nav-icon-size: 20px;
   --nav-icon-size-sm: 18px;
-  --nav-badge-size: 14px;
-  --nav-badge-font-size: 9px;
-  --nav-badge-offset-x: -8px;
-  --nav-badge-offset-y: -8px;
+  --nav-badge-size: 13px;
+  --nav-badge-font-size: 8px;
+  --nav-badge-offset-x: -5px;
+  --nav-badge-offset-y: -2px;
   --nav-toggle-icon-size: 24px;
   --nav-toggle-icon-size-sm: 22px;
   --nav-toggle-padding: 8px;
@@ -61,13 +61,13 @@
   width: var(--nav-badge-size);
   height: var(--nav-badge-size);
   background-color: var(--color-white);
-  border: 1.5px solid var(--color-gray-darkest);
+  border: 1px solid var(--color-black);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--nav-badge-font-size);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-gray-darkest);
   line-height: 1;
 }
