@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import ProductCard from '../components/ProductCard.vue';
 import HeroSlider from '../components/HeroSlider.vue';
-import { getProducts } from '../services/api';
+import { getProducts } from '../transport/api';
 
 const latestProducts = ref([]);
 const isLoading = ref(true);

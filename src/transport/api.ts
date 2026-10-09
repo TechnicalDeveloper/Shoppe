@@ -4,20 +4,23 @@ const api = axios.create({
   baseURL: 'https://api.dev.cwe.su/api',
 });
 
-export const getPromos = async () => {
+export const getPromos = async (): Promise<any[]> => {
   const { data } = await api.get('/promos?populate=product');
   return data.data;
 };
 
-export const getProducts = async (limit = null) => {
+export const getProducts = async (
+  limit: number | null = null
+): Promise<any[]> => {
   const url = limit
     ? `/products?pagination[pageSize]=${limit}&populate=*`
     : '/products?populate=*';
+
   const { data } = await api.get(url);
   return data.data;
 };
 
-export const getProductById = async (documentId) => {
+export const getProductById = async (documentId: string): Promise<any> => {
   const { data } = await api.get(`/products/${documentId}?populate=*`);
   return data.data;
 };

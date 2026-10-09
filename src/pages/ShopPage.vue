@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { getProducts } from '../services/api';
+import { getProducts } from '../transport/api';
 import ProductCard from '../components/ProductCard.vue';
 
 const products = ref([]);

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { getProductById, getProducts } from '../services/api';
+import { getProductById, getProducts } from '../transport/api';
 import { useFavoritesStore } from '../stores/favorites';
 import ProductCard from '../components/ProductCard.vue';
 

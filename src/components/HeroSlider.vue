@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { getPromos } from '../services/api';
+import { getPromos } from '../transport/api';
 
 const modules = [Pagination, Autoplay];
 const promos = ref([]);
